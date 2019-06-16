@@ -22,7 +22,7 @@ function setup() {
   video = createCapture(VIDEO: {
       facingMode: {
         exact: "environment"
-      } );
+      } } );
   // Append it to the videoContainer DOM element
   video.parent('videoContainer');
   // Create the UI buttons
