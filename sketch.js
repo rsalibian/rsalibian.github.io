@@ -19,9 +19,18 @@ function setup() {
   featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
   noCanvas();
   // Create a video element
-  video = createCapture(VIDEO: {facingMode: {
-        exact: "environment"
-      }});
+  //video = createCapture(VIDEO);
+    
+  
+  var constraints = {
+    audio: false,
+    video: {
+      facingMode: "environment"
+    }
+  };  
+    
+  video = createCapture(constraints);
+    
   // Append it to the videoContainer DOM element
   video.parent('videoContainer');
   // Create the UI buttons
