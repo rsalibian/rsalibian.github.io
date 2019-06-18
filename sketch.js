@@ -1,12 +1,4 @@
- // Copyright (c) 2018 ml5
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
 
-/* ===
-ml5 Example
-KNN Classification on Webcam Images with mobileNet. Built with p5.js
-=== */
 
 let video;
 
@@ -27,12 +19,10 @@ function setup() {
     }
   };  
   
-    
   video = createCapture(constraints);
     
-  // Append it to the videoContainer DOM element
   video.parent('videoContainer');
-  // Create the UI buttons
+
   createButtons();
     
   loadMyKNN();
