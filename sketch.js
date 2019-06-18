@@ -36,8 +36,7 @@ function setup() {
   createButtons();
     
   loadMyKNN();
-    
-  classify();
+
     
 }
 
