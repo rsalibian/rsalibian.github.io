@@ -37,35 +37,37 @@ function setup() {
     
   loadMyKNN();
     
+  classify();
+    
 }
 
 function modelReady(){
+    
   select('#status').html('FeatureExtractor(mobileNet model) Loaded')
+    
 }
 
-// Add the current frame from the video to the classifier
+
 function addExample(label) {
-  // Get the features of the input video
-  const features = featureExtractor.infer(video);
-  // You can also pass in an optional endpoint, defaut to 'conv_preds'
-  // const features = featureExtractor.infer(video, 'conv_preds');
-  // You can list all the endpoints by calling the following function
-  // console.log('All endpoints: ', featureExtractor.mobilenet.endpoints)
 
-  // Add an example with a label to the classifier
+  const features = featureExtractor.infer(video);
+
   knnClassifier.addExample(features, label);
+    
   updateCounts();
+    
 }
 
-// Predict the current frame.
+
 function classify() {
-  // Get the total number of labels from knnClassifier
+
   const numLabels = knnClassifier.getNumLabels();
+    
   if (numLabels <= 0) {
     console.error('There is no examples in any label');
     return;
   }
-  // Get the features of the input video
+
   const features = featureExtractor.infer(video);
 
   // Use knnClassifier to classify which label do these features belong to
@@ -80,7 +82,7 @@ function classify() {
   // gotResults(null, res);
 }
 
-// A util function to create UI buttons
+
 function createButtons() {
   // When the A button is pressed, add the current frame
   // from the video with a label of "rock" to the classifier
