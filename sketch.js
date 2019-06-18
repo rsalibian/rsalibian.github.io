@@ -42,7 +42,7 @@ function setup() {
 
 function modelReady(){
     
-  select('#status').html('FeatureExtractor(mobileNet model) Loaded')
+  //select('#status').html('FeatureExtractor(mobileNet model) Loaded')
     
 }
 
