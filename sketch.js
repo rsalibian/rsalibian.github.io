@@ -15,19 +15,18 @@ const knnClassifier = ml5.KNNClassifier();
 let featureExtractor;
 
 function setup() {
-  // Create a featureExtractor that can extract the already learned features from MobileNet
+
   featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
-  noCanvas();
-  // Create a video element
-  //video = createCapture(VIDEO);
-    
   
+  noCanvas();
+
   var constraints = {
     audio: false,
     video: {
       facingMode: "environment"
     }
   };  
+  
     
   video = createCapture(constraints);
     
@@ -35,6 +34,9 @@ function setup() {
   video.parent('videoContainer');
   // Create the UI buttons
   createButtons();
+    
+  loadMyKNN();
+    
 }
 
 function modelReady(){
@@ -143,7 +145,7 @@ function gotResults(err, result) {
 
   if (result.confidencesByLabel) {
     const confidences = result.confidencesByLabel;
-    // result.label is the label that has the highest confidence
+    
     if (result.label) {
       select('#result').html(result.label);
       select('#confidence').html(`${confidences[result.label] * 100} %`);
