@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<juiceboxgallery>
+<juiceboxgallery 
+
+	useFullscreenExpand="true"
+
+>
   <image imageURL="images/Capture1.jpg"
 	thumbURL="thumbs/Capture1.jpg"
 	linkURL="images/Capture1.jpg"
 	linkTarget="_blank"
-	sourcePath="/Users/AllisonSalibian/Desktop/Capture1.PNG"
-
->
+	sourcePath="/Users/AllisonSalibian/Desktop/Capture1.PNG">
     <title><![CDATA[Capture1]]></title>
     <caption><![CDATA[]]></caption>
   </image>
