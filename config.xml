@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<juiceboxgallery 
+
+	maxImageWidth="1000"
+	maxImageHeight="1000"
+
+>
+  <image imageURL="images/case1.jpg"
+	thumbURL="thumbs/case1.jpg"
+	linkURL="images/case1.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/case1.jpg">
+    <title><![CDATA[case1]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case2.jpg"
+	thumbURL="thumbs/case2.jpg"
+	linkURL="images/case2.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/case2.jpg">
+    <title><![CDATA[case2]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case3.jpg"
+	thumbURL="thumbs/case3.jpg"
+	linkURL="images/case3.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/case3.jpg">
+    <title><![CDATA[case3]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case4.jpg"
+	thumbURL="thumbs/case4.jpg"
+	linkURL="images/case4.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/case4.jpg">
+    <title><![CDATA[case4]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/Capture2.jpg"
+	thumbURL="thumbs/Capture2.jpg"
+	linkURL="images/Capture2.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/Capture2.PNG">
+    <title><![CDATA[Capture2]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/Capture1.jpg"
+	thumbURL="thumbs/Capture1.jpg"
+	linkURL="images/Capture1.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/Capture1.PNG">
+    <title><![CDATA[Capture1]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+</juiceboxgallery>

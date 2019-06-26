@@ -1,129 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial;
-  color: white;
-}
+	<title>Juicebox Gallery</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" id="jb-viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+	<meta name="description" content="" />
 
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+	<!-- START OPEN GRAPH TAGS-->
+	<meta property="og:title" content="Juicebox Gallery" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:description" content="" />
+	<!-- END OPEN GRAPH TAGS-->
 
-.left {
-  left: 0;
-  background-color: #111;
-}
-
-.right {
-  right: 0;
-  background-color: red;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.centered img {
-  width: 150px;
-  border-radius: 50%;
-}
-</style>
+	<style type="text/css">
+	body {
+		margin: 0px;
+	}
+	</style>
 </head>
 <body>
-
-<div class="split left">
-    
- <table style="width:100%">
- 
-  <tr>
-    <td><img src="https://rsalibian.github.io/case1/case1.jpg" height="300" width="300"></td>
-    <td><img src="https://rsalibian.github.io/case1/case2.jpg" height="300" width="300"></td>
-  </tr>
-  <tr>
-    <td><img src="https://rsalibian.github.io/case1/case3.jpg" height="300" width="300"></td>
-    <td><img src="https://rsalibian.github.io/case1/case4.jpg" height="300" width="300"></td>
-  </tr>
-  <tr>
-    <td><img src="https://rsalibian.github.io/case1/case1.jpg" height="300" width="300"></td>
-    <td><img src="https://rsalibian.github.io/case1/case4.jpg" height="300" width="300"></td>
-  </tr>
-     
-   <tr>
-    <td><img src="https://rsalibian.github.io/case1/case1.jpg" height="300" width="300"></td>
-    <td><img src="https://rsalibian.github.io/case1/case2.jpg" height="300" width="300"></td>
-  </tr>
-  <tr>
-    <td><img src="https://rsalibian.github.io/case1/case3.jpg" height="300" width="300"></td>
-    <td><img src="https://rsalibian.github.io/case1/case4.jpg" height="300" width="300"></td>
-  </tr>
-  <tr>
-    <td><img src="https://rsalibian.github.io/case1/case1.jpg" height="300" width="300"></td>
-    <td><img src="https://rsalibian.github.io/case1/case4.jpg" height="300" width="300"></td>
-  </tr>  
-</table>
-
-    
-
-</div>
-      
-      
-      
-      
-      
-  </div>
-</div>
-
-<div class="split right">
-  <div class="centered">
-   <head>
-  <meta charset="UTF-8">
-    
-  <title>OVMC RADIOLOGY - AI APPLICATIONS</title>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
-  <script src="https://unpkg.com/ml5@0.3.1/dist/ml5.min.js" type="text/javascript"></script>
-  
-  <style></style>
-    
-</head>
-
-<body>
-    
-  <h1><font size="6">OVMC AI PAGE</font></h1>
-
-  <div id="videoContainer"></div>
-    
-  <p id="status">Loading Model...</p>
-    
-    <button id="buttonPredict">Start predicting!</button><br />
-
-  </p>
-    
-  <p>
-    OVMC AI Classifier: 
-    Class: <span id="result">...</span>
-    with a confidence of <span id="confidence">...</span>
-  </p>
-
-  <script src="sketch.js"></script>
-    
+	<!--START JUICEBOX EMBED-->
+	<script src="jbcore/juicebox.js"></script>
+	<script>
+	new juicebox({
+		containerId: 'juicebox-container',
+		galleryWidth: '100%',
+		galleryHeight: '100%',
+		backgroundColor: 'rgba(34,34,34,1)'
+	});
+	</script>
+	<div id="juicebox-container"></div>
+	<!--END JUICEBOX EMBED-->
 </body>
-  </div>
-</div>
-     
-</body>
-</html> 
+</html>
