@@ -49,7 +49,7 @@ function addExamplefromfile() {
       
        console.log("/images/case" + currentimage + ".jpg")
        
-       img = loadImage('images/case1.jpg');
+       img = loadImage('https://rsalibian.github.io/trainfolder/images/case1.jpg');
 
        //const features = featureExtractor.infer("/images/case" + currentimage + ".jpg");
        
