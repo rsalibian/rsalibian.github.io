@@ -45,7 +45,7 @@ function addExamplefromfile() {
     
    var currentimage;
     
-   for (currentimage = 1; currentimage < 5; currentimage++) { 
+   //for (currentimage = 1; currentimage < 5; currentimage++) { 
        
        img = loadImage("https://rsalibian.github.io/trainfolder/images/case1.jpg");
        
@@ -55,7 +55,7 @@ function addExamplefromfile() {
 
        knnClassifier.addExample(features, 'stress fracture');
        
-    }
+    //}
     
 }
     
