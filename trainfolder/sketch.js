@@ -46,11 +46,9 @@ function addExamplefromfile() {
    var currentimage;
     
    for (currentimage = 1; currentimage < 5; currentimage++) { 
-      
-       console.log("/images/case" + currentimage + ".jpg")
        
-       img = loadImage('https://rsalibian.github.io/trainfolder/images/case1.jpg');
-
+       img = loadImage("https://rsalibian.github.io/trainfolder/images/case1.jpg");
+       
        //const features = featureExtractor.infer("/images/case" + currentimage + ".jpg");
        
        const features = featureExtractor.infer(img);
