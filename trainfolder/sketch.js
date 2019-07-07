@@ -56,7 +56,7 @@ function addExamplefromfile() {
       
        x.setAttribute("src", "https://rsalibian.github.io/case1.jpg");
     
-       var getImage = document.getElementById('x');
+       var getImage = document.getElementById('x').src;
        
        const features = featureExtractor.infer(getImage);
 
