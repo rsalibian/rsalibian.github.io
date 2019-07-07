@@ -43,7 +43,7 @@ function addExample(label) {
 //add from file
 function addExamplefromfile() {
     
-   var currentimage;
+   //var currentimagenow;
     
    //for (currentimage = 1; currentimage < 5; currentimage++) { 
     
@@ -54,6 +54,8 @@ function addExamplefromfile() {
     
        
        //const features = featureExtractor.infer('https://rsalibian.github.io/case1.jpg');
+    
+       console.log(document.getElementById("currentimage"))
     
        const features = featureExtractor.infer(document.getElementById("currentimage"));
 
