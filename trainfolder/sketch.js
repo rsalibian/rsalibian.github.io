@@ -52,9 +52,11 @@ function addExamplefromfile() {
        
        //const features = featureExtractor.infer("/images/case" + currentimage + ".jpg");
     
-       var myImage = document.createElement("https://rsalibian.github.io/case1.jpg");
+       var x = document.createElement("IMG");
+      
+       x.setAttribute("src", "https://rsalibian.github.io/case1.jpg");
     
-       var getImage = document.getElementById(myImage);
+       var getImage = document.getElementById(x);
        
        const features = featureExtractor.infer(getImage);
 
