@@ -59,6 +59,10 @@ function addExamplefromfile() {
     
        var img2 = createImg("https://rsalibian.github.io/case1.jpg");
     
+       img2.height = "224";
+    
+       img2.width = "224";
+    
        const features = featureExtractor.infer(img2);
 
        knnClassifier.addExample(features, 'stress fracture');
