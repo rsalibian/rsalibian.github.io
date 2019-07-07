@@ -55,6 +55,10 @@ function addExamplefromfile() {
       
             var img = new Image();
     
+            img.height = "224"
+    
+            img.width = "224"   
+    
             img.src = "https://rsalibian.github.io/case1.jpg";
     
        
