@@ -44,27 +44,22 @@ function addExample(label) {
 //add from file
 function addExamplefromfile() {
     
-   //var currentimagenow;
+   var imagenumber;
     
-   //for (currentimage = 1; currentimage < 5; currentimage++) { 
-    
-       
-       //img = loadImage("https://rsalibian.github.io/case1.jpg");
-       
-       //const features = featureExtractor.infer("/images/case" + currentimage + ".jpg");
-    
-       
-       //const features = featureExtractor.infer('https://rsalibian.github.io/case1.jpg');
+   for (imagenumber = 1; imagenumber < 5; imagenumber++) { 
     
        console.log(document.getElementById("currentImage"))
     
-       const image = document.getElementById('currentImage');
+       //const image = document.getElementById('currentImage');
    
-       const features = featureExtractor.infer(image);
+       //const features = featureExtractor.infer(image);
+       
+       
+       const features = featureExtractor.infer("/images/case" + imagenumber + ".jpg");
 
        knnClassifier.addExample(features, 'stress fracture');
        
-    //}
+    }
     
 }
     
