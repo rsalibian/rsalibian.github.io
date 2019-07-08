@@ -1,5 +1,6 @@
 
 let video;
+let image;
 
 const knnClassifier = ml5.KNNClassifier();
 
@@ -59,9 +60,9 @@ function addExamplefromfile() {
     
        //let img2 = loadImage("https://rsalibian.github.io/case1.jpg");
     
-       inputImg = select('#currentImage');
+       image = loadImage('https://rsalibian.github.io/case1.jpg');
     
-       const features = featureExtractor.infer(inputImg);
+       const features = featureExtractor.infer(image);
 
        knnClassifier.addExample(features, 'stress fracture');
        
