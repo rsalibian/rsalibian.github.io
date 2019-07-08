@@ -17,7 +17,7 @@ function setup() {
   // Create the UI buttons
   createButtons();
     
-  addExamplefromfile(); 
+ 
     
 }
 
