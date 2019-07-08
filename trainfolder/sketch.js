@@ -60,7 +60,9 @@ function addExamplefromfile() {
     
        //let img2 = loadImage("https://rsalibian.github.io/case1.jpg");
     
-       image = loadImage('https://rsalibian.github.io/case1.jpg');
+       const image = document.getElementById('currentImage');
+    
+       //image = loadImage('https://rsalibian.github.io/case1.jpg');
     
        const features = featureExtractor.infer(image);
 
