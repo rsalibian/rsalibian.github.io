@@ -48,12 +48,13 @@ function addExamplefromfile() {
     
    for (imagenumber = 1; imagenumber < 5; imagenumber++) { 
     
-       console.log(document.getElementById("currentImage"))
+       //console.log(document.getElementById("currentImage"))
     
        //const image = document.getElementById('currentImage');
    
        //const features = featureExtractor.infer(image);
        
+       console.log("/images/case" + imagenumber + ".jpg");
        
        const features = featureExtractor.infer("/images/case" + imagenumber + ".jpg");
 
