@@ -18,12 +18,6 @@ function setup() {
     
 }
 
-function modelReady(){
-  
-    select('#status').html('FeatureExtractor(mobileNet model) Loaded')
-
-}
-
 
 //add from file
 function addExamplefromfile() {
