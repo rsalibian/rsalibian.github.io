@@ -8,7 +8,7 @@ let featureExtractor;
 
 function setup() {
   
-  featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
+  featureExtractor = ml5.featureExtractor('MobileNet');
   
   noCanvas();
 
