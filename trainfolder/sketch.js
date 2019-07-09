@@ -44,23 +44,36 @@ function addExample(label) {
 //add from file
 function addExamplefromfile() {
     
-   var imagenumber;
     
-   for (imagenumber = 1; imagenumber < 5; imagenumber++) { 
+    //for (i = 1; i < 5; i++) {
+        
+       console.log(document.getElementById("image1"))
     
-       //console.log(document.getElementById("currentImage"))
-    
-       //const image = document.getElementById('currentImage');
+       const image = document.getElementById('image1');
    
-       //const features = featureExtractor.infer(image);
-       
-       console.log("/images/case" + imagenumber + ".jpg");
-       
-       const features = featureExtractor.infer("/images/case" + imagenumber + ".jpg");
+       const features = featureExtractor.infer(image);
+
+       knnClassifier.addExample(features, 'stress fracture');
+  
+    //}
+    
+       console.log(document.getElementById("image2"))
+    
+       image = document.getElementById('image2');
+   
+       features = featureExtractor.infer(image);
+
+       knnClassifier.addExample(features, 'stress fracture');
+    
+    
+       console.log(document.getElementById("image3"))
+    
+       image = document.getElementById('image3');
+   
+       features = featureExtractor.infer(image);
 
        knnClassifier.addExample(features, 'stress fracture');
        
-    }
     
 }
     
