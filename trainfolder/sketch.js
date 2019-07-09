@@ -43,37 +43,31 @@ function addExample(label) {
 
 //add from file
 function addExamplefromfile() {
-    
-    
-    //for (i = 1; i < 5; i++) {
         
-       console.log(document.getElementById("image1"))
+       
+  call addexamplenow("image1");
+  
+  
+}
+
+function addexamplenow(imageIdelement) {
     
-       const image = document.getElementById('image1');
+       console.log(document.getElementById(imageIdelement))
+    
+       const image = document.getElementById(imageIdelement);
    
        const features = featureExtractor.infer(image);
 
        knnClassifier.addExample(features, 'stress fracture');
-  
-    //}
     
-       console.log(document.getElementById("image2"))
     
-       image = document.getElementById('image2');
+       //console.log(document.getElementById("image1"))
+    
+       //const image = document.getElementById('image1');
    
-       features = featureExtractor.infer(image);
+       //const features = featureExtractor.infer(image);
 
-       knnClassifier.addExample(features, 'stress fracture');
-    
-    
-       console.log(document.getElementById("image3"))
-    
-       image = document.getElementById('image3');
-   
-       features = featureExtractor.infer(image);
-
-       knnClassifier.addExample(features, 'stress fracture');
-       
+       //knnClassifier.addExample(features, 'stress fracture');
     
 }
     
