@@ -30,7 +30,7 @@ function addExamplefromfile() {
    
          const features = featureExtractor.infer(image);
 
-         knnClassifier.addExample(features, 'Calcaneal Stress fracture');
+         knnClassifier.addExample(features, 'Calcaneal stress fracture');
        
        }
     
@@ -42,7 +42,7 @@ function addExamplefromfile() {
    
          const features2 = featureExtractor.infer(nimage);
 
-         knnClassifier.addExample(features2, ' No calcaneal stress fracture');
+         knnClassifier.addExample(features2, 'No calcaneal stress fracture');
        
        }
     
