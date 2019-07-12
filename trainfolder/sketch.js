@@ -40,9 +40,9 @@ function addExamplefromfile() {
     
          const nimage = document.getElementById("nimage" + i);
    
-         const features = featureExtractor.infer(nimage);
+         const features2 = featureExtractor.infer(nimage);
 
-         knnClassifier.addExample(features, ' No calcaneal stress fracture');
+         knnClassifier.addExample(features2, ' No calcaneal stress fracture');
        
        }
     
