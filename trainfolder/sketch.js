@@ -30,9 +30,22 @@ function addExamplefromfile() {
    
          const features = featureExtractor.infer(image);
 
-         knnClassifier.addExample(features, 'stress fracture');
+         knnClassifier.addExample(features, 'Calcaneal Stress fracture');
        
        }
+    
+       for (i = 1; i < 5; i++) {
+
+         console.log(document.getElementById("nimage" + i))
+    
+         const nimage = document.getElementById("nimage" + i);
+   
+         const features = featureExtractor.infer(nimage);
+
+         knnClassifier.addExample(features, ' No calcaneal stress fracture');
+       
+       }
+    
     
        //console.log(document.getElementById("image1"))
     
