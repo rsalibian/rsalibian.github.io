@@ -34,11 +34,11 @@ function addExamplefromfile() {
        
        }
     
-       for (i = 1; i < 5; i++) {
+       for (j = 1; j < 5; j++) {
 
-         console.log(document.getElementById("nimage" + i))
+         console.log(document.getElementById("nimage" + j))
     
-         const nimage = document.getElementById("nimage" + i);
+         const nimage = document.getElementById("nimage" + j);
    
          const features2 = featureExtractor.infer(nimage);
 
