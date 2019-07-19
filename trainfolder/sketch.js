@@ -22,6 +22,25 @@ function setup() {
 //add from file
 function addExamplefromfile() {
     
+     var x;
+    
+     for (i = 1; i < 5; i++) {
+    
+        
+         x = document.createElement("IMG");
+         
+         x.src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";
+         
+         const features = featureExtractor.infer(image);
+
+         knnClassifier.addExample(features, 'Calcaneal stress fracture');
+         
+         console.log("added");
+             
+         //document.getElementById("myImg").src = "hackanm.gif";
+    
+     }
+    
        for (i = 1; i < 5; i++) {
 
          console.log(document.getElementById("image" + i))
