@@ -31,6 +31,10 @@ function addExamplefromfile() {
          
          x.id = "image1";
          
+         x.height = "200";
+         
+         x.width = "200";
+         
          document.getElementById("image1").src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";
          
          const features = featureExtractor.infer(x);
