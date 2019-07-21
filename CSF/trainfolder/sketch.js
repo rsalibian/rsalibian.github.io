@@ -18,18 +18,21 @@ function setup() {
 //add from file
 function addExamplefromfile() {
     
-     var sourceFolder1 = new sourceFolder;
-    
-     sourceFolder1.url = "https://rsalibian.github.io/CSF/trainfolder/images/";
-    
-     var fileList = sourceFolder.getFiles();  
-    
-    
-     for (var i = 0; i < fileList.length; i++) { 
+     const testFolder = "https://rsalibian.github.io/CSF/trainfolder/images/";
+     
+     const fs = require('fs');
+
+     fs.readdir(testFolder, (err, files) => {
          
-         console.log(downloadingImage.src);
+      files.forEach(file => {
+          
+        console.log(file);
+          
+       });
+         
+      });
     
-     }  
+
     
     
      var downloadingImage = new Image();
