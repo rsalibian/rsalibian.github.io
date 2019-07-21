@@ -18,6 +18,18 @@ function setup() {
 //add from file
 function addExamplefromfile() {
     
+     var sourceFolder = new Folder("https://rsalibian.github.io/CSF/trainfolder/images/");  
+    
+     var fileList = sourceFolder.getFiles();  
+    
+    
+     for (var i = 0; i < fileList.length; i++) { 
+         
+         console.log(downloadingImage.src);
+    
+     }  
+    
+    
      var downloadingImage = new Image();
     
      for (i = 1; i < 5; i++) {
