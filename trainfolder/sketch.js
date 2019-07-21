@@ -25,25 +25,21 @@ function addExamplefromfile() {
      var x;
     
      for (i = 1; i < 5; i++) {
-    
-        
-         x = document.createElement("IMG");
          
-         x.id = "image1";
+         var downloadingImage = new Image();
          
-         x.height = "200";
-         
-         x.width = "200";
-         
-         //document.getElementById("image1").src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";
-         
-         const features = featureExtractor.infer("https://rsalibian.github.io/trainfolder/images/case1.jpg");
-
-         knnClassifier.addExample(features, 'Calcaneal stress fracture');
-         
-         console.log("added");
+         downloadingImage.onload = function(){
+           
+            downloadingImage.src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";   
              
-         //document.getElementById("image1").src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";
+            const features = featureExtractor.infer("https://rsalibian.github.io/trainfolder/images/case1.jpg");
+
+            knnClassifier.addExample(features, 'Calcaneal stress fracture');
+         
+            console.log("added");
+                 
+         };
+        
     
      }
     
