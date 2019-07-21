@@ -18,19 +18,21 @@ function setup() {
     
 }
 
+function testfunction(){
+    
+     console.log("added");
+}
 
 //add from file
 function addExamplefromfile() {
     
-     var x;
+     var downloadingImage = new Image();
     
      for (i = 1; i < 5; i++) {
          
-         var downloadingImage = new Image();
-         
          downloadingImage.src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";
          
-         downloadingImage.onload = function(){
+         downloadingImage.onload = testfunction(){
            
             const features = featureExtractor.infer(downloadingImage);
 
