@@ -18,23 +18,7 @@ function setup() {
 //add from file
 function addExamplefromfile() {
     
-     const testFolder = "https://rsalibian.github.io/CSF/trainfolder/images/";
-     
-     const fs = require('fs');
-
-     fs.readdir(testFolder, (err, files) => {
-         
-      files.forEach(file => {
-          
-        console.log(file);
-          
-       });
-         
-      });
-    
-
-    
-    
+  
      var downloadingImage = new Image();
     
      for (i = 1; i < 5; i++) {
