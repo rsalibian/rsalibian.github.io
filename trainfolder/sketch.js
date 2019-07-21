@@ -40,9 +40,8 @@ function addExamplefromfile() {
          
             console.log("added");
                  
-         };
+         }
         
-    
      }
     
        for (i = 1; i < 5; i++) {
