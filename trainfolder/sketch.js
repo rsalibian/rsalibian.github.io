@@ -14,14 +14,8 @@ function setup() {
 
   createButtons();
     
- 
-    
 }
 
-function testfunction(){
-    
-     console.log("added");
-}
 
 //add from file
 function addExamplefromfile() {
@@ -32,7 +26,7 @@ function addExamplefromfile() {
          
          downloadingImage.src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";
          
-         downloadingImage.onload = testfunction(){
+         downloadingImage.onload = function(){
            
             const features = featureExtractor.infer(downloadingImage);
 
