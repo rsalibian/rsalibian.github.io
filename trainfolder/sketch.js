@@ -28,10 +28,10 @@ function addExamplefromfile() {
          
          var downloadingImage = new Image();
          
+         downloadingImage.src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";
+         
          downloadingImage.onload = function(){
            
-            downloadingImage.src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";   
-             
             const features = featureExtractor.infer("https://rsalibian.github.io/trainfolder/images/case1.jpg");
 
             knnClassifier.addExample(features, 'Calcaneal stress fracture');
