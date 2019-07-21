@@ -18,7 +18,9 @@ function setup() {
 //add from file
 function addExamplefromfile() {
     
-     var sourceFolder = new sourceFolder ("https://rsalibian.github.io/CSF/trainfolder/images")
+     var sourceFolder1 = new sourceFolder;
+    
+     sourceFolder1.url = "https://rsalibian.github.io/CSF/trainfolder/images/";
     
      var fileList = sourceFolder.getFiles();  
     
