@@ -38,29 +38,29 @@ function addExamplefromfile() {
         
      }
     
-       for (i = 1; i < 5; i++) {
+       //for (i = 1; i < 5; i++) {
 
-         console.log(document.getElementById("image" + i))
+         //console.log(document.getElementById("image" + i))
     
-         const image = document.getElementById("image" + i);
+         //const image = document.getElementById("image" + i);
    
-         const features = featureExtractor.infer(image);
+         //const features = featureExtractor.infer(image);
 
-         knnClassifier.addExample(features, 'Calcaneal stress fracture');
+         //knnClassifier.addExample(features, 'Calcaneal stress fracture');
        
-       }
+       //}
     
-       for (j = 1; j < 5; j++) {
+       //for (j = 1; j < 5; j++) {
 
-         console.log(document.getElementById("nimage" + j))
+         //console.log(document.getElementById("nimage" + j))
     
-         const nimage = document.getElementById("nimage" + j);
+         //const nimage = document.getElementById("nimage" + j);
    
-         const features2 = featureExtractor.infer(nimage);
+         //const features2 = featureExtractor.infer(nimage);
 
-         knnClassifier.addExample(features2, 'No calcaneal stress fracture');
+         //knnClassifier.addExample(features2, 'No calcaneal stress fracture');
        
-       }
+       //}
     
     
        //console.log(document.getElementById("image1"))
