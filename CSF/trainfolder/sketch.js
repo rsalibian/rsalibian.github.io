@@ -21,7 +21,7 @@ function addExamplefromfile() {
   
      var downloadingImage = new Image();
     
-     for (i = 1; i < 5; i++) {
+     for (i = 1; i < 11; i++) {
          
          downloadingImage.src = "https://rsalibian.github.io/CSF/trainfolder/images/case" + i + ".jpg";
          
@@ -38,7 +38,7 @@ function addExamplefromfile() {
      }
     
     
-    for (i = 1; i < 5; i++) {
+    for (i = 1; i < 11; i++) {
          
          downloadingImage.src = "https://rsalibian.github.io/CSF/trainfolder/images/normalcase" + i + ".jpg";
          
