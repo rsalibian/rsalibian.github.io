@@ -14,37 +14,70 @@ function setup() {
 
   createButtons();
     
- 
-    
 }
 
 
 //add from file
 function addExamplefromfile() {
     
-       for (i = 1; i < 5; i++) {
-
-         console.log(document.getElementById("image" + i))
+     var downloadingImage = new Image();
     
-         const image = document.getElementById("image" + i);
+     for (i = 1; i < 5; i++) {
+         
+         downloadingImage.src = "https://rsalibian.github.io/CSF/trainfolder/images/case" + i + ".jpg";
+         
+         downloadingImage.onload = function(){
+           
+            const features = featureExtractor.infer(downloadingImage);
+
+            knnClassifier.addExample(features, 'Calcaneal stress fracture');
+                 
+         }
+         
+         console.log(downloadingImage.src);
+        
+     }
+    
+    
+    for (i = 1; i < 5; i++) {
+         
+         downloadingImage.src = "https://rsalibian.github.io/CSF/trainfolder/images/normalcase" + i + ".jpg";
+         
+         downloadingImage.onload = function(){
+           
+            const features = featureExtractor.infer(downloadingImage);
+
+            knnClassifier.addExample(features, 'No calcaneal stress fracture');
+                 
+         }
+         
+         console.log(downloadingImage.src);
+        
+     }
+    
+       //for (i = 1; i < 5; i++) {
+
+         //console.log(document.getElementById("image" + i))
+    
+         //const image = document.getElementById("image" + i);
    
-         const features = featureExtractor.infer(image);
+         //const features = featureExtractor.infer(image);
 
-         knnClassifier.addExample(features, 'Calcaneal stress fracture');
+         //knnClassifier.addExample(features, 'Calcaneal stress fracture');
        
-       }
+       //}
     
-       for (j = 1; j < 5; j++) {
+       //for (j = 1; j < 5; j++) {
 
-         console.log(document.getElementById("nimage" + j))
+         //console.log(document.getElementById("nimage" + j))
     
-         const nimage = document.getElementById("nimage" + j);
+         //const nimage = document.getElementById("nimage" + j);
    
-         const features2 = featureExtractor.infer(nimage);
+         //const features2 = featureExtractor.infer(nimage);
 
-         knnClassifier.addExample(features2, 'No calcaneal stress fracture');
+         //knnClassifier.addExample(features2, 'No calcaneal stress fracture');
        
-       }
+       //}
     
     
        //console.log(document.getElementById("image1"))
