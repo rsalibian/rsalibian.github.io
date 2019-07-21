@@ -34,7 +34,24 @@ function addExamplefromfile() {
                  
          }
          
-         console.log("added");
+         console.log(downloadingImage.src);
+        
+     }
+    
+    
+    for (i = 1; i < 5; i++) {
+         
+         downloadingImage.src = "https://rsalibian.github.io/trainfolder/images/normalcase" + i + ".jpg";
+         
+         downloadingImage.onload = function(){
+           
+            const features = featureExtractor.infer(downloadingImage);
+
+            knnClassifier.addExample(features, 'No calcaneal stress fracture');
+                 
+         }
+         
+         console.log(downloadingImage.src);
         
      }
     
