@@ -24,7 +24,7 @@ function addExamplefromfile() {
     
      for (i = 1; i < 5; i++) {
          
-         downloadingImage.src = "https://rsalibian.github.io/trainfolder/images/case1.jpg";
+         downloadingImage.src = "https://rsalibian.github.io/trainfolder/images/case" + i + ".jpg";
          
          downloadingImage.onload = function(){
            
