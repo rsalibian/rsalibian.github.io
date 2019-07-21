@@ -31,10 +31,10 @@ function addExamplefromfile() {
             const features = featureExtractor.infer(downloadingImage);
 
             knnClassifier.addExample(features, 'Calcaneal stress fracture');
-         
-            console.log("added");
                  
          }
+         
+         console.log("added");
         
      }
     
