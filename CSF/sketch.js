@@ -50,8 +50,10 @@ function addExample(label) {
 
 function classify() {
     
-  document.getElementById('result').innerHTML = 'Please Wait';
-    
+   if (result.label) {
+      select('#result').html('');
+      select('#confidence').html(``);
+    }
 
   const numLabels = knnClassifier.getNumLabels();
 
