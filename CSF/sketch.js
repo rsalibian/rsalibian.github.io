@@ -50,11 +50,6 @@ function addExample(label) {
 
 function classify() {
     
-   if (result.label) {
-      select('#result').html('');
-      select('#confidence').html(``);
-    }
-
   const numLabels = knnClassifier.getNumLabels();
 
   const features = featureExtractor.infer(video);
@@ -86,6 +81,8 @@ function gotResults(err, result) {
       select('#result').html(result.label);
       select('#confidence').html(`${confidences[result.label] * 100} %`);
     }
+      
+    window.alert("Calcaneal Stress Fracture");
 
     select('#confidenceRock').html(`${confidences['Rock'] ? confidences['Rock'] * 100 : 0} %`);
     select('#confidencePaper').html(`${confidences['Paper'] ? confidences['Paper'] * 100 : 0} %`);
