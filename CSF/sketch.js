@@ -49,6 +49,9 @@ function addExample(label) {
 
 
 function classify() {
+    
+  select('#result').html("");
+    
 
   const numLabels = knnClassifier.getNumLabels();
     
