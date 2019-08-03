@@ -22,7 +22,7 @@ function setup() {
   
   video = createCapture(constraints);
     
-  video.size(700, 900);  
+  video.size(700, 1000);  
     
   video.parent('videoContainer');
 
