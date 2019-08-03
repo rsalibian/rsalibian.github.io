@@ -50,15 +50,10 @@ function addExample(label) {
 
 function classify() {
     
-  select('#result').html("Pleae Wait");
+  document.getElementById('result').innerHTML = 'Please Wait';
     
 
   const numLabels = knnClassifier.getNumLabels();
-    
-  if (numLabels <= 0) {
-    console.error('There is no examples in any label');
-    return;
-  }
 
   const features = featureExtractor.infer(video);
 
