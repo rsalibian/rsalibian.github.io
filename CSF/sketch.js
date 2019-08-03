@@ -50,7 +50,7 @@ function addExample(label) {
 
 function classify() {
     
-  select('#result').html("");
+  select('#result').html("Pleae Wait");
     
 
   const numLabels = knnClassifier.getNumLabels();
