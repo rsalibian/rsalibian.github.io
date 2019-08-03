@@ -1,24 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<juiceboxgallery 
-
-	useFullscreenExpand="true"
+<juiceboxgallery>
+  <image imageURL="images/case1.jpg"
+	thumbURL="thumbs/case1.jpg"
+	linkURL="images/case1.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case1.jpg"
 
 >
-  <image imageURL="images/Capture1.jpg"
-	thumbURL="thumbs/Capture1.jpg"
-	linkURL="images/Capture1.jpg"
-	linkTarget="_blank"
-	sourcePath="/Users/AllisonSalibian/Desktop/Capture1.PNG">
-    <title><![CDATA[Capture1]]></title>
+    <title><![CDATA[case1]]></title>
     <caption><![CDATA[]]></caption>
   </image>
-  <image imageURL="images/Capture2.jpg"
-	thumbURL="thumbs/Capture2.jpg"
-	linkURL="images/Capture2.jpg"
+  <image imageURL="images/case2.jpg"
+	thumbURL="thumbs/case2.jpg"
+	linkURL="images/case2.jpg"
 	linkTarget="_blank"
-	sourcePath="/Users/AllisonSalibian/Desktop/Capture2.PNG">
-    <title><![CDATA[Capture2]]></title>
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case2.jpg">
+    <title><![CDATA[case2]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case3.jpg"
+	thumbURL="thumbs/case3.jpg"
+	linkURL="images/case3.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case3.jpg">
+    <title><![CDATA[case3]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case4.jpg"
+	thumbURL="thumbs/case4.jpg"
+	linkURL="images/case4.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case4.jpg">
+    <title><![CDATA[case4]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case5.jpg"
+	thumbURL="thumbs/case5.jpg"
+	linkURL="images/case5.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case5.jpg">
+    <title><![CDATA[case5]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case6.jpg"
+	thumbURL="thumbs/case6.jpg"
+	linkURL="images/case6.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case6.jpg">
+    <title><![CDATA[case6]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case7.jpg"
+	thumbURL="thumbs/case7.jpg"
+	linkURL="images/case7.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case7.jpg">
+    <title><![CDATA[case7]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case8.jpg"
+	thumbURL="thumbs/case8.jpg"
+	linkURL="images/case8.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case8.jpg">
+    <title><![CDATA[case8]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case9.jpg"
+	thumbURL="thumbs/case9.jpg"
+	linkURL="images/case9.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case9.jpg">
+    <title><![CDATA[case9]]></title>
+    <caption><![CDATA[]]></caption>
+  </image>
+  <image imageURL="images/case10.jpg"
+	thumbURL="thumbs/case10.jpg"
+	linkURL="images/case10.jpg"
+	linkTarget="_blank"
+	sourcePath="/Users/AllisonSalibian/Desktop/GitHub1/rsalibian.github.io/CSF/trainfolder/images/case10.jpg">
+    <title><![CDATA[case10]]></title>
     <caption><![CDATA[]]></caption>
   </image>
 </juiceboxgallery>
