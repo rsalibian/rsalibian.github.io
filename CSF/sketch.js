@@ -85,7 +85,7 @@ function gotResults(err, result) {
       
     }
       
-    window.alert(result.label + confidences);
+    window.alert(result.label + ${confidences[result.label] * 100} + ''%');
 
     select('#confidenceRock').html(`${confidences['Rock'] ? confidences['Rock'] * 100 : 0} %`);
     select('#confidencePaper').html(`${confidences['Paper'] ? confidences['Paper'] * 100 : 0} %`);
