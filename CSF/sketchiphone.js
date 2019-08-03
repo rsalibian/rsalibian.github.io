@@ -35,7 +35,7 @@ function setup() {
 
 function modelReady(){
     
-  select('#status').html('Model Successfully Loaded!')
+  //select('#status').html('Model Successfully Loaded!')
     
 }
 
