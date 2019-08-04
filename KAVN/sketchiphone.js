@@ -11,15 +11,18 @@ function setup() {
   featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
   
   noCanvas();
-
+    
   var constraints = {
     audio: false,
     video: {
       facingMode: "environment"
     }
+        
   };  
   
   video = createCapture(constraints);
+    
+  video.size(945, 1200);  
     
   video.parent('videoContainer');
 
@@ -32,7 +35,7 @@ function setup() {
 
 function modelReady(){
     
-  select('#status').html('Model Successfully Loaded!')
+  //select('#status').html('Model Successfully Loaded!')
     
 }
 
@@ -49,8 +52,13 @@ function addExample(label) {
 
 
 function classify() {
-    
+
   const numLabels = knnClassifier.getNumLabels();
+    
+  if (numLabels <= 0) {
+    console.error('There is no examples in any label');
+    return;
+  }
 
   const features = featureExtractor.infer(video);
 
@@ -78,11 +86,8 @@ function gotResults(err, result) {
     const confidences = result.confidencesByLabel;
     
     if (result.label) {
-        
       select('#result').html(result.label);
       select('#confidence').html(`${confidences[result.label] * 100} %`);
-        
-      
     }
       
     window.alert(result.label + " " + document.getElementById('confidence').textContent);
@@ -106,5 +111,5 @@ function updateCounts() {
 
 // Load dataset to the classifier
 function loadMyKNN() {
-  knnClassifier.load('./HAVNknnDataSet.json', updateCounts);
+  knnClassifier.load('./KienBknnDataSet.json', updateCounts);
 }

@@ -111,5 +111,5 @@ function updateCounts() {
 
 // Load dataset to the classifier
 function loadMyKNN() {
-  knnClassifier.load('./myKNNDataset.json', updateCounts);
+  knnClassifier.load('./CSFknnDataSet.json', updateCounts);
 }

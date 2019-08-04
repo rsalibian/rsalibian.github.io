@@ -69,6 +69,6 @@ function createButtons() {
 
 // Save dataset as myKNNDataset.json
 function saveMyKNN() {
-  knnClassifier.save('myKNNDataset');
+  knnClassifier.save('HAVNknnDataSet');
 }
 
