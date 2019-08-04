@@ -29,7 +29,7 @@ function addExamplefromfile() {
            
             const features = featureExtractor.infer(downloadingImage);
 
-            knnClassifier.addExample(features, 'Calcaneal stress fracture');
+            knnClassifier.addExample(features, 'Humeral Head AVN');
                  
          }
          
@@ -46,7 +46,7 @@ function addExamplefromfile() {
            
             const features = featureExtractor.infer(downloadingImage);
 
-            knnClassifier.addExample(features, 'No calcaneal stress fracture');
+            knnClassifier.addExample(features, 'No Humeral Head AVN');
                  
          }
          
