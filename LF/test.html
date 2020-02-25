@@ -34,10 +34,10 @@
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
         webcam = new tmImage.Webcam(800, 800, flip); // width, height, flip
-        webcam.set( 'constraints',{ facingMode:'environment' });
         
         await webcam.setup(); // request access to the webcam
         await webcam.play();
+        webcam.set( 'constraints',{ facingMode:'environment' });
         window.requestAnimationFrame(loop);
 
         // append elements to the DOM
