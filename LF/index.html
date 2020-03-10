@@ -54,7 +54,7 @@ body {
     
 <button type="button" style="height:50px;width:200px" onclick="init()">Start</button>
      
-<button type="button" style="height:50px;width:200px" onclick="init()">Flip Image2</button>   
+<button type="button" style="height:50px;width:200px" onclick="flipcamera()">Flip Image</button>   
     
 <br/><br/><br/> 
     
@@ -73,6 +73,13 @@ body {
     const URL = "https://teachablemachine.withgoogle.com/models/V35zWK6d/";
 
     let model, webcam, labelContainer, maxPredictions;
+    
+    sync function flipcamera() {
+        
+        
+        
+    }
+    
 
     // Load the image model and setup the webcam
     async function init() {
@@ -93,7 +100,7 @@ body {
         };
         
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(600, 600, flip); // width, height, flip
+        webcam = new tmImage.Webcam(300, 600, flip); // width, height, flip
         
         await webcam.setup(constraints); // request access to the webcam
         
