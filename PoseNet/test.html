@@ -70,7 +70,7 @@ body {
 
 &nbsp;&nbsp;&nbsp;
     
-<label for="pageTitle" font-size: 15px>Achilles Tendon Case 1</label><br/> <br/>
+<label id="caseTitle" font-size: 15px>Achilles Tendon Case 1</label><br/> <br/>
     
 </font>
     
@@ -194,6 +194,9 @@ function pauseVid() {
            
              function myFunction(xml) {
              var xmlDoc = xml.responseXML;
+                 
+             document.getElementById("caseTitle").innerHTML =
+             xmlDoc.getElementsByTagName("key1")[1].childNodes[0].nodeValue;    
              
              document.getElementById("KeyPoint1").innerHTML =
              xmlDoc.getElementsByTagName("key1")[1].childNodes[0].nodeValue;
