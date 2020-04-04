@@ -48,15 +48,18 @@ body {
     
 </head>
     
-<body>
+<body onload="init()" >
 
 <div class="split left">
   <div class="left">
-   &nbsp;&nbsp;&nbsp;<button type="button" onclick="init()">Start</button><br/></br/>
-   &nbsp;&nbsp;&nbsp;<button type="button" onclick="nextCase()">Next Case</button><br/></br/>
-   &nbsp;&nbsp;&nbsp;<a href="url">Case 1</a><br/><br/>
-   &nbsp;&nbsp;&nbsp;<a href="url">Case 2</a><br/><br/>
-   &nbsp;&nbsp;&nbsp;<a href="url">Case 3</a><br/><br/>
+      
+   <font size="10" color="blue">    
+    
+   &nbsp;<a href="url">Achilles Tendon</a><br/><br/>
+   &nbsp;<a href="url">Flexor Tendons</a><br/><br/>
+   &nbsp;<a href="url">Peroneal Tendons</a><br/><br/>
+    
+   </font>
   </div>
 </div>
 
@@ -193,10 +196,10 @@ function pauseVid() {
              var xmlDoc = xml.responseXML;
              
              document.getElementById("KeyPoint1").innerHTML =
-             xmlDoc.getElementsByTagName("key1")[0].childNodes[0].nodeValue;
+             xmlDoc.getElementsByTagName("key1")[1].childNodes[0].nodeValue;
 
              document.getElementById("KeyPoint2").innerHTML =
-             xmlDoc.getElementsByTagName("key2")[0].childNodes[0].nodeValue;
+             xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
                  
    }
            
