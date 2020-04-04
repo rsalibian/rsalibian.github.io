@@ -4,68 +4,11 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial;
-  color: white;
-}
 
-.split {
-  height: 100%;
-  width: 75%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-.left {
-  left: 0;
-  background-color: lightgray;
-}
-
-.right {
-  right: 0;
-  background-color: blue;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.centered img {
-  width: 150px;
-  border-radius: 50%;
-}
-    
-    
-</style>
-    
 </head>
     
 <body onload="init()" >
 
-<div class="split left">
-  <div class="left">
-      
-   <font size="10" color="blue">    
-    
-   &nbsp;<a href="url">Achilles Tendon</a><br/><br/>
-   &nbsp;<a href="url">Flexor Tendons</a><br/><br/>
-   &nbsp;<a href="url">Peroneal Tendons</a><br/><br/>
-    
-   </font>
-  </div>
-</div>
-
-<div class="split right">
-    
-    
 <font size="12" color="red">
 
 &nbsp;&nbsp;&nbsp;
@@ -74,7 +17,7 @@ body {
     
 </font>
     
-<font size="12" color="white">    
+<font size="12" color="red">    
     
 &nbsp;&nbsp;&nbsp;   
 
@@ -82,18 +25,26 @@ body {
     
 &nbsp;&nbsp;&nbsp;
     
-<label id="KeyPoint2">Complete Achilles tendon tear.</label>    
+<label id="KeyPoint2">Complete Achilles tendon tear.</label> <br/>  
     
-</font>
+</font>    
     
-<div class="centered">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
-<video id="myVideo" width="1000" height="1000">
+<video id="myVideo" width="1000" height="700">
   <source src="movie1.mp4" type="video/mp4">
 </video>    
     
-<div><canvas id="canvas"></canvas></div>
+<div>
+    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+<canvas id="canvas"></canvas>
+    
+</div>
+    
 <div id="label-container"></div>
+    
+    
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     
@@ -113,6 +64,9 @@ function pauseVid() {
     let model, webcam, ctx, labelContainer, maxPredictions;
 
     async function init() {
+        
+        document.getElementById("label-container").style.display = "none"; 
+        
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
@@ -120,7 +74,7 @@ function pauseVid() {
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
-        const size = 200;
+        const size = 500;
         const flip = true; // whether to flip the webcam
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
@@ -233,17 +187,9 @@ function pauseVid() {
     }
 </script>
 
-      
-      
-    
-  </div>
-      
-      
-      
-  </div>
-</div>
      
 </body>
+    
 </html> 
 
 
