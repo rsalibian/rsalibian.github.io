@@ -1,14 +1,14 @@
 <bookstore>
     
    <book category="Achilles Tendon Case">
-       <key1>Complete Achilles Tendon Tear</key1>
-       <key2>Unnderlying Achilles Teninopathy</key2>
+       <key1>Complete Achilles Tendon Tear 1</key1>
+       <key2>Unnderlying Achilles Teninopathy 1</key2>
        <image>movie1.mp4</image>
    </book>
     
    <book category="Achilles Tendon Case">
-       <key1>Partial Achilles Tendon Tear</key1>
-       <key2>Unnderlying Achilles Teninopathy</key2>
+       <key1>Partial Achilles Tendon Tear 2</key1>
+       <key2>Unnderlying Achilles Teninopathy 2</key2>
        <image>movie2.mp4</image>
    </book> 
    
