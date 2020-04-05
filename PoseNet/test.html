@@ -15,7 +15,7 @@
 
 
     
-<label id="caseTitle" font-size: 15px>Knee MRI Case 1</label><br/> <br/>
+<label id="caseTitle" font-size: 15px>Knee MRI Case 1 - 77</label><br/> <br/>
     
 </font>
     
@@ -117,6 +117,8 @@
     
      async function nextCase() {
          
+        currentImage = 1;
+         
         currentCase = currentCase + 1;
          
         CasePath = "case" + currentCase;  
@@ -154,7 +156,7 @@
     
      async function nextImage() {
          
-         if (currentImage <= totalImages){
+         if (currentImage < totalImages){
          
          while (canMove == "Yes") {
              
