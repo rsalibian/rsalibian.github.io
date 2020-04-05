@@ -15,7 +15,7 @@
 
 
     
-<label id="caseTitle" font-size: 15px>Knee MRI Case 1 - 80</label><br/> <br/>
+<label id="caseTitle" font-size: 15px>Knee MRI Case 1 - 81</label><br/> <br/>
     
 </font>
     
@@ -78,34 +78,8 @@
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         
-        var xhttp = new XMLHttpRequest(); 
+        nextCase();
         
-        xhttp.onreadystatechange = function() {
-             if (this.readyState == 4 && this.status == 200) {
-               myFunction(this);
-             }
-            };
-
-            xhttp.open("GET", "books.xml", true);
-            xhttp.send();
-           
-             function myFunction(xml) {
-             var xmlDoc = xml.responseXML;
-                 
-             document.getElementById("caseTitle").innerHTML =
-             xmlDoc.getElementsByTagName("case")[1].childNodes[0].nodeValue;    
-             
-             document.getElementById("KeyPoint1").innerHTML =
-             xmlDoc.getElementsByTagName("key1")[1].childNodes[0].nodeValue;
-
-             document.getElementById("KeyPoint2").innerHTML =
-             xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
-                 
-             totalImages = xmlDoc.getElementsByTagName("image")[1].childNodes[0].nodeValue; 
-                 
-             }
-    
-     }
     }
     
     
@@ -150,7 +124,44 @@
     
      async function nextCase() {
          
-        consol.log ("here");
+       currentImage = 1;
+         
+            currentCase = currentCase + 1;
+         
+            CasePath = "case" + currentCase;  
+         
+            document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
+         
+        
+        var xhttp = new XMLHttpRequest(); 
+        
+        xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+               myFunction(this);
+             }
+            };
+
+
+            xhttp.open("GET", "books.xml", true);
+            xhttp.send();
+           
+             function myFunction(xml) {
+             var xmlDoc = xml.responseXML;
+                 
+             document.getElementById("caseTitle").innerHTML =
+             xmlDoc.getElementsByTagName("case")[1].childNodes[0].nodeValue;    
+             
+             document.getElementById("KeyPoint1").innerHTML =
+             xmlDoc.getElementsByTagName("key1")[1].childNodes[0].nodeValue;
+
+             document.getElementById("KeyPoint2").innerHTML =
+             xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
+                 
+             totalImages = xmlDoc.getElementsByTagName("image")[1].childNodes[0].nodeValue; 
+                 
+             }
+    
+     }
                  
      }
     
