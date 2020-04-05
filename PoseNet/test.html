@@ -78,8 +78,9 @@
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         
-        nextCase();
+        nextCase;
         
+    }
     }
     
     
@@ -110,8 +111,6 @@
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
-     
-        //setTimeout(nextCase, 10000);
         
     }
     
@@ -124,7 +123,7 @@
     
      async function nextCase() {
          
-       currentImage = 1;
+            currentImage = 1;
          
             currentCase = currentCase + 1;
          
@@ -162,8 +161,7 @@
              }
     
      }
-                 
-     }
+                
     
      async function nextImage() {
          
