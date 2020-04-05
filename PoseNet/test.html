@@ -29,6 +29,7 @@
     
     
 <table cellpadding="10" border="1">
+
   <tr>
     <th>
        
@@ -72,6 +73,8 @@
     var currentCase = 1;
     var currentImage = 1;
     var canMove = "Yes";
+    var totalImages = 6;
+    
     
     async function init() {
         
@@ -103,12 +106,8 @@
      
         setTimeout(nextCase, 10000);
         
-        
     }
     
-    function showIt2() {
-      //document.getElementById("myVideo").style.visibility = "visible";
-    }
 
     async function loop(timestamp) {
         webcam.update(); // update the webcam frame
@@ -147,11 +146,15 @@
              document.getElementById("KeyPoint2").innerHTML =
              xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
                  
+             totalImages = xmlDoc.getElementsByTagName("image")[1].childNodes[0].nodeValue; 
+                 
              }
                  
      }
     
      async function nextImage() {
+         
+         if (currentImage <= totalImages){
          
          while (canMove == "Yes") {
              
@@ -169,6 +172,8 @@
          
          setTimeout(function(){ canMove = "Yes"; }, 2000);
            
+         }
+         
      }
 
 
