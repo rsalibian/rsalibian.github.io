@@ -15,26 +15,24 @@
 
 
     
-<label id="caseTitle" font-size: 15px>Achilles Tendon Case 1</label><br/> <br/>
+<label id="caseTitle" font-size: 15px>Knee MRI Case 1</label><br/> <br/>
     
 </font>
     
 <font size="12" color="red">    
 
-<label id="KeyPoint1">Complete Achilles tendon tear.</label> <br/>    
+<label id="KeyPoint1">Bucket Handle Tear - Medial Meniscus</label> <br/>    
     
-<label id="KeyPoint2">Complete Achilles tendon tear.</label> <br/>  <br/>
+<label id="KeyPoint2"></label> <br/>  <br/>
     
 </font>  
     
     
-<table border="1">
+<table cellpadding="10" border="1">
   <tr>
     <th>
        
-      <video id="myVideo" width="900" height="900">
-  <source src="movie1.mp4" type="video/mp4">
-</video>  
+   <img src="case1/1.bmp" id="keyImage" height="700" width="700">
         
     </th>
     <th>
@@ -50,9 +48,14 @@
     
 <div>
     
-
-
+<br/>
     
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
 </div>
     
 <div id="label-container"></div>
@@ -62,21 +65,16 @@
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     
 <script type="text/javascript">
-    
-var vid = document.getElementById("myVideo");   
-
-function playVid() { 
-  vid.play(); 
-} 
-
-function pauseVid() { 
-  vid.pause(); 
-} 
-
-    const URL = "https://teachablemachine.withgoogle.com/models/U8D0EEYYu/";
+      
+    const URL = "https://teachablemachine.withgoogle.com/models/tnXd1yMpR/";
     let model, webcam, ctx, labelContainer, maxPredictions;
-
+    var CasePath;
+    var currentCase = 1;
+    var currentImage = 1;
+    var canMove = "Yes";
+    
     async function init() {
+        
         
         document.getElementById("label-container").style.display = "none"; 
         
@@ -87,7 +85,7 @@ function pauseVid() {
         maxPredictions = model.getTotalClasses();
 
         // Convenience function to setup a webcam
-        const size = 500;
+        const size = 700;
         const flip = true; // whether to flip the webcam
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
@@ -102,11 +100,14 @@ function pauseVid() {
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
-    
+     
+        setTimeout(nextCase, 10000);
+        
+        
     }
     
     function showIt2() {
-      document.getElementById("myVideo").style.visibility = "visible";
+      //document.getElementById("myVideo").style.visibility = "visible";
     }
 
     async function loop(timestamp) {
@@ -117,40 +118,15 @@ function pauseVid() {
     
      async function nextCase() {
          
-        document.getElementById('myVideo').src = 'movie2.mp4';
+        currentCase = currentCase + 1;
+         
+        CasePath = "case" + currentCase;  
+         
+        document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
+         
+        var xhttp = new XMLHttpRequest(); 
         
-        
-     }
-
-    async function predict() {
-
-        const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
-        const prediction = await model.predict(posenetOutput);
-
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
-        
-       if (prediction[0].probability.toFixed(2) > .9) {
-           
-           playVid();
-           
-       }
-        
-       else if (prediction[1].probability.toFixed(2) > .9) {
-           
-       var xhttp = new XMLHttpRequest();
-        
-           document.getElementById("myVideo").style.visibility = "hidden";
-           
-           document.getElementById('myVideo').src = 'movie2.mp4';
-           
-           setTimeout("showIt2()", 1000);
-           
-      
-           xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
                myFunction(this);
              }
@@ -171,15 +147,52 @@ function pauseVid() {
              document.getElementById("KeyPoint2").innerHTML =
              xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
                  
-   }
+             }
+                 
+     }
+    
+     async function nextImage() {
+         
+         while (canMove == "Yes") {
+             
+           CasePath = "case" + currentCase;
+             
+           currentImage = currentImage + 1; 
+             
+           //alert(CasePath + "/" + currentImage + ".bmp");
+             
+           document.getElementById("keyImage").src =  CasePath + "/" + currentImage + ".bmp";
+             
+           canMove = "No";
+         
+         }
+         
+         setTimeout(function(){ canMove = "Yes"; }, 2000);
+           
+     }
+
+
+    async function predict() {
+
+        const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
+        const prediction = await model.predict(posenetOutput);
+
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+        
+       if (prediction[0].probability.toFixed(2) > .90) {
+           
+            while (canMove == "Yes") {
+            
+                nextImage();
+                
+            }
            
        }
-           
-           
-       else {
-           
-           pauseVid();
-       }
+
 
         // finally draw the poses
         drawPose(pose);
