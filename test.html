@@ -13,15 +13,13 @@
     
 <br/>
 
-
-    
-<label id="caseTitle" font-size: 15px>Knee MRI Case 1 - 77</label><br/> <br/>
+&nbsp;<a id = "caseTitle" href="test2.html">Knee MRI Case 1 - 90</a> <br/> <br/>
     
 </font>
     
 <font size="12" color="red">    
 
-<label id="KeyPoint1">Bucket Handle Tear - Medial Meniscus</label> <br/>    
+&nbsp;<label id="KeyPoint1">Bucket Handle Tear - Medial Meniscus</label> <br/>    
     
 <label id="KeyPoint2"></label> <br/>  <br/>
     
@@ -75,6 +73,51 @@
     var canMove = "Yes";
     var totalImages = 6;
     
+    document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        
+       
+        currentImage = 1;
+         
+            currentCase = currentCase + 1;
+         
+            CasePath = "case" + currentCase;  
+         
+            document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
+         
+        
+        var xhttp = new XMLHttpRequest(); 
+        
+        xhttp.onreadystatechange = function() {
+             if (this.readyState == 4 && this.status == 200) {
+               myFunction(this);
+             }
+            };
+
+
+            xhttp.open("GET", "books.xml", true);
+            xhttp.send();
+           
+             function myFunction(xml) {
+             var xmlDoc = xml.responseXML;
+                 
+             document.getElementById("caseTitle").innerHTML =
+             xmlDoc.getElementsByTagName("case")[1].childNodes[0].nodeValue;    
+             
+             document.getElementById("KeyPoint1").innerHTML =
+             xmlDoc.getElementsByTagName("key1")[1].childNodes[0].nodeValue;
+
+             document.getElementById("KeyPoint2").innerHTML =
+             xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
+                 
+             totalImages = xmlDoc.getElementsByTagName("image")[1].childNodes[0].nodeValue; 
+                 
+             }
+        
+        
+    }
+    }
+    
     
     async function init() {
         
@@ -103,8 +146,6 @@
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
-     
-        //setTimeout(nextCase, 10000);
         
     }
     
@@ -115,44 +156,7 @@
         window.requestAnimationFrame(loop);
     }
     
-     async function nextCase() {
-         
-        currentImage = 1;
-         
-        currentCase = currentCase + 1;
-         
-        CasePath = "case" + currentCase;  
-         
-        document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
-         
-        var xhttp = new XMLHttpRequest(); 
-        
-        xhttp.onreadystatechange = function() {
-             if (this.readyState == 4 && this.status == 200) {
-               myFunction(this);
-             }
-            };
-
-            xhttp.open("GET", "books.xml", true);
-            xhttp.send();
-           
-             function myFunction(xml) {
-             var xmlDoc = xml.responseXML;
-                 
-             document.getElementById("caseTitle").innerHTML =
-             xmlDoc.getElementsByTagName("case")[1].childNodes[0].nodeValue;    
-             
-             document.getElementById("KeyPoint1").innerHTML =
-             xmlDoc.getElementsByTagName("key1")[1].childNodes[0].nodeValue;
-
-             document.getElementById("KeyPoint2").innerHTML =
-             xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
-                 
-             totalImages = xmlDoc.getElementsByTagName("image")[1].childNodes[0].nodeValue; 
-                 
-             }
-                 
-     }
+       
     
      async function nextImage() {
          
@@ -164,8 +168,6 @@
              
            currentImage = currentImage + 1; 
              
-           //alert(CasePath + "/" + currentImage + ".bmp");
-             
            document.getElementById("keyImage").src =  CasePath + "/" + currentImage + ".bmp";
              
            canMove = "No";
@@ -176,7 +178,15 @@
            
          }
          
-         else(nextCase)
+         else {
+             
+             
+              
+             document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
+              
+             currentImage = 0;
+             
+         }
          
      }
 
