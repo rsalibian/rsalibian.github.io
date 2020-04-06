@@ -13,7 +13,7 @@
     
 <br/>
 
-&nbsp;<a id = "caseTitle" href="test2.html">Knee MRI Case 1 - 90</a> <br/> <br/>
+&nbsp;<a id = "caseTitle" href="exchoice.html">Knee MRI Case 1</a> <br/> <br/>
     
 </font>
     
@@ -31,7 +31,7 @@
   <tr>
     <th>
        
-   <img src="case1/1.bmp" id="keyImage" height="700" width="700">
+   <img src="tricepskickback.jpg" id="keyImage" height="700" width="700">
         
     </th>
     <th>
@@ -160,7 +160,7 @@
     
      async function nextImage() {
          
-         if (currentImage < totalImages){
+         if (currentImage < totalImages + 1){
          
          while (canMove == "Yes") {
              
@@ -184,7 +184,7 @@
               
              document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
               
-             currentImage = 0;
+             currentImage = 1;
              
          }
          
