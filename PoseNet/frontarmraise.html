@@ -31,7 +31,7 @@
   <tr>
     <th>
        
-   <img src="case1/1.bmp" id="keyImage" height="700" width="700">
+   <img src="frontraise.jpg" id="keyImage" height="700" width="700">
         
     </th>
     <th>
@@ -49,12 +49,6 @@
     
 <br/>
     
-<audio controls>
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
 </div>
     
 <div id="label-container"></div>
@@ -160,7 +154,7 @@
     
      async function nextImage() {
          
-         if (currentImage < totalImages){
+         if (currentImage < totalImages + 1){
          
          while (canMove == "Yes") {
              
@@ -184,7 +178,7 @@
               
              document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
               
-             currentImage = 0;
+             currentImage = 1;
              
          }
          
