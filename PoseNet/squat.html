@@ -115,7 +115,7 @@
     
     async function init() {
         
-      if (navigator.maxTouchPoints!) {
+      if (navigator.maxTouchPoints > 0) {
         alert("this is not a mobile devise");
       }
         document.getElementById("label-container").style.display = "none"; 
