@@ -115,8 +115,11 @@
     
     async function init() {
         
-      if (navigator.maxTouchPoints > 0) {
-        alert("this is not a mobile devise");
+      if (navigator.maxTouchPoints) {
+          
+        alert("this is a mobile devise");
+        window.location.href = "kneemenu.html";
+          
       }
         document.getElementById("label-container").style.display = "none"; 
         
