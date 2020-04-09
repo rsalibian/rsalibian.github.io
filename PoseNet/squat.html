@@ -70,8 +70,7 @@
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         
-       
-        currentImage = 1;
+            currentImage = 1;
          
             currentCase = currentCase + 1;
          
@@ -105,8 +104,6 @@
              xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
                  
              totalImages = xmlDoc.getElementsByTagName("image")[1].childNodes[0].nodeValue; 
-                 
-             alert(totalImages);
                  
              }
         
@@ -160,10 +157,10 @@
     
      async function nextImage() {
          
+         if (currentImage < totalImages + 1){
+             
          alert("current images:" + currentImage);         
          alert("total images:" + totalImages);
-         
-         if (currentImage < totalImages + 1){
          
          while (canMove == "Yes") {
              
