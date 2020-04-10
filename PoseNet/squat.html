@@ -70,21 +70,21 @@
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         
-        
-            
             currentImage = 1;
          
             currentCase = currentCase + 1;
          
             CasePath = "meniscus/case" + currentCase;  
         
-            try {
+            var myFile = CasePath + "/" + "1.bmp";
+        
+            if myFile.exits(){
                 
             document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
          
             }
         
-            catch(err) {
+            else {
              
                  window.location.href = "kneemenu.html";
              }              
