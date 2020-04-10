@@ -70,6 +70,7 @@
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         
+       
             currentImage = 1;
          
             currentCase = currentCase + 1;
@@ -103,7 +104,10 @@
              document.getElementById("KeyPoint2").innerHTML =
              xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
                  
-             totalImages = xmlDoc.getElementsByTagName("image")[1].childNodes[0].nodeValue; 
+             totalImages = xmlDoc.getElementsByTagName("imagecount")[1].childNodes[0].nodeValue; 
+                 
+             alert("new case");
+             alert(totalImages);
                  
              }
         
@@ -153,12 +157,11 @@
         window.requestAnimationFrame(loop);
     }
     
-   
+       
+    
      async function nextImage() {
          
          if (currentImage < totalImages + 1){
-             
-         alert("current image:" + currentImage + " " + "total images:" + totalImages);
          
          while (canMove == "Yes") {
              
@@ -178,7 +181,7 @@
          
          else {
              
-             alert("Back to Image One");
+             
               
              document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
               
