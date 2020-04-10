@@ -162,6 +162,8 @@
      async function nextImage() {
          
          if (currentImage < totalImages + 1){
+             
+         alert("next image");
          
          while (canMove == "Yes") {
              
@@ -181,7 +183,7 @@
          
          else {
              
-             
+             alert("back to image 1");
               
              document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
               
