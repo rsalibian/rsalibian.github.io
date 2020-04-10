@@ -81,6 +81,7 @@
          
         
         var xhttp = new XMLHttpRequest(); 
+        var totalImagesHold;
         
         xhttp.onreadystatechange = function() {
              if (this.readyState == 4 && this.status == 200) {
@@ -104,9 +105,9 @@
              document.getElementById("KeyPoint2").innerHTML =
              xmlDoc.getElementsByTagName("key2")[1].childNodes[0].nodeValue;
                  
-             //totalImages = xmlDoc.getElementsByTagName("imagecount")[1].childNodes[0].nodeValue; 
+             totalImagesHold = xmlDoc.getElementsByTagName("imagecount")[1].childNodes[0].nodeValue; 
                  
-             totalImages = 17;
+             totalImages = parseInt(totalImagesHold);
                  
              alert("new case");
              alert(totalImages);
