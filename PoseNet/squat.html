@@ -67,8 +67,12 @@
     var canMove = "Yes";
     var totalImages = 12;
     
+    //meniscus cases = 2
+    
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
+        
+        if (currentCase <= 2){
         
             currentImage = 1;
          
@@ -107,7 +111,9 @@
                  
              totalImages = parseInt(totalImagesHold);
                  
-             }              
+             }             
+            
+           else {window.location.href = "kneemenu.html";}
     
     }
     }
