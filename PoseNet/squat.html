@@ -70,7 +70,9 @@
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         
-            currentImage = 1;
+        try {
+            
+             currentImage = 1;
          
             currentCase = currentCase + 1;
          
@@ -108,8 +110,14 @@
                  
              totalImages = parseInt(totalImagesHold);
                  
-             }
-        
+             }            
+  
+            }
+
+        catch(err) {
+             window.location.href = "kneemenu.html";
+          }        
+      
     }
     }
     
