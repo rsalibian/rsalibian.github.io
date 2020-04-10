@@ -70,16 +70,24 @@
     document.body.onkeyup = function(e){
     if(e.keyCode == 32){
         
-        try {
+        
             
-             currentImage = 1;
+            currentImage = 1;
          
             currentCase = currentCase + 1;
          
             CasePath = "meniscus/case" + currentCase;  
-         
+        
+            try {
+                
             document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
          
+            }
+        
+            catch(err) {
+             
+                 window.location.href = "kneemenu.html";
+             }              
         
         var xhttp = new XMLHttpRequest(); 
         var totalImagesHold;
@@ -110,13 +118,7 @@
                  
              totalImages = parseInt(totalImagesHold);
                  
-             }            
-  
-            }
-
-        catch(err) {
-             window.location.href = "kneemenu.html";
-          }        
+             }              
     
     }
     }
