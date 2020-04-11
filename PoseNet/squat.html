@@ -78,6 +78,16 @@
          
             CasePath = "meniscus/case" + currentCase;  
         
+            // Open a log file
+             var myLog = new File(CasePath + "/" + "1.bmp");
+
+            // See if the file exists
+              if(myLog.exists()){
+               alert("The file exists");
+              }else{
+               alert("The file does not exist");
+             }
+        
             document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
         
         var xhttp = new XMLHttpRequest(); 
