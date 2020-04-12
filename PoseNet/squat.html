@@ -78,13 +78,13 @@
          
             CasePath = "meniscus/case" + currentCase;  
         
-            myFile = CasePath + "/" + "1.bmp"
-        
-            if(myFile.exists()){
-             alert('The file exists');
-            }else{
-              alert('The file does not exist');
-            }            
+            var result = doesFileExist(CasePath + "/" + "1.bmp");
+ 
+            if (result == true) {
+                
+            } else {
+                alert("no file to load");
+            }     
              
         
             document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
@@ -126,6 +126,18 @@
     
     }
     }
+    
+    function doesFileExist(urlToFile) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('HEAD', urlToFile, false);
+        xhr.send();
+     
+        if (xhr.status == "404") {
+            return false;
+        } else {
+            return true;
+        }
+     }    
     
     
     async function init() {
