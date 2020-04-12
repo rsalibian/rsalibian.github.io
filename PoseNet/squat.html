@@ -13,7 +13,7 @@
     
 <br/>
 
-&nbsp;<a id = "caseTitle" href="exchoice.html">Meniscus Case 1 - 96</a> <br/> <br/>
+&nbsp;<a id = "caseTitle" href="exchoice.html">Meniscus Case 1 - 93</a> <br/> <br/>
     
 </font>
     
@@ -78,15 +78,19 @@
          
             CasePath = "meniscus/case" + currentCase;  
         
-            try
-               {
-                document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
-               }   
-            
-            catch(err){
-                alert("No image to load");
-            }
+            myFile = CasePath + "/" + "1.bmp"
         
+            if(myFile.exists()){
+             alert('The file exists');
+            }else{
+              alert('The file does not exist');
+            }            
+             
+        
+            document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
+            
+            
+            
             //document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
         
         var xhttp = new XMLHttpRequest(); 
