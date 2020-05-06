@@ -70,7 +70,7 @@
     
      async function predictFile() {
         
-        img.src = "test1.bmp";
+        img.src = document.getElementById("currentImage").src;
         
         const prediction = await model.predict(img);
         for (let i = 0; i < maxPredictions; i++) {
