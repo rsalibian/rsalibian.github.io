@@ -88,7 +88,7 @@ function allowDrop(ev) {
 
 function drop(ev) {
   ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
+  var data = ev.dataTransfer.getData("image");
   ev.target.appendChild(document.getElementById(data));
 }
     
