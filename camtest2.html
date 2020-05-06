@@ -8,6 +8,8 @@
 <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
     
 <img id="currentImage" src="test1.bmp" height="500" width="500">
+    
+<p id="snapShot"></p>
 
 <input type="button" value="Take a Snap" id="btPic" onclick="predictFile()" /> 
     
@@ -77,10 +79,10 @@
     
      async function predictFile() {
          
-        alert("New Image 4");
+        alert("New Image 5");
          
         Webcam.snap(function (data_uri) {
-            document.getElementById('currentImage').innerHTML = 
+            document.getElementById('snapShot').innerHTML = 
                 '<img src="' + data_uri + '" width="70px" height="50px" />';
         });
         
