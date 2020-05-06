@@ -19,8 +19,6 @@
 
 <input type="button" value="Take a Snap" style="font-size : 50px;height:100;width:500;" id="btPic" onclick="predictFile()" /> 
     
-<label id="pathName">Male</label>
-
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -96,13 +94,14 @@
         });
         
         img.src = document.getElementById("snapShot").src;
+         
+        alert(document.getElementById("snapShot").src);
         
         const prediction = await model.predict(img);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
-            //alert(classPrediction);
         }
        
      }
