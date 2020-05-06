@@ -51,14 +51,12 @@
         }
         
         // CAMERA SETTINGS.
-    Webcam.set({
-        width: 220,
-        height: 190,
-        image_format: 'jpeg',
-        jpeg_quality: 100
-    });
-        
-    Webcam.set( 'constraints',{ facingmode:'environment' });    
+   Webcam.set(‘constraints’,
+ { facingMode:’environment’ },{
+width: 320,
+ height: 240,
+ image_format: ‘jpeg’,
+jpeg_quality: 90,
         
     Webcam.attach('#camera');
         
