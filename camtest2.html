@@ -56,9 +56,9 @@
         height: 190,
         image_format: 'jpeg',
         jpeg_quality: 100
-        facingMode: environment
-
     });
+        
+    Webcam.set( 'constraints',{ facingmode:'environment' });    
         
     Webcam.attach('#camera');
         
