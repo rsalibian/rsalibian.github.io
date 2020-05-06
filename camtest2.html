@@ -3,7 +3,7 @@
     
 <br/>
 
-<div>OVMC Radiology - 5</div>
+<div>OVMC Radiology - 6</div>
 
 </br><br/>
 
@@ -51,16 +51,7 @@
         }
         
         // CAMERA SETTINGS.
-   Webcam.set ({
-   
-   ‘constraints’,{ facingMode:’environment’ },
- 
-     width: 320,
-     height: 240,
-     image_format: ‘jpeg’,
-     jpeg_quality: 90
-       
-    });
+    Webcam.set( 'constraints', { width: 1280, height: 720, facingMode: { exact: "environment" } } );
        
         
     Webcam.attach('#camera');
