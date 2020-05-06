@@ -3,7 +3,7 @@
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 
-<img id="currentImage" src="test1.bmp" ondrop="drop(event)" ondragover="allowDrop(event)" height="500" width="500">
+<img id="currentImage" src="test1.bmp" height="500" width="500">
 
 <input type="button" value="Take a Snap" id="btPic" onclick="predictFile()" /> 
 
@@ -11,11 +11,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
 <script type="text/javascript">
-    // More API functions here:
-    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
-
-    // the link to your model provided by Teachable Machine export panel
-    
     
     var img = new Image();
         
@@ -69,6 +64,13 @@
     }
     
      async function predictFile() {
+         
+        alert("New Image");
+         
+        webcam.snap(function (data_uri) {
+            document.getElementById('currentImage').innerHTML = 
+                '<img src="' + data_uri + '" width="70px" height="50px" />';
+        });
         
         img.src = document.getElementById("currentImage").src;
         
@@ -81,16 +83,7 @@
         }
        
      }
-            
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
+     
     
     
 </script>
