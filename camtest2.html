@@ -86,7 +86,7 @@
                 '<img src="' + data_uri + '" width="70px" height="50px" />';
         });
         
-        img.src = document.getElementById("currentImage").src;
+        img.src = document.getElementById("snapShot").src;
         
         const prediction = await model.predict(img);
         for (let i = 0; i < maxPredictions; i++) {
