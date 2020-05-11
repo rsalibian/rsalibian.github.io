@@ -5,7 +5,7 @@
 
 <font size="12" color="red">
     
-<div>OVMC Radiology 7 </div>
+<div>OVMC Radiology 8 </div>
 
 <div id="label-container"></div>
     
@@ -88,14 +88,17 @@
     
      async function predictFile() {
          
+         var testone;
+         
         Webcam.snap(function (data_uri) {
             document.getElementById('snapShot').innerHTML = 
                 '<img src="' + data_uri + '" width="70px" height="50px" />';
+                testone = data_uri;
         });
         
         img.src = document.getElementById("thisImage").src;
  
-        alert(document.getElementById('snapShot').innerHTML);
+        alert(testone);
         
         //const prediction = await model.predict(img);
          
