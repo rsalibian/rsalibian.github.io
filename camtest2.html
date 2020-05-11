@@ -5,7 +5,7 @@
 
 <font size="12" color="red">
     
-<div>OVMC Radiology 8 </div>
+<div>OVMC Radiology 10 </div>
 
 <div id="label-container"></div>
     
@@ -16,6 +16,8 @@
 <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
     
 <p id="snapShot"></p>
+    
+<img src="f" id="testImage" height="42" width="42">    
 
 <input type="button" value="Take a Snap" style="font-size : 50px;height:100;width:500;" id="btPic" onclick="predictFile()" /> 
     
@@ -87,18 +89,20 @@
    // }
     
      async function predictFile() {
-         
-         var testone;
-         
+        
         Webcam.snap(function (data_uri) {
             document.getElementById('snapShot').innerHTML = 
                 '<img src="' + data_uri + '" width="70px" height="50px" />';
-                testone = data_uri;
+            
+           document.getElementById("testImage").src = data_uri;
+            
         });
+         
+        alert(document.getElementById("testImage").src);
         
         img.src = document.getElementById("thisImage").src;
  
-        alert(testone);
+    
         
         //const prediction = await model.predict(img);
          
