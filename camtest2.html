@@ -5,7 +5,7 @@
 
 <font size="12" color="red">
     
-<div>OVMC Radiology</div>
+<div>OVMC Radiology 2 </div>
 
 <div id="label-container"></div>
     
@@ -14,6 +14,10 @@
 </font>
     
 <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
+    
+<br/>
+    
+<img src="" id="thisImage" height="100" width="100"> 
     
 <p id="snapShot"></p>
 
@@ -89,13 +93,13 @@
      async function predictFile() {
          
         Webcam.snap(function (data_uri) {
-            document.getElementById('snapShot').innerHTML = 
+            document.getElementById('thisImage').innerHTML = 
                 '<img src="' + data_uri + '" width="70px" height="50px" />';
         });
         
-        img.src = document.getElementById("snapShot").src;
+        img.src = document.getElementById("thisImage").src;
  
-        alert(document.getElementById("snapShot").src);
+        alert(document.getElementById("thisImage").src);
         
         //const prediction = await model.predict(img);
          
