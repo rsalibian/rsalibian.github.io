@@ -5,7 +5,7 @@
 
 <font size="12" color="red">
     
-<div>OVMC Radiology 16 </div>
+<div>OVMC Radiology 17 </div>
 
 <div id="label-container"></div>
     
@@ -30,6 +30,8 @@
 <script type="text/javascript">
     
     var img = new Image();
+    
+    var img2 = new ImageBitmap();
         
     const URL = "https://teachablemachine.withgoogle.com/models/I28us5FI/";
 
@@ -100,9 +102,9 @@
          
         //img = document.getElementById("testImage").src;
          
-         img = "test1.bmp";
-       
-        const prediction = await model.predict(img);
+        img2 = document.getElementById("testImage").src;
+         
+        const prediction = await model.predict(img2);
          
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
