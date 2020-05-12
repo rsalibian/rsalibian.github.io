@@ -5,7 +5,7 @@
 
 <font size="12" color="red">
     
-<div>OVMC Radiology 18 </div>
+<div>OVMC Radiology 19 </div>
 
 <div id="label-container"></div>
     
@@ -104,7 +104,7 @@
          
         const imageBitmapPromise = createImageBitmap(img, 32, 32, 32, 32);
          
-        const prediction = await model.predict(iimageBitmapPromise);
+        const prediction = await model.predict(imageBitmapPromise);
          
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
