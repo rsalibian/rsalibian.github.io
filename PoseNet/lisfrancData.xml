@@ -1,15 +1,14 @@
 <bookstore>
     
    <book category="Lisfranc">
-       <case>Meniscus Case 1</case>
-       <key1>Bucket-Handle Tear Medial Meniscus</key1>
-       <key2>Flipped Meniscal Fragment Inferior to PCL</key2>
-       <imagecount>12</imagecount>
+       <case>Meniscus Set 1</case>
+       <key1>Lisfranc Fracture-Dislocation</key1>
+       <imagecount>25</imagecount>
    </book>
     
-   <book category="Meniscus">
-       <case>Meniscus Case 2</case>
-       <key1>Bucket-Handle Tear Medial Meniscus</key1>
+   <book category="Lisfranc">
+       <case>Lisfranc Set 2/case>
+       <key1>Lisfranc Fracture-Dislocation</key1>
        <key2>Flipped Meniscal Fragment Inferior to PCL</key2>
        <imagecount>17</imagecount>
    </book> 
