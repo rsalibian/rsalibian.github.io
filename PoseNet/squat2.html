@@ -74,9 +74,9 @@
          
             currentCase = currentCase + 1;
          
-            CasePath = "meniscus/case" + currentCase;  
+            CasePath = "lisfranc/set1/" + currentCase;  
         
-            var result = doesFileExist(CasePath + "/" + "1.bmp");
+            var result = doesFileExist(CasePath + "/" + "1.png");
  
             if (result == true) {
                 
@@ -84,12 +84,8 @@
                 window.location.href = "kneemenu.html";
             }     
              
-        
-            document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
+            document.getElementById("keyImage").src =  CasePath + "/" + "1.png";
             
-            
-            
-            //document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
         
         var xhttp = new XMLHttpRequest(); 
         var totalImagesHold;
@@ -101,7 +97,7 @@
             };
 
 
-            xhttp.open("GET", "books.xml", true);
+            xhttp.open("GET", "lisfrancData.xml", true);
             xhttp.send();
            
              function myFunction(xml) {
@@ -188,9 +184,9 @@
          
          while (canMove == "Yes") {
              
-           CasePath = "meniscus/case" + currentCase;
+           CasePath = "lisfranc/set1/" + currentCase;
              
-           document.getElementById("keyImage").src =  CasePath + "/" + currentImage + ".bmp";
+           document.getElementById("keyImage").src =  CasePath + "/" + currentImage + ".png";
              
            currentImage = currentImage + 1; 
              
@@ -204,7 +200,7 @@
          
          else {
                     
-             document.getElementById("keyImage").src =  CasePath + "/" + "1.bmp";
+             document.getElementById("keyImage").src =  CasePath + "/" + "1.png";
               
              currentImage = 1;
              
