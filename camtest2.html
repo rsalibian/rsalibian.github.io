@@ -5,8 +5,12 @@
 
 <font size="12" color="red">
     
-<div>OVMC Radiology 20 </div>
-
+<div>OVMC Radiology 21 </div>
+    
+<canvas id="canvas"></canvas>
+    
+<br/>
+    
 <div id="label-container"></div>
     
 <br/>
@@ -36,25 +40,21 @@
     let model, labelContainer, maxPredictions;
 
     async function init() {
+        
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
         
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
-
-        // Convenience function to setup a webcam
-        //const flip = true; // whether to flip the webcam
-        //webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        //await webcam.setup(); // request access to the webcam
-        //await webcam.play();
-        //window.requestAnimationFrame(loop);
-
-        // append elements to the DOM
-        //document.getElementById("webcam-container").appendChild(webcam.canvas);
+        
+        const canvas = document.getElementById("canvas");
+        canvas.width = 700; canvas.height = 700;
+        ctx = canvas.getContext("2d");
+        
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
-        }
+        }        
         
         // CAMERA SETTINGS
        
@@ -95,6 +95,9 @@
            document.getElementById("testImage").src = data_uri;
             
         });
+         
+         
+        ctx.drawImage(webcam.canvas, 0, 0);
          
         //alert(document.getElementById("testImage").src);
          
