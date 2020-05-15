@@ -5,11 +5,7 @@
 
 <font size="12" color="red">
     
-<div>OVMC Radiology 21 </div>
-    
-<canvas id="canvas"></canvas>
-    
-<br/>
+<div>OVMC Radiology 22 </div>
     
 <div id="label-container"></div>
     
@@ -48,7 +44,7 @@
         maxPredictions = model.getTotalClasses();
         
         const canvas = document.getElementById("canvas");
-        canvas.width = 700; canvas.height = 700;
+        canvas.width = 200; canvas.height = 200;
         ctx = canvas.getContext("2d");
         
         labelContainer = document.getElementById("label-container");
@@ -97,17 +93,11 @@
         });
          
          
-        ctx.drawImage(webcam.canvas, 0, 0);
-         
         //alert(document.getElementById("testImage").src);
          
         img = document.getElementById("testImage").src;
-         
-        img2 = document.getElementById("testImage").src;
-         
-        const imageBitmapPromise = createImageBitmap(img, 32, 32, 32, 32);
-         
-        const prediction = await model.predict(document.getElementById("testImage").src);
+            
+        const prediction = await model.predict(img);
          
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
