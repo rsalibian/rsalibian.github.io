@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>Lisfranc Injury Detection</div>  
+<div>Lisfranc Injury Detection - 1</div>  
     
 <br/>
     
@@ -137,6 +137,8 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
         
+        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;  
+	    
         document.getElementById("male").innerHTML = "Lisfranc Injury: " + probNumber2 + " %";
         
     }
