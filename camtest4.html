@@ -10,6 +10,10 @@
     
 <input type="button" style="font-size : 50px; width: 500px; height: 100px;" value="Predict Now" onclick="predictFile()" />
     
+<br/>
+    
+<input type="button" style="font-size : 50px; width: 500px; height: 100px;" value="Predict Now 2" onclick="predictFile2()" />
+    
 </font>
     
 <br/><br/><br/>
@@ -131,6 +135,24 @@
         //playNow(probNumber);
         
     }
+    
+    
+    async function predictFile() {
+        
+        document.getElementById("testImage").style.display = "block";
+        
+        var uri = webcam.canvas.toDataURL("image/png"); 
+        
+        document.getElementById("testImage").src = uri;
+        
+        document.getElementById("male").innerHTML = "Lisfranc Injury: " + probNumber2 + " %";
+        
+        //document.getElementById("male").innerHTML = labelContainer.childNodes[1].innerHTML;
+        
+        //alert(ogNumber);
+        
+        
+    }  
     
      async function playNow(freq) {
         
