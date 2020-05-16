@@ -92,8 +92,15 @@
         //alert(document.getElementById("testImage").src);
          
         img = document.getElementById("testImage");
-            
-        const prediction = await model.predict(img);
+         
+        var canvas = document.createElement("canvas");
+	    canvas.width = img.width;
+	    canvas.height = img.height;
+	    canvas.getContext("2d").drawImage(img, 0, 0);
+
+	    return canvas;  
+         
+        const prediction = await model.predict(canvas);
          
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
@@ -103,6 +110,14 @@
        
      }
      
-    
+    function convertImageToCanvas(image) {
+        
+	    var canvas = document.createElement("canvas");
+	    canvas.width = image.width;
+	    canvas.height = image.height;
+	    canvas.getContext("2d").drawImage(image, 0, 0);
+
+	    return canvas;
+}  
     
 </script>
