@@ -112,11 +112,13 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
         
+        alert(prediction[1].probability.toFixed(2));   
+              
         probNumber = prediction[1].probability.toFixed(2);    
         
         probNumber = probNumber * 1000;
         
-        probNumber2 = probNumber * 100;    
+        probNumber2 = probNumber * 10;    
     }
     
     
