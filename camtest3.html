@@ -57,7 +57,7 @@
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/I28us5FI/";  
     
-    let model, webcam, labelContainer, maxPredictions;
+    let model, webcam, labelContainer, maxPredictions, probNumber;
 
     // Load the image model and setup the webcam
     async function init() {
@@ -109,6 +109,7 @@
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                probNumber = prediction[1].probability.toFixed(2);            
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
@@ -122,6 +123,8 @@
         document.getElementById("testImage").src = uri;
         
         document.getElementById("male").innerHTML = labelContainer.childNodes[1].innerHTML;
+        
+        alert(probNumber);
         
         playNow(700);
         
