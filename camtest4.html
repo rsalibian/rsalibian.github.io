@@ -122,17 +122,22 @@
         
         document.getElementById("testImage").style.display = "block";
         
-        var uri = webcam.canvas.toDataURL("image/png"); 
-        
-        document.getElementById("testImage").src = uri;
+        img = document.getElementById("testImage");
+         
+        var canvas = document.createElement("canvas");
+	    canvas.width = img.width;
+	    canvas.height = img.height;
+	    canvas.getContext("2d").drawImage(img, 0, 0);
+         
+        const prediction = await model.predict(canvas);
+         
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
         
         document.getElementById("male").innerHTML = "Lisfranc Injury: " + probNumber2 + " %";
-        
-        //document.getElementById("male").innerHTML = labelContainer.childNodes[1].innerHTML;
-        
-        //alert(ogNumber);
-        
-        //playNow(probNumber);
         
     }
     
