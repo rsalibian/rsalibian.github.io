@@ -110,9 +110,7 @@
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
             labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
-        
-        alert(prediction[1].probability.toFixed(2));   
+        } 
               
         probNumber = prediction[1].probability.toFixed(2);    
         
@@ -134,7 +132,7 @@
         
         //document.getElementById("male").innerHTML = labelContainer.childNodes[1].innerHTML;
         
-        //alert(probNumber);
+        alert(probNumber);
         
         playNow(probNumber);
         
