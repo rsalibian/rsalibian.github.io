@@ -5,7 +5,7 @@
 
 <font size="12" color="red">
     
-<div>OVMC Radiology 24 </div>
+<div>OVMC Radiology 25 </div>
     
 <div id="label-container"></div>
     
@@ -98,7 +98,7 @@
 	    canvas.height = img.height;
 	    canvas.getContext("2d").drawImage(img, 0, 0);
 
-	    return canvas;  
+         //return canvas;  
          
         const prediction = await model.predict(canvas);
          
