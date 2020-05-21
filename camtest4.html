@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>Lisfranc Injury Detection - 3</div>  
+<div>Lisfranc Injury Detection - 4</div>  
     
 <br/>
     
@@ -141,7 +141,12 @@
     
      async function predictFile2() {
          
-        const prediction = await model.predict(document.getElementById("testImage").src);
+        var img1 = document.createElement("img");
+        img1.src = document.getElementById("testImage").src;   
+         
+        var img1 = document.createElement(img1);   
+         
+        const prediction = await model.predict(img1);
          
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
