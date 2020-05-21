@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>Lisfranc Injury Detection - 2</div>  
+<div>Lisfranc Injury Detection - 3</div>  
     
 <br/>
     
@@ -149,8 +149,11 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-        
-    }    
+        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
+     
+        alert(probNumber2);
+     
+     }    
     
     
      async function playNow(freq) {
