@@ -148,6 +148,8 @@
         var img1 = new Image();
         img1.src = document.getElementById("testImage").src;   
          
+        document.getElementById("testImage").style.display = "block";
+         
         const prediction = await model.predict(img1);
          
         for (let i = 0; i < maxPredictions; i++) {
