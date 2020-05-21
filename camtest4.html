@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>Lisfranc Injury Detection - 4</div>  
+<div>Lisfranc Injury Detection - 5</div>  
     
 <br/>
     
@@ -141,10 +141,8 @@
     
      async function predictFile2() {
          
-        var img1 = document.createElement("img");
+        var img1 = new Image();
         img1.src = document.getElementById("testImage").src;   
-         
-        var img1 = document.createElement(img1);   
          
         const prediction = await model.predict(img1);
          
