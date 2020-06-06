@@ -60,8 +60,11 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
         
-        
-element.dispatchEvent(new KeyboardEvent('keypress',{'key':'a'}));
+        if (prediction[1].probability.toFixed(2) > .90) {
+           
+           element.dispatchEvent(new KeyboardEvent('keypress',{'key':'a'}));           
+       }        
+
 
         // finally draw the poses
         drawPose(pose);
