@@ -59,6 +59,9 @@
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
+        
+        
+element.dispatchEvent(new KeyboardEvent('keypress',{'key':'a'}));
 
         // finally draw the poses
         drawPose(pose);
