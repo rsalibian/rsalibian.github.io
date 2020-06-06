@@ -1,6 +1,6 @@
 
 <body style="background-color:lightgray;" onload="init()" >
-<div>Teachable Machine - Emily Horse Training</div>
+<div>Teachable Machine - Emily Horse Training 1</div>
 </body>
 
 <div><canvas id="canvas"></canvas></div>
@@ -14,8 +14,6 @@
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/6OyOF5kak/";
     let model, webcam, ctx, labelContainer, maxPredictions;
-    
-    var keyboardEvent = document.createEvent("KeyboardEvent");
     
     async function init() {
         const modelURL = URL + "model.json";
@@ -69,7 +67,7 @@
            const upArrowKey = 38
            const event = new KeyboardEvent('keydown',{'key':upArrowKey})
            document.dispatchEvent(event)   
-           console.log("up");
+           console.log("up")
         }        
 
         else if (prediction[2].probability.toFixed(2) > .90) {
@@ -77,7 +75,7 @@
            const leftArrowKey = 37
            const event = new KeyboardEvent('keydown',{'key':leftArrowKey})
            document.dispatchEvent(event)     
-           console.log("left);
+           console.log("left)
        } 
         
         else if (prediction[3].probability.toFixed(2) > .90) {
@@ -85,7 +83,7 @@
            const rightArrowKey = 39
            const event = new KeyboardEvent('keydown',{'key':rightArrowKey})
            document.dispatchEvent(event) 
-           console.log("right);     
+           console.log("right)    
         }      
         
         // finally draw the poses
