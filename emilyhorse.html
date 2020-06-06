@@ -1,6 +1,6 @@
 
 <body style="background-color:lightgray;" onload="init()" >
-<div>Teachable Machine - Emily Horse Training 2</div>
+<div>Teachable Machine - Emily Horse Training 3</div>
 </body>
 
 <div><canvas id="canvas"></canvas></div>
@@ -66,7 +66,9 @@
         
         if (prediction[1].probability.toFixed(2) > .90) {
            
-           element.dispatchEvent(new KeyboardEvent('keypress',{'key':'38'}));           
+           const rightArrowKey = 39
+           const event = new KeyboardEvent('keydown',{'key':rightArrowKey})
+           document.dispatchEvent(event)      
        }        
 
 
