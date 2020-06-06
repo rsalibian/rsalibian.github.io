@@ -14,7 +14,9 @@
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/6OyOF5kak/";
     let model, webcam, ctx, labelContainer, maxPredictions;
-
+    
+    var keyboardEvent = document.createEvent("KeyboardEvent");
+    
     async function init() {
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
@@ -64,7 +66,7 @@
         
         if (prediction[1].probability.toFixed(2) > .90) {
            
-           //element.dispatchEvent(new KeyboardEvent('keypress',{'key':'38'}));           
+           element.dispatchEvent(new KeyboardEvent('keypress',{'key':'38'}));           
        }        
 
 
