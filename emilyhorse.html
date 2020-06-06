@@ -1,6 +1,6 @@
 
 <body style="background-color:lightgray;" onload="init()" >
-<div>Teachable Machine - Emily Horse Training 4</div>
+<div>Teachable Machine - Emily Horse Training 5</div>
 </body>
 
 <div><canvas id="canvas"></canvas></div>
@@ -68,22 +68,25 @@
            
            const upArrowKey = 38
            const event = new KeyboardEvent('keydown',{'key':upArrowKey})
-           document.dispatchEvent(event)      
+           document.dispatchEvent(event)   
+           console.log = "up";
        }        
 
-        else if (prediction[1].probability.toFixed(2) > .90) {
+        else if (prediction[2].probability.toFixed(2) > .90) {
            
            const leftArrowKey = 37
            const event = new KeyboardEvent('keydown',{'key':leftArrowKey})
-           document.dispatchEvent(event)      
+           document.dispatchEvent(event)     
+console.log = "left";
        } 
         
-        else if (prediction[1].probability.toFixed(2) > .90) {
+        else if (prediction[3].probability.toFixed(2) > .90) {
            
            const rightArrowKey = 39
            const event = new KeyboardEvent('keydown',{'key':rightArrowKey})
-           document.dispatchEvent(event)      
-       }      
+           document.dispatchEvent(event) 
+            console.log = "right";       
+        }      
         
         // finally draw the poses
         drawPose(pose);
