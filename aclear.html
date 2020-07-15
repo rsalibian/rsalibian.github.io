@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 3</div>  
+<div>ACL Tear Detection - 4</div>  
     
 <br/>
     
@@ -164,7 +164,7 @@
          //image 2
           img1.src = document.getElementById("testImage2").src;   
          
-        const prediction = await model.predict(img1);
+        prediction = await model.predict(img1);
          
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
@@ -182,7 +182,7 @@
          
           img1.src = document.getElementById("testImage3").src;   
          
-        const prediction = await model.predict(img1);
+        prediction = await model.predict(img1);
          
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
@@ -199,7 +199,7 @@
          
           img1.src = document.getElementById("testImage4").src;   
          
-        const prediction = await model.predict(img1);
+        prediction = await model.predict(img1);
          
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
