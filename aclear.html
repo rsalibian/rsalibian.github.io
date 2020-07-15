@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 5</div>  
+<div>ACL Tear Detection - 6</div>  
     
 <br/>
     
@@ -116,11 +116,11 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
               
-        ogNumber = prediction[1].probability.toFixed(2); 
+        ogNumber = prediction[0].probability.toFixed(2); 
         
-        probNumber = (prediction[1].probability.toFixed(2)) * 1000;    
+        probNumber = (prediction[0].probability.toFixed(2)) * 1000;    
         
-        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;      
+        probNumber2 = (prediction[0].probability.toFixed(2)) * 100;      
     }
     
     
