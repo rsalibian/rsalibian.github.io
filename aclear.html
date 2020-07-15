@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 2</div>  
+<div>ACL Tear Detection - 3</div>  
     
 <br/>
     
@@ -145,7 +145,7 @@
      async function predictFile2() {
          
         var img1 = new Image();
-        img1.src = document.getElementById("testImage").src;   
+        img1.src = document.getElementById("testImage1").src;   
          
         const prediction = await model.predict(img1);
          
@@ -157,8 +157,60 @@
              
         probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
      
-        alert(probNumber2);
+        //alert(probNumber2);
         playNow(probNumber2);
+         
+         
+         //image 2
+          img1.src = document.getElementById("testImage2").src;   
+         
+        const prediction = await model.predict(img1);
+         
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        } 
+             
+        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
+     
+        //alert(probNumber2);
+        playNow(probNumber2);    
+         
+         
+         //image3
+         
+          img1.src = document.getElementById("testImage3").src;   
+         
+        const prediction = await model.predict(img1);
+         
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        } 
+             
+        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
+     
+        //alert(probNumber2);
+        playNow(probNumber2);     
+     
+     //image 4
+         
+          img1.src = document.getElementById("testImage4").src;   
+         
+        const prediction = await model.predict(img1);
+         
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        } 
+             
+        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
+     
+        //alert(probNumber2);
+        playNow(probNumber2);     
      
      }    
     
