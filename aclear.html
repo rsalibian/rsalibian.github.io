@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 8</div>  
+<div>ACL Tear Detection - 9</div>  
     
 <br/>
     
@@ -124,24 +124,6 @@
     }
     
     
-    async function predictFile() {
-        
-        document.getElementById("testImage").style.display = "block";
-        
-        var uri = webcam.canvas.toDataURL("image/png"); 
-        
-        document.getElementById("testImage").src = uri;
-        
-        document.getElementById("male").innerHTML = "Lisfranc Injury: " + probNumber2 + " %";
-        
-        //document.getElementById("male").innerHTML = labelContainer.childNodes[1].innerHTML;
-        
-        //alert(ogNumber);
-        
-        //playNow(probNumber);
-        
-    }
-    
      async function predictFile2() {
          
         var img1 = new Image();
@@ -155,7 +137,7 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
+        probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
      
         alert(probNumber2);
         playNow(probNumber2);
@@ -172,7 +154,7 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
+        probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
      
         alert(probNumber2);
         playNow(probNumber2);    
@@ -190,7 +172,7 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
+        probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
      
         alert(probNumber2);
         playNow(probNumber2);     
@@ -207,7 +189,7 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;          
+        probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
      
         alert(probNumber2);
         playNow(probNumber2);     
