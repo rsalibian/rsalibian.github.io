@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 1</div>  
+<div>ACL Tear Detection - 2</div>  
     
 <br/>
     
@@ -186,7 +186,7 @@ function onFileSelected1(event) {
   var selectedFile = event.target.files[0];
   var reader = new FileReader();
 
-  var imgtag = document.getElementById("testImage");
+  var imgtag = document.getElementById("testImage1");
   imgtag.title = selectedFile.name;
 
   reader.onload = function(event) {
@@ -195,5 +195,57 @@ function onFileSelected1(event) {
 
   reader.readAsDataURL(selectedFile);
 }
+    
+function onFileSelected2(event) {
+  
+  //document.getElementById("testImage").style.display = "block";   
+    
+  var selectedFile = event.target.files[0];
+  var reader = new FileReader();
+
+  var imgtag = document.getElementById("testImage1");
+  imgtag.title = selectedFile.name;
+
+  reader.onload = function(event) {
+    imgtag.src = event.target.result;
+  };
+
+  reader.readAsDataURL(selectedFile);
+}
+
+function onFileSelected3(event) {
+  
+  //document.getElementById("testImage").style.display = "block";   
+    
+  var selectedFile = event.target.files[0];
+  var reader = new FileReader();
+
+  var imgtag = document.getElementById("testImage1");
+  imgtag.title = selectedFile.name;
+
+  reader.onload = function(event) {
+    imgtag.src = event.target.result;
+  };
+
+  reader.readAsDataURL(selectedFile);
+}
+    
+function onFileSelected4(event) {
+  
+  //document.getElementById("testImage").style.display = "block";   
+    
+  var selectedFile = event.target.files[0];
+  var reader = new FileReader();
+
+  var imgtag = document.getElementById("testImage1");
+  imgtag.title = selectedFile.name;
+
+  reader.onload = function(event) {
+    imgtag.src = event.target.result;
+  };
+
+  reader.readAsDataURL(selectedFile);
+}
+    
     
 </script>
