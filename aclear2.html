@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 31</div>  
+<div>ACL Tear Detection - 32</div>  
     
 <br/>
     
@@ -221,10 +221,13 @@
     
 function onFileSelected1(event) {
     
+    
   const fileList = event.target.files;
   //console.log(fileList[0]);   
     
-  var img1 = new Image(fileList[0].name);
+  var img1 = new Image();
+  img1 = fileList[0].name;
+    
   alert(fileList[0].name);
         
         prediction = await model.predict(img1);
