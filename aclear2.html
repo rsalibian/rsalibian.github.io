@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 16</div>  
+<div>ACL Tear Detection - 17</div>  
     
 <br/>
     
@@ -220,20 +220,10 @@
     
     
 function onFileSelected1(event) {
-  
-  //document.getElementById("testImage").style.display = "block";   
     
-  var selectedFile = event.target.files[0];
-  var reader = new FileReader();
-
-  var imgtag = document.getElementById("testImage1");
-  imgtag.title = selectedFile.name;
-
-  reader.onload = function(event) {
-    imgtag.src = event.target.result;
-  };
-
-  reader.readAsDataURL(selectedFile);
+  const fileList = event.target.files;
+  console.log(fileList);    
+ 
 }
     
 function onFileSelected2(event) {
