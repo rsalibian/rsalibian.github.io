@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 32</div>  
+<div>ACL Tear Detection - 33</div>  
     
 <br/>
     
@@ -220,28 +220,22 @@
     
     
 function onFileSelected1(event) {
-    
-    
-  const fileList = event.target.files;
+      
+  //const fileList = event.target.files;
   //console.log(fileList[0]);   
     
-  var img1 = new Image();
-  img1 = fileList[0].name;
-    
-  alert(fileList[0].name);
-        
-        prediction = await model.predict(img1);
-         
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        } 
-             
-        probNumber2 = proNumber2 + (prediction[0].probability.toFixed(2)) * 100;          
-     
-        alert(probNumber2);
+  var selectedFile = event.target.files[0];
+  var reader = new FileReader();
 
+  var imgtag = document.getElementById("testImage1");
+  imgtag.title = selectedFile.name;
+
+  reader.onload = function(event) {
+    imgtag.src = event.target.result;
+  };
+
+  reader.readAsDataURL(selectedFile);
+    
 }
     
 function onFileSelected2(event) {
