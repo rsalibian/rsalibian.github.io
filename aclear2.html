@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 3</div>  
+<div>The ACL Ear - Hear The Difference - 4</div>  
     
 <br/>
     
@@ -29,27 +29,19 @@
 <tr>
     
     <td>
-         <img id="testImage1" height="400" width="400">   
-        
-         <br/> <br/>
-        
-         <input type="button" value="<<" onclick="predictFile2()" />
-        
-         &nbsp;&nbsp;
-        
-         <input type="button" value=">>" onclick="nextImageTest()" />
+         <img id="testImage1" height="300" width="300">   
     </td>
     
     <td>
-        <img id="testImage2" height="400" width="400">
+        <img id="testImage2" height="300" width="300">
     </td>
     
     <td>       
-        <img id="testImage3" height="400" width="400">
+        <img id="testImage3" height="300" width="300">
     </td>
     
     <td>
-        <img id="testImage4" height="400" width="400">
+        <img id="testImage4" height="300" width="300">
     </td>    
     
 </tr>
@@ -91,28 +83,19 @@
 <tr>
     
     <td>
-         <img id="testImage5" height="400" width="400">    
-        
-          <br/> <br/>
-        
-         <input type="button" value="<<" onclick="predictFile2()" />
-        
-         &nbsp;&nbsp;
-        
-         <input type="button" value=">>" onclick="predictFile2()" />
-        
+         <img id="testImage5" height="300" width="300">    
     </td>
     
     <td>
-        <img id="testImage6" height="400" width="400">
+        <img id="testImage6" height="300" width="300">
     </td>
     
     <td>       
-        <img id="testImage7" height="400" width="400">
+        <img id="testImage7" height="300" width="300">
     </td>
     
     <td>
-        <img id="testImage8" height="400" width="400">
+        <img id="testImage8" height="300" width="300">
     </td>    
     
 </tr>
@@ -141,8 +124,6 @@
     const URL = "https://teachablemachine.withgoogle.com/models/yUL3T8ZKV/"; 
     
     let model, webcam, labelContainer, maxPredictions, probNumber, probNumber2, ogNumber;
-    
-    var imageTestarray = [];
 
     // Load the image model and setup the webcam
     async function init() {
@@ -287,20 +268,11 @@
          
      }    
 
-function nextImageTest(){
-    
-   var imgtag = document.getElementById("testImage1");
-   imgtag.src =  imageTestarray [1];
-}
     
 function onFileSelected1(event) {
       
   //const fileList = event.target.files;
   //console.log(fileList[0]);   
-    
-  imageTestarray [0] = event.target.files[0];
-  imageTestarray [1] = event.target.files[1];
-  imageTestarray [2] = event.target.files[2];
     
   var selectedFile = event.target.files[0];
   var reader = new FileReader();
