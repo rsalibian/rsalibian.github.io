@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 1</div>  
+<div>The ACL Ear - Hear The Difference - 2</div>  
     
 <br/>
     
@@ -37,7 +37,7 @@
         
          &nbsp;&nbsp;
         
-         <input type="button" value=">>" onclick="predictFile2()" />
+         <input type="button" value=">>" onclick="nextImageTest()" />
     </td>
     
     <td>
@@ -287,10 +287,10 @@
          
      }    
 
-function moveimageright (){
+function nextImageTest()(){
     
-    
- 
+   var imgtag = document.getElementById("testImage1");
+   imgtag.src =  imageTestarray [1];
 }
     
 function onFileSelected1(event) {
