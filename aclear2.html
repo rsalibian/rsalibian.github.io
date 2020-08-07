@@ -355,6 +355,34 @@ function onFileSelected1(event) {
 
   reader4.readAsDataURL(selectedFile4);  
     
+  //5th image
+    
+  var selectedFile5 = event.target.files[4];
+  var reader5 = new FileReader();
+
+  var imgtag5 = document.getElementById("testImage5");
+  imgtag5.title = selectedFile5.name;
+
+  reader5.onload = function(event) {
+    imgtag5.src = event.target.result;
+  };
+
+  reader5.readAsDataURL(selectedFile5);  
+    
+  //6th image
+    
+  var selectedFile6 = event.target.files[5];
+  var reader6 = new FileReader();
+
+  var imgtag6 = document.getElementById("testImage6");
+  imgtag6.title = selectedFile6.name;
+
+  reader6.onload = function(event) {
+    imgtag6.src = event.target.result;
+  };
+
+  reader4.readAsDataURL(selectedFile6);  
+    
 }
     
 function onFileSelected2(event) {
