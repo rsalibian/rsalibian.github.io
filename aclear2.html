@@ -148,6 +148,8 @@
     const URL = "https://teachablemachine.withgoogle.com/models/yUL3T8ZKV/"; 
     
     let model, webcam, labelContainer, maxPredictions, probNumber, probNumber2, ogNumber;
+    
+    var imgArray = new Array();
 
     // Load the image model and setup the webcam
     async function init() {
@@ -292,6 +294,24 @@
          
      }    
 
+function onFileSelectedTest(event) {   
+    
+   const fileList = event.target.files;
+    
+  
+
+imgArray[0] = new Image();
+imgArray[0].src = 'images/img/Splash_image1.jpg';
+
+imgArray[1] = new Image();
+imgArray[1].src = 'images/img/Splash_image2.jpg';
+
+/* ... more images ... */
+
+imgArray[5] = new Image();
+imgArray[5].src = 'images/img/Splash_image6.jpg';
+
+}
     
 function onFileSelected1(event) {
       
