@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference</div>  
+<div>The ACL Ear - Hear The Difference - 1</div>  
     
 <br/>
     
@@ -141,6 +141,8 @@
     const URL = "https://teachablemachine.withgoogle.com/models/yUL3T8ZKV/"; 
     
     let model, webcam, labelContainer, maxPredictions, probNumber, probNumber2, ogNumber;
+    
+    var imageTestarray = [];
 
     // Load the image model and setup the webcam
     async function init() {
@@ -284,12 +286,21 @@
         g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 11)
          
      }    
+
+function moveimageright (){
     
+    
+ 
+}
     
 function onFileSelected1(event) {
       
   //const fileList = event.target.files;
   //console.log(fileList[0]);   
+    
+  imageTestarray [0] = event.target.files[0];
+  imageTestarray [1] = event.target.files[1];
+  imageTestarray [2] = event.target.files[2];
     
   var selectedFile = event.target.files[0];
   var reader = new FileReader();
