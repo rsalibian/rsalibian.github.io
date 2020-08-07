@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 12</div>  
+<div>ACL Tear Detection - 13</div>  
     
 <br/>
     
@@ -139,14 +139,10 @@
              
         probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
      
-        alert(probNumber2);
+        //alert(probNumber2);
          
-            playNow(probNumber2);
+        playNow(probNumber2);
         
-         
-    
-      
-         
          
          //image 2
           img1.src = document.getElementById("testImage2").src;   
@@ -159,10 +155,12 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-        probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
+        probNumber2 = proNumber2 + (prediction[0].probability.toFixed(2)) * 100;  
+         
+        
      
         //alert(probNumber2);
-        playNow(probNumber2);    
+        //playNow(probNumber2);    
          
          
          //image3
@@ -177,10 +175,10 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-        probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
+        probNumber2 = proNumber2 + (prediction[0].probability.toFixed(2)) * 100;          
      
         //alert(probNumber2);
-        playNow(probNumber2);     
+        //playNow(probNumber2);     
      
      //image 4
          
@@ -194,10 +192,13 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-        probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
+        probNumber2 = proNumber2 + (prediction[0].probability.toFixed(2)) * 100;          
      
         //alert(probNumber2);
-        playNow(probNumber2);     
+        //playNow(probNumber2);     
+         
+         
+        playNow(proNumber2/4);
      
      }    
     
