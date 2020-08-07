@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>ACL Tear Detection - 21</div>  
+<div>ACL Tear Detection - 22</div>  
     
 <br/>
     
@@ -224,8 +224,6 @@ function onFileSelected1(event) {
   const fileList = event.target.files;
   console.log(fileList[0]);   
     
-  //const prediction = await model.predict(img1);
-    
     const prediction = await model.predict(fileList[0]);         
 
     for (let i = 0; i < maxPredictions; i++) {
@@ -236,13 +234,12 @@ function onFileSelected1(event) {
              
         probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
      
-        //alert(probNumber2);
+        alert(probNumber2);
  
 }
     
 function onFileSelected2(event) {
   
-  //document.getElementById("testImage").style.display = "block";   
     
   var selectedFile = event.target.files[0];
   var reader = new FileReader();
