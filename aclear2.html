@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 5</div>  
+<div>The ACL Ear - Hear The Difference - 6</div>  
     
 <br/>
     
@@ -20,7 +20,7 @@
     
 <br/><br/><br/>
 
-<input type="file" id="myFile1" onchange="onFileSelected1(event)" accept=".jpg, .jpeg, .png, .bmp" multiple>
+<input type="file" id="myFile1" onchange="onFileSelectedTest(event)" accept=".jpg, .jpeg, .png, .bmp" multiple>
 
 <br/><br/>
 
@@ -301,15 +301,13 @@ function onFileSelectedTest(event) {
   
 
 imgArray[0] = new Image();
-imgArray[0].src = 'images/img/Splash_image1.jpg';
+imgArray[0].src = event.target.files[0];
 
 imgArray[1] = new Image();
-imgArray[1].src = 'images/img/Splash_image2.jpg';
+imgArray[1].src = event.target.files[1];
 
-/* ... more images ... */
-
-imgArray[5] = new Image();
-imgArray[5].src = 'images/img/Splash_image6.jpg';
+imgArray[2] = new Image();
+imgArray[2].src = event.target.files[2];
 
 }
     
