@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 13</div>  
+<div>The ACL Ear - Hear The Difference - 14</div>  
     
 <br/>
     
@@ -299,18 +299,13 @@ function onFileSelectedTest(event) {
     var input = event.target;   
     
     for (var i = 0; i < input.files.length; i++) {
+        
       console.log(input.files[i].name);
+        
+      imgArray[i] = new Image();
+      imgArray[i].src = input.files[i].name;
+    
     }
-   
-
-imgArray[0] = new Image();
-imgArray[0].src = input.files[0].name;
-
-//imgArray[1] = new Image();
-//imgArray[1].src = event.target.files[1];
-
-//imgArray[2] = new Image();
-//imgArray[2].src = event.target.files[2];
 
 }
     
