@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 23</div>  
+<div>The ACL Ear - Hear The Difference - 24</div>  
     
 <br/>
     
@@ -29,15 +29,15 @@
 <tr>
     
     <td>
-         <img id="testImage1" height="300" width="300">   
+         <img id="testImage0" height="300" width="300">   
+    </td>
+    
+    <td>
+        <img id="testImage1" height="300" width="300">
     </td>
     
     <td>
         <img id="testImage2" height="300" width="300">
-    </td>
-    
-    <td>
-        <img id="testImage3" height="300" width="300">
     </td>
     
 </tr>
@@ -45,15 +45,15 @@
 <tr>
     
     <td>       
-        <img id="testImage4" height="300" width="300">
+        <img id="testImage3" height="300" width="300">
     </td>
     
     <td>
-        <img id="testImage5" height="300" width="300">
+        <img id="testImage4" height="300" width="300">
     </td>    
     
     <td>
-        <img id="testImage6" height="300" width="300">
+        <img id="testImage5" height="300" width="300">
     </td>
     
 </tr>
@@ -246,18 +246,22 @@ function onFileSelectedTest(event) {
     
     var input = event.target;   
     
+    var selectedFile;
+    var reader;
+    var imgtag;
+    
     for (var i = 0; i < input.files.length; i++) {
         
       console.log(input.files[i].name);
         
-      var selectedFile = event.target.files[i];
-      var reader = new FileReader();
+      selectedFile = event.target.files[i];
+      reader = new FileReader();
 
-      var imgtag = document.getElementById("testImage" + (i + 1));
+      imgtag = document.getElementById("testImage" + i);
       imgtag.title = selectedFile.name;
 
       reader.onload = function(event) {
-      imgtag.src = event.target.result;
+        imgtag.src = event.target.result;
       };
 
       reader.readAsDataURL(selectedFile);    
