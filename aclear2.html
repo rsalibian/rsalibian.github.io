@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 55</div>  
+<div>The ACL Ear - Hear The Difference - 56</div>  
     
 <br/>
     
@@ -12,7 +12,11 @@
     
 &nbsp;&nbsp;
     
-<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Compare Below" onclick="predictFileCompare()" />
+<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Compare Normal" onclick="predictFileCompareNormal()" />
+    
+&nbsp;&nbsp;
+    
+<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Compare Abnormal" onclick="predictFileCompareAbnormal()" />
     
 </br>
     
@@ -75,11 +79,15 @@
 
 <label for="cars">Abnormal ACL Case:</label>
 
-<select name="Abnormal ACL" id="cars2">
-  <option value="Case 1">Case 1</option>
-  <option value="Case 2">Case 2</option>
-  <option value="Case 3">Case 3</option>
-  <option value="Case 4">Case 4</option>
+<select name="abnormalACL" id="abnormalACL">
+  <option value="case1">Case 1</option>
+  <option value="case2">Case 2</option>
+  <option value="case3">Case 3</option>
+  <option value="case4">Case 4</option>
+  <option value="case5">Case 5</option>
+  <option value="case6">Case 6</option>
+  <option value="case7">Case 7</option>
+  <option value="case8">Case 8</option>
 </select>
 
 <br/><br/><br/>
@@ -161,7 +169,7 @@
     }
     
     
-     async function predictFileCompare() {
+     async function predictFileCompareNormal() {
          
         var img1;
         
@@ -189,6 +197,35 @@
         playNow(probNumber2/6);
          
      }
+    
+     async function predictFileCompareAbnormal() {
+         
+        var img1;
+        
+        for (let i = 0; i < 25; i++) {
+            
+        img1 = new Image();
+        img1.src = "/normalACL/" + document.getElementById("abnormalACL").value + "/" + i + ".bmp";
+        
+        alert("/normalACL/" + document.getElementById("abnormalACL").value + "/" + i + ".bmp");
+         
+        const prediction = await model.predict(img1);
+         
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        } 
+             
+       probNumber2 = probNumber2 + (prediction[0].probability.toFixed(2)) * 100;
+            
+       }
+     
+        alert(probNumber2/6);
+     
+        playNow(probNumber2/6);
+         
+     }    
     
      async function predictFile2() {
             
