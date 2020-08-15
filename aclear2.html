@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 53</div>  
+<div>The ACL Ear - Hear The Difference - 54</div>  
     
 <br/>
     
@@ -12,7 +12,7 @@
     
 &nbsp;&nbsp;
     
-<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Compare Below" onclick="predictFile2()" />
+<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Compare Below" onclick="predictFileCompare()" />
     
 </br>
     
@@ -164,6 +164,33 @@
     }
     
     
+     async function predictFileCompare() {
+         
+        var img1;
+        
+        for (let i = 0; i < 6; i++) {
+            
+        img1 = new Image();
+        img1.src = document.getElementById("testImage0").src;   
+         
+        const prediction = await model.predict(img1);
+         
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        } 
+             
+       probNumber2 = probNumber2 + (prediction[0].probability.toFixed(2)) * 100;
+            
+       }
+     
+        alert(probNumber2/6);
+     
+        playNow(probNumber2/6);
+         
+     }
+    
      async function predictFile2() {
             
         var img1;
@@ -171,7 +198,9 @@
         for (let i = 0; i < 6; i++) {
             
         img1 = new Image();
-        img1.src = document.getElementById("testImage0").src;   
+        img1.src = document.getElementById("testImage" + i).src;   
+        
+        alert("testImage" + i);
          
         const prediction = await model.predict(img1);
          
