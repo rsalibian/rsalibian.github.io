@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 36</div>  
+<div>The ACL Ear - Hear The Difference - 37</div>  
     
 <br/>
     
@@ -400,22 +400,21 @@ dropArea.addEventListener('drop', (event) => {
     
   event.stopPropagation();
   event.preventDefault();
+    
   const fileList = event.dataTransfer.files;
     
   console.log(fileList);
     
-  var selectedFile = fileList.item[0];
-  var reader = new FileReader();
-
   var imgtag = document.getElementById("testImage0");
-  //imgtag.title = selectedFile.name;
-
-  reader.onload = function(event) {
+    
+  const reader = new FileReader();
+    
+  reader.addEventListener('load', (event) => {
     imgtag.src = event.target.result;
-  };
-
-  reader.readAsDataURL(selectedFile);
-
+  });
+    
+  reader.readAsDataURL(event.target.result);
+    
 });
     
 </script>
