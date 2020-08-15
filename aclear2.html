@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 43</div>  
+<div>The ACL Ear - Hear The Difference - 44</div>  
     
 <br/>
     
@@ -17,10 +17,6 @@
 </br>
     
 </font>
-    
-<br/><br/><br/>
-
-<input type="file" id="myFile1" onchange="onFileSelectedTest(event)" accept=".jpg, .jpeg, .png, .bmp" multiple>
 
 <br/><br/>
 
@@ -164,7 +160,7 @@
             
         var img1;
         
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             
         img1 = new Image();
         img1.src = document.getElementById("testImage" + i).src;   
@@ -203,182 +199,6 @@
          
      }    
 
-function onFileSelectedTest(event) {   
-    
-    var input = event.target;   
-    
-    numberOfImages = input.files.length;
-    
-    var selectedFile;
-    var reader;
-    var imgtag;
-    
-    for (var i = 0; i < input.files.length; i++) {
-        
-      console.log(input.files[i].name);
-        
-       
-        
-      /*
-      selectedFile = event.target.files[i];
-      reader = new FileReader();
-
-      imgtag = document.getElementById("testImage" + i);
-      imgtag.title = selectedFile.name;
-
-      reader.onload = function(event) {
-        imgtag.src = event.target.result;
-      };
-
-      reader.readAsDataURL(selectedFile); 
-      */
-        
-    } 
-    
-}
-    
-function onFileSelected1(event) {
-      
-  //const fileList = event.target.files;
-  //console.log(fileList[0]);   
-    
-  var selectedFile = event.target.files[0];
-  var reader = new FileReader();
-
-  var imgtag = document.getElementById("testImage1");
-  imgtag.title = selectedFile.name;
-
-  reader.onload = function(event) {
-    imgtag.src = event.target.result;
-  };
-
-  reader.readAsDataURL(selectedFile);
-    
-    
-  //2nd image
-    
-  var selectedFile2 = event.target.files[1];
-  var reader2 = new FileReader();
-
-  var imgtag2 = document.getElementById("testImage2");
-  imgtag2.title = selectedFile2.name;
-
-  reader2.onload = function(event) {
-    imgtag2.src = event.target.result;
-  };
-
-  reader2.readAsDataURL(selectedFile2);  
-    
-    
-   //3rd image
-    
-  var selectedFile3 = event.target.files[2];
-  var reader3 = new FileReader();
-
-  var imgtag3 = document.getElementById("testImage3");
-  imgtag3.title = selectedFile3.name;
-
-  reader3.onload = function(event) {
-    imgtag3.src = event.target.result;
-  };
-
-  reader3.readAsDataURL(selectedFile3);    
-    
-    
- //4th image
-    
-  var selectedFile4 = event.target.files[3];
-  var reader4 = new FileReader();
-
-  var imgtag4 = document.getElementById("testImage4");
-  imgtag4.title = selectedFile4.name;
-
-  reader4.onload = function(event) {
-    imgtag4.src = event.target.result;
-  };
-
-  reader4.readAsDataURL(selectedFile4);  
-    
-  //5th image
-    
-  var selectedFile5 = event.target.files[4];
-  var reader5 = new FileReader();
-
-  var imgtag5 = document.getElementById("testImage5");
-  imgtag5.title = selectedFile5.name;
-
-  reader5.onload = function(event) {
-    imgtag5.src = event.target.result;
-  };
-
-  reader5.readAsDataURL(selectedFile5);  
-    
-  //6th image
-    
-  var selectedFile6 = event.target.files[5];
-  var reader6 = new FileReader();
-
-  var imgtag6 = document.getElementById("testImage6");
-  imgtag6.title = selectedFile6.name;
-
-  reader6.onload = function(event) {
-    imgtag6.src = event.target.result;
-  };
-
-  reader6.readAsDataURL(selectedFile6);  
-    
-}
-    
-function onFileSelected2(event) {
-  
-    
-  var selectedFile = event.target.files[0];
-  var reader = new FileReader();
-
-  var imgtag = document.getElementById("testImage2");
-  imgtag.title = selectedFile.name;
-
-  reader.onload = function(event) {
-    imgtag.src = event.target.result;
-  };
-
-  reader.readAsDataURL(selectedFile);
-}
-
-function onFileSelected3(event) {
-  
-  //document.getElementById("testImage").style.display = "block";   
-    
-  var selectedFile = event.target.files[0];
-  var reader = new FileReader();
-
-  var imgtag = document.getElementById("testImage3");
-  imgtag.title = selectedFile.name;
-
-  reader.onload = function(event) {
-    imgtag.src = event.target.result;
-  };
-
-  reader.readAsDataURL(selectedFile);
-}
-    
-function onFileSelected4(event) {
-  
-  //document.getElementById("testImage").style.display = "block";   
-    
-  var selectedFile = event.target.files[0];
-  var reader = new FileReader();
-
-  var imgtag = document.getElementById("testImage4");
-  imgtag.title = selectedFile.name;
-
-  reader.onload = function(event) {
-    imgtag.src = event.target.result;
-  };
-
-  reader.readAsDataURL(selectedFile);
-}
-    
 dropArea0.addEventListener('dragover', (event) => {
   event.stopPropagation();
   event.preventDefault();
