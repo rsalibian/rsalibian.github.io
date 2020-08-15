@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 32</div>  
+<div>The ACL Ear - Hear The Difference - 33</div>  
     
 <br/>
     
@@ -149,6 +149,8 @@
     
     let model, webcam, labelContainer, maxPredictions, probNumber, probNumber2, ogNumber;
     
+    const dropArea = document.getElementById('testImage0');
+    
     var numberOfImages;
 
     // Load the image model and setup the webcam
@@ -261,17 +263,21 @@ function onFileSelectedTest(event) {
         
       console.log(input.files[i].name);
         
+       
+        
+      /*
       selectedFile = event.target.files[i];
       reader = new FileReader();
 
       imgtag = document.getElementById("testImage" + i);
       imgtag.title = selectedFile.name;
 
-      //reader.onload = function(event) {
+      reader.onload = function(event) {
         imgtag.src = event.target.result;
-      //};
+      };
 
       reader.readAsDataURL(selectedFile); 
+      */
         
     } 
     
@@ -419,5 +425,18 @@ function onFileSelected4(event) {
   reader.readAsDataURL(selectedFile);
 }
     
+dropArea.addEventListener('dragover', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  // Style the drag-and-drop as a "copy file" operation.
+  event.dataTransfer.dropEffect = 'copy';
+});
+
+dropArea.addEventListener('drop', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  const fileList = event.dataTransfer.files;
+  console.log(fileList);
+});
     
 </script>
