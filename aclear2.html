@@ -404,10 +404,10 @@ dropArea.addEventListener('drop', (event) => {
     
   console.log(fileList);
     
-  var selectedFile = event.target.files[0];
+  var selectedFile = fileList.item[0];
   var reader = new FileReader();
 
-  var imgtag = document.getElementById("testImage1");
+  var imgtag = document.getElementById("testImage0");
   imgtag.title = selectedFile.name;
 
   reader.onload = function(event) {
