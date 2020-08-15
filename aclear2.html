@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 26</div>  
+<div>The ACL Ear - Hear The Difference - 27</div>  
     
 <br/>
     
@@ -202,20 +202,24 @@
     
      async function predictFile2() {
          
-     
+     var img1;
          
-        //var img1 = new Image();
-        //img1.src = document.getElementById("testImage1").src;   
+     for (var i = 0; i < 6; i++) {
          
-        //const prediction = await model.predict(img1);
+        img1 = new Image();
+        img1.src = document.getElementById("testImage" + i).src;   
          
-        //for (let i = 0; i < maxPredictions; i++) {
-            //const classPrediction =
-                //prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
-            //labelContainer.childNodes[i].innerHTML = classPrediction;
-        //} 
+        const prediction = await model.predict(img1);
+         
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        } 
              
-       // probNumber2 = (prediction[0].probability.toFixed(2)) * 100;          
+       probNumber2 = (prediction[0].probability.toFixed(2)) * 100;
+         
+     }
      
         alert(probNumber2);
      
