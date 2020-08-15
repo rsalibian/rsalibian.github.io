@@ -168,10 +168,12 @@
          
         var img1;
         
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 25; i++) {
             
         img1 = new Image();
-        img1.src = document.getElementById("testImage0").src;   
+        img1.src = "/normalACL/" + normalCaseNumber + "/" + i + "bmp";
+        
+        alert("/normalACL/" + normalCaseNumber + "/" + i + "bmp");
          
         const prediction = await model.predict(img1);
          
@@ -199,8 +201,6 @@
             
         img1 = new Image();
         img1.src = document.getElementById("testImage" + i).src;   
-        
-        alert("testImage" + i);
          
         const prediction = await model.predict(img1);
          
