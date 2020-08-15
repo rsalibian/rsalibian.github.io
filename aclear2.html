@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 56</div>  
+<div>The ACL Ear - Hear The Difference - 58</div>  
     
 <br/>
     
@@ -151,7 +151,6 @@
         window.requestAnimationFrame(loop);
     }
 
-    // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
@@ -178,7 +177,7 @@
         img1 = new Image();
         img1.src = "/normalACL/" + document.getElementById("normalACL").value + "/" + i + ".bmp";
         
-        alert("/normalACL/" + document.getElementById("normalACL").value + "/" + i + ".bmp");
+        //alert("/normalACL/" + document.getElementById("normalACL").value + "/" + i + ".bmp");
          
         const prediction = await model.predict(img1);
          
@@ -207,7 +206,7 @@
         img1 = new Image();
         img1.src = "/normalACL/" + document.getElementById("abnormalACL").value + "/" + i + ".bmp";
         
-        alert("/normalACL/" + document.getElementById("abnormalACL").value + "/" + i + ".bmp");
+        //alert("/normalACL/" + document.getElementById("abnormalACL").value + "/" + i + ".bmp");
          
         const prediction = await model.predict(img1);
          
@@ -248,7 +247,7 @@
             
        }
      
-        alert(probNumber2/6);
+        //alert(probNumber2/6);
      
         playNow(probNumber2/6);
         
