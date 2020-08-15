@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 33</div>  
+<div>The ACL Ear - Hear The Difference - 34</div>  
     
 <br/>
     
@@ -89,42 +89,6 @@
 </select>
 
 <br/><br/><br/>
-
-<table>
-    
-<tr>
-    
-    <td>
-         <img id="testImage1" height="300" width="300">   
-    </td>
-    
-    <td>
-        <img id="testImage2" height="300" width="300">
-    </td>
-    
-    <td>
-        <img id="testImage2" height="300" width="300">
-    </td>
-    
-</tr>
-    
-<tr>
-    
-    <td>       
-        <img id="testImage3" height="300" width="300">
-    </td>
-    
-    <td>
-        <img id="testImage4" height="300" width="300">
-    </td>    
-    
-    <td>
-        <img id="testImage2" height="300" width="300">
-    </td>
-    
-</tr>
-    
-</table>
     
 <font size="12" color="red">
     
@@ -433,10 +397,25 @@ dropArea.addEventListener('dragover', (event) => {
 });
 
 dropArea.addEventListener('drop', (event) => {
+    
   event.stopPropagation();
   event.preventDefault();
   const fileList = event.dataTransfer.files;
+    
   console.log(fileList);
+    
+  var selectedFile = event.target.files[0];
+  var reader = new FileReader();
+
+  var imgtag = document.getElementById("testImage1");
+  imgtag.title = selectedFile.name;
+
+  reader.onload = function(event) {
+    imgtag.src = event.target.result;
+  };
+
+  reader.readAsDataURL(selectedFile);
+
 });
     
 </script>
