@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 28</div>  
+<div>The ACL Ear - Hear The Difference - 29</div>  
     
 <br/>
     
@@ -149,7 +149,7 @@
     
     let model, webcam, labelContainer, maxPredictions, probNumber, probNumber2, ogNumber;
     
-    var imgArray = new Array();
+    var numberOfImages;
 
     // Load the image model and setup the webcam
     async function init() {
@@ -204,7 +204,7 @@
          
      var img1;
          
-     for (var i = 0; i < 6; i++) {
+     for (var i = 0; i < numberOfImages; i++) {
          
         img1 = new Image();
         img1.src = document.getElementById("testImage" + i).src;   
@@ -217,7 +217,7 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-       probNumber2 = (prediction[0].probability.toFixed(2)) * 100;
+       probNumber2 = proNumber2 + (prediction[0].probability.toFixed(2)) * 100;
          
      }
      
@@ -247,6 +247,8 @@ function onFileSelectedTest(event) {
     
     var input = event.target;   
     
+    numberOfImages = input.files.length;
+    
     var selectedFile;
     var reader;
     var imgtag;
@@ -266,8 +268,6 @@ function onFileSelectedTest(event) {
       //};
 
       reader.readAsDataURL(selectedFile); 
-        
-      alert("testImage" + i);
         
     } 
     
