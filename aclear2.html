@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 41</div>  
+<div>The ACL Ear - Hear The Difference - 42</div>  
     
 <br/>
     
@@ -115,8 +115,7 @@
     
     const dropArea0 = document.getElementById('testImage0');
     const dropArea1 = document.getElementById('testImage1');    
-    
-    var numberOfImages;
+  
 
     // Load the image model and setup the webcam
     async function init() {
@@ -127,16 +126,10 @@
         
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
-     
-
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+    
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
 
-       
         labelContainer = document.getElementById("label-container");
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
@@ -168,13 +161,11 @@
     
     
      async function predictFile2() {
-         
-     var img1;
-     
-     alert(numberOfImages);
-         
-     for (var i = 0; i < numberOfImages; i++) {
-         
+            
+        var img1;
+        
+        for (let i = 0; i < 3; i++) {
+            
         img1 = new Image();
         img1.src = document.getElementById("testImage" + i).src;   
          
@@ -185,10 +176,10 @@
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
-         
-       alert(probNumber2);
              
        probNumber2 = probNumber2 + (prediction[0].probability.toFixed(2)) * 100;
+            
+       }
          
      }
      
