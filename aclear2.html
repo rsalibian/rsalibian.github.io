@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 47</div>  
+<div>The ACL Ear - Hear The Difference - 48</div>  
     
 <br/>
     
@@ -107,7 +107,9 @@
     // the link to your model provided by Teachable Machine export panel
     const URL = "https://teachablemachine.withgoogle.com/models/yUL3T8ZKV/"; 
     
-    let model, webcam, labelContainer, maxPredictions, probNumber, probNumber2, ogNumber;
+    let model, webcam, labelContainer, maxPredictions, probNumber, ogNumber;
+    
+    let probNumber2 = 0;
     
     const dropArea0 = document.getElementById('testImage0');
     const dropArea1 = document.getElementById('testImage1');    
@@ -173,7 +175,7 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-       probNumber2 = (prediction[0].probability.toFixed(2)) * 100;
+       probNumber2 = probNumber2 + (prediction[0].probability.toFixed(2)) * 100;
             
        //}
      
