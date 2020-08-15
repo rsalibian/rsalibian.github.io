@@ -61,7 +61,6 @@
 <label for="cars">Normal ACL Case:</label>
 
 <select name="normal ACL" id="cars">
-  <option value=""></option>
   <option value="Case 1">Case 1</option>
   <option value="Case 2">Case 2</option>
   <option value="Case 3">Case 3</option>
@@ -77,7 +76,6 @@
 <label for="cars">Abnormal ACL Case:</label>
 
 <select name="Abnormal ACL" id="cars2">
-  <option value=""></option>
   <option value="Case 1">Case 1</option>
   <option value="Case 2">Case 2</option>
   <option value="Case 3">Case 3</option>
@@ -111,6 +109,8 @@
     
     let probNumber2 = 0;
     
+    let normalCaseNumber = "case1";    
+    let abnormalCaseNumber = "case1";    
     
     const dropArea0 = document.getElementById('testImage0');
     const dropArea1 = document.getElementById('testImage1');    
@@ -171,9 +171,9 @@
         for (let i = 0; i < 25; i++) {
             
         img1 = new Image();
-        img1.src = "/normalACL/" + normalCaseNumber + "/" + i + "bmp";
+        img1.src = "/normalACL/" + normalCaseNumber + "/" + i + ".bmp";
         
-        alert("/normalACL/" + normalCaseNumber + "/" + i + "bmp");
+        alert("/normalACL/" + normalCaseNumber + "/" + i + ".bmp");
          
         const prediction = await model.predict(img1);
          
