@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 50</div>  
+<div>The ACL Ear - Hear The Difference - 51</div>  
     
 <br/>
     
@@ -113,9 +113,13 @@
     
     const dropArea0 = document.getElementById('testImage0');
     const dropArea1 = document.getElementById('testImage1');    
-  
-
-    // Load the image model and setup the webcam
+    
+    const dropArea0 = document.getElementById('testImage2');
+    const dropArea1 = document.getElementById('testImage3');    
+    
+    const dropArea0 = document.getElementById('testImage4');
+    const dropArea1 = document.getElementById('testImage5');    
+    
     async function init() {
         
         document.getElementById("label-container").style.display = "none";
@@ -254,4 +258,116 @@ dropArea1.addEventListener('drop', (event) => {
   reader.readAsDataURL(selectedFile);
     
 });    
+    
+dropArea2.addEventListener('dragover', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  // Style the drag-and-drop as a "copy file" operation.
+  event.dataTransfer.dropEffect = 'copy';
+});
+
+dropArea2.addEventListener('drop', (event) => {
+    
+  event.stopPropagation();
+  event.preventDefault();
+    
+  const fileList = event.dataTransfer.files;
+  var selectedFile = fileList.item(0);
+    
+  var imgtag = document.getElementById("testImage2");
+    
+  const reader = new FileReader();
+    
+  reader.addEventListener('load', (event) => {
+    imgtag.src = event.target.result;
+  });
+    
+  reader.readAsDataURL(selectedFile);
+    
+});    
+    
+    
+dropArea3.addEventListener('dragover', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  // Style the drag-and-drop as a "copy file" operation.
+  event.dataTransfer.dropEffect = 'copy';
+});
+
+dropArea3.addEventListener('drop', (event) => {
+    
+  event.stopPropagation();
+  event.preventDefault();
+    
+  const fileList = event.dataTransfer.files;
+  var selectedFile = fileList.item(0);
+    
+  var imgtag = document.getElementById("testImage3");
+    
+  const reader = new FileReader();
+    
+  reader.addEventListener('load', (event) => {
+    imgtag.src = event.target.result;
+  });
+    
+  reader.readAsDataURL(selectedFile);
+    
+});     
+    
+    
+dropArea4.addEventListener('dragover', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  // Style the drag-and-drop as a "copy file" operation.
+  event.dataTransfer.dropEffect = 'copy';
+});
+
+dropArea4.addEventListener('drop', (event) => {
+    
+  event.stopPropagation();
+  event.preventDefault();
+    
+  const fileList = event.dataTransfer.files;
+  var selectedFile = fileList.item(0);
+    
+  var imgtag = document.getElementById("testImage4");
+    
+  const reader = new FileReader();
+    
+  reader.addEventListener('load', (event) => {
+    imgtag.src = event.target.result;
+  });
+    
+  reader.readAsDataURL(selectedFile);
+    
+});    
+
+dropArea5.addEventListener('dragover', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  // Style the drag-and-drop as a "copy file" operation.
+  event.dataTransfer.dropEffect = 'copy';
+});
+
+dropArea5.addEventListener('drop', (event) => {
+    
+  event.stopPropagation();
+  event.preventDefault();
+    
+  const fileList = event.dataTransfer.files;
+  var selectedFile = fileList.item(0);
+    
+  var imgtag = document.getElementById("testImage5");
+    
+  const reader = new FileReader();
+    
+  reader.addEventListener('load', (event) => {
+    imgtag.src = event.target.result;
+  });
+    
+  reader.readAsDataURL(selectedFile);
+    
+});    
+
+
 </script>
