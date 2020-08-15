@@ -4,7 +4,7 @@
     
 <font size="50" color="red">
     
-<div>The ACL Ear - Hear The Difference - 25</div>  
+<div>The ACL Ear - Hear The Difference - 26</div>  
     
 <br/>
     
@@ -260,9 +260,9 @@ function onFileSelectedTest(event) {
       imgtag = document.getElementById("testImage" + i);
       imgtag.title = selectedFile.name;
 
-      reader.onload = function(event) {
+      //reader.onload = function(event) {
         imgtag.src = event.target.result;
-      };
+      //};
 
       reader.readAsDataURL(selectedFile); 
         
