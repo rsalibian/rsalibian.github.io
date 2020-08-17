@@ -2,25 +2,25 @@
     
 <br/><br/>
     
-<font size="50" color="red">
+<font size="40" color="red">
     
-<div>The ACL Ear - Hear The Difference - 59</div>  
+<div>The ACL Ear - Hear The Difference</div>  
+    
+</font>
     
 <br/>
     
-<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Listen Now" onclick="predictFile2()" />
+<font size="20" color="blue">    
     
-&nbsp;
-    
-<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Compare Normal" onclick="predictFileCompareNormal()" />
-    
-&nbsp;
-    
-<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Compare Abnormal" onclick="predictFileCompareAbnormal()" />
-    
-</br>
+<label>Probability of ACL Tear:</label>&nbsp;&nbsp;<label id="resultLabel"></label>
     
 </font>
+    
+<br/><br/><br/>
+    
+<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="Listen Now" onclick="predictFile2()" />
+    
+<br/>
 
 <br/><br/>
 
@@ -36,25 +36,19 @@
         <img id="testImage1" height="300" width="300">
     </td>
     
-    <td>
-        <img id="testImage2" height="300" width="300">
-    </td>
-    
 </tr>
     
 <tr>
     
-    <td>       
-        <img id="testImage3" height="300" width="300">
+    <td>      
+        <img id="testImage2" height="300" width="300">
+        
     </td>
     
     <td>
-        <img id="testImage4" height="300" width="300">
+        <img id="testImage3" height="300" width="300">
     </td>    
     
-    <td>
-        <img id="testImage5" height="300" width="300">
-    </td>
     
 </tr>
     
@@ -62,7 +56,12 @@
 
 <br/><br/>
 
-<label for="cars">Normal ACL Case:</label>
+<table>
+
+<tr>
+    
+    <td>
+        
 
 <select name="normalACL" id="normalACL">
   <option value="case1">Case 1</option>
@@ -71,13 +70,21 @@
   <option value="case4">Case 4</option>
   <option value="case5">Case 5</option>
   <option value="case6">Case 6</option>
-  <option value="case7">Case 7</option>
-  <option value="case8">Case 8</option>
 </select>
+    
+    </td>
+    
+    <td>
+    
+    <input type="button" style="font-size : 12px; width: 300px; height: 50px;" value="Compare Normal" onclick="predictFileCompareNormal()" />
+    </td>
 
-<br/><br/>
-
-<label for="cars">Abnormal ACL Case:</label>
+</tr>
+    
+<tr>
+    
+    <td>
+    
 
 <select name="abnormalACL" id="abnormalACL">
   <option value="case1">Case 1</option>
@@ -88,7 +95,34 @@
   <option value="case6">Case 6</option>
   <option value="case7">Case 7</option>
   <option value="case8">Case 8</option>
+  <option value="case9">Case 9</option>
+  <option value="case10">Case 10</option>
+  <option value="case11">Case 11</option>
+  <option value="case12">Case 12</option>
+  <option value="case13">Case 13</option>
+  <option value="case14">Case 14</option>
+  <option value="case15">Case 15</option>
 </select>
+    </td>
+    
+    <td>
+    
+    <input type="button" style="font-size : 12px; width: 300px; height: 50px;" value="Compare Abnormal" onclick="predictFileCompareAbnormal()" />
+        
+    </td>
+    
+    
+    
+    </tr>
+
+
+</table>
+
+
+
+<br/><br/>
+
+
 
 <br/><br/><br/>
     
@@ -108,11 +142,14 @@
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
 
-    const URL = "https://teachablemachine.withgoogle.com/models/yUL3T8ZKV/"; 
+    const URL = "https://teachablemachine.withgoogle.com/models/yUL3T8ZKV/";
     
-    let model, webcam, labelContainer, maxPredictions, probNumber, ogNumber;
+    let model, webcam, labelContainer, maxPredictions;
     
     let probNumber2 = 0;
+    
+    let probNumberAbnormal = 0;
+    let probNumberNormal = 0;
     
     let normalCaseNumber = "case1";    
     let abnormalCaseNumber = "case1";    
@@ -121,17 +158,12 @@
     const dropArea1 = document.getElementById('testImage1');    
     
     const dropArea2 = document.getElementById('testImage2');
-    const dropArea3 = document.getElementById('testImage3');    
-    
-    const dropArea4 = document.getElementById('testImage4');
-    const dropArea5 = document.getElementById('testImage5');    
+    const dropArea3 = document.getElementById('testImage3');      
     
     
     async function init() {
         
         document.getElementById("label-container").style.display = "none";
-        
-        //document.getElementById("testImage").style.display = "none";
         
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
@@ -150,34 +182,15 @@
         await predict();
         window.requestAnimationFrame(loop);
     }
-
-    async function predict() {
-        // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        } 
-              
-        ogNumber = prediction[1].probability.toFixed(2); 
-        
-        probNumber = (prediction[1].probability.toFixed(2)) * 1000;    
-        
-        probNumber2 = (prediction[1].probability.toFixed(2)) * 100;      
-    }
     
     
      async function predictFileCompareNormal() {
-         
-        var img1;
         
-        for (let i = 0; i < 25; i++) {
+        for (let i = 1; i < 5; i++) {
             
-        img1 = new Image();
-        img1.src = "/normalACL/" + document.getElementById("normalACL").value + "/" + i + ".bmp";
-        
-        //alert("/normalACL/" + document.getElementById("normalACL").value + "/" + i + ".bmp");
+        var img1 = new Image();
+
+        img1.src = "normalACL/" + document.getElementById("normalACL").value + "/" + i + ".bmp";
          
         const prediction = await model.predict(img1);
          
@@ -187,26 +200,27 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-       probNumber2 = probNumber2 + (prediction[0].probability.toFixed(2)) * 100;
+       probNumber2 = probNumber2 + (prediction[1].probability.toFixed(2)) * 1000;
             
        }
      
-        alert(probNumber2/6);
+        alert(probNumber2/5);
      
-        playNow(probNumber2/6);
+        playNow(probNumber2/5);
+         
+        probNumber2 = 0;
+         
+        document.getElementById('resultLabel').innerHTML = ""; 
          
      }
     
      async function predictFileCompareAbnormal() {
-         
-        var img1;
         
-        for (let i = 0; i < 25; i++) {
+        for (let i = 1; i < 5; i++) {
             
-        img1 = new Image();
-        img1.src = "/abnormalACL/" + document.getElementById("abnormalACL").value + "/" + i + ".bmp";
-        
-        //alert("/normalACL/" + document.getElementById("abnormalACL").value + "/" + i + ".bmp");
+        var img1 = new Image();
+ 
+        img1.src = "abnormalACL/" + document.getElementById("abnormalACL").value + "/" + i + ".bmp";
          
         const prediction = await model.predict(img1);
          
@@ -216,21 +230,27 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-       probNumber2 = probNumber2 + (prediction[0].probability.toFixed(2)) * 100;
+       probNumber2 = probNumber2 + (prediction[0].probability.toFixed(2)) * 10000;
             
        }
+         
+         
+        alert((probNumber2/5) - 100);
      
-        alert(probNumber2/6);
-     
-        playNow(probNumber2/6);
+        playNow((probNumber2/5) - 100);
+         
+        probNumber2 = 0;
+         
+        document.getElementById('resultLabel').innerHTML = ""; 
+        
          
      }    
     
      async function predictFile2() {
             
-        var img1;
+        //var img1;
         
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 4; i++) {
             
         img1 = new Image();
         img1.src = document.getElementById("testImage" + i).src;   
@@ -243,13 +263,49 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         } 
              
-       probNumber2 = probNumber2 + (prediction[0].probability.toFixed(2)) * 100;
+       probNumberAbnormal = probNumberAbnormal + (prediction[0].probability.toFixed(2)) * 100;
+            
+       probNumberNormal = probNumberNormal + (prediction[1].probability.toFixed(2)) * 1000;
             
        }
+         
+        if(probNumberNormal > probNumberAbnormal){
+           
+           //alert((probNumberNormal-probNumberAbnormal)/4);
      
-        //alert(probNumber2/6);
+           playNow((probNumberNormal-probNumberAbnormal)/4);
+            
+           if ( (((probNumberNormal-probNumberAbnormal)/4) - 990) < 0)
+               
+               {
+              
+               
+                  document.getElementById('resultLabel').innerHTML = " 0 %";
+               }
+               
+            
+           else{
+               
+                document.getElementById('resultLabel').innerHTML = (((probNumberNormal-probNumberAbnormal)/4) - 990) + " %";
+            
+               }
+            
+           }
+         
+        else{
+           
+           //alert((probNumberAbnormal-probNumberNormal)/4);
      
-        playNow(probNumber2/6);
+           playNow((probNumberAbnormal-probNumberNormal)/4);
+            
+           document.getElementById('resultLabel').innerHTML = ((probNumberAbnormal-probNumberNormal)/4) + " %";
+           
+           }
+        
+       
+            
+        probNumberNormal = 0;
+        probNumberAbnormal = 0;
         
      }    
     
@@ -378,60 +434,5 @@ dropArea3.addEventListener('drop', (event) => {
     
 });     
     
-    
-dropArea4.addEventListener('dragover', (event) => {
-  event.stopPropagation();
-  event.preventDefault();
-  // Style the drag-and-drop as a "copy file" operation.
-  event.dataTransfer.dropEffect = 'copy';
-});
-
-dropArea4.addEventListener('drop', (event) => {
-    
-  event.stopPropagation();
-  event.preventDefault();
-    
-  const fileList = event.dataTransfer.files;
-  var selectedFile = fileList.item(0);
-    
-  var imgtag = document.getElementById("testImage4");
-    
-  const reader = new FileReader();
-    
-  reader.addEventListener('load', (event) => {
-    imgtag.src = event.target.result;
-  });
-    
-  reader.readAsDataURL(selectedFile);
-    
-});    
-
-dropArea5.addEventListener('dragover', (event) => {
-  event.stopPropagation();
-  event.preventDefault();
-  // Style the drag-and-drop as a "copy file" operation.
-  event.dataTransfer.dropEffect = 'copy';
-});
-
-dropArea5.addEventListener('drop', (event) => {
-    
-  event.stopPropagation();
-  event.preventDefault();
-    
-  const fileList = event.dataTransfer.files;
-  var selectedFile = fileList.item(0);
-    
-  var imgtag = document.getElementById("testImage5");
-    
-  const reader = new FileReader();
-    
-  reader.addEventListener('load', (event) => {
-    imgtag.src = event.target.result;
-  });
-    
-  reader.readAsDataURL(selectedFile);
-    
-});    
-
 
 </script>
