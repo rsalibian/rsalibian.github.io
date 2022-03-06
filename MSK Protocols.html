@@ -1,0 +1,343 @@
+<body style="background-color:lightgray;" onload="init()">
+    
+<br/><br/>
+    
+<font size="30" color="red">
+    
+<div>OVMC MRI PROTOCOL ENGINE</div>  
+
+</font>
+    
+<br/><br/>
+
+<label id="patientIDlabel" style="font-size : 35px; width: 300px; height: 50px">Patient MR#:</label>
+
+<input type="text" name="inputbox" id="inputbox" value="" style="font-size : 35px; width: 300px; height: 50px">
+
+<label id="idmissing" style="color: red; font-size : 35px; width: 300px; height: 50px">*</label>
+
+<br/><br/>
+
+<label for="refMDlabel" style="font-size : 35px; width: 300px; height: 50px">Referring Provider:</label>
+
+<select name="refMD" id="refMD" onchange="changeRefMDFunction()" style="font-size : 30px; width: 600px; height: 50px">
+
+  <option value="Select Provider">Select Provider</option>
+
+  <option value="rsalibian@dhs.lacounty.gov">Salibian, Raffi, Alex</option>
+  <option value="acooperman@dhs.lacounty.gov">Cooperman, Andrea</option>
+  <option value="ocaniga@dhs.lacounty.gov">Caniga, Oliver</option>
+  <option value="psalama@dhs.lacounty.gov">Salama, Paul</option>
+  <option value="akrekoryohanian@dhs.lacounty.gov">Ohanian, Artin Krekory</option>
+  <option value="olmelamed@dhs.lacounty.gov">Melamed, Oleg</option>
+  <option value="fochoa@dhs.lacounty.gov">Ochoa, Fabiola</option>
+  <option value="ggalustanian@dhs.lacounty.gov">Galustanian, Gayane</option>
+  <option value="gshahin@dhs.lacounty.gov">Shahin, George</option>
+  <option value="kpettersen@dhs.lacounty.gov">Pettersen, Kenneth</option>
+  <option value="ssoleymani2@dhs.lacounty.gov">Soleymani, Sahar</option>
+  <option value="yreznikova@dhs.lacounty.gov">Reznikova, Yuliya</option>
+  <option value="ccusi@dhs.lacounty.gov">Cusi, Catherine, Catam</option>
+  <option value="mhauptschein@dhs.lacounty.gov">Hauptschein, Martin</option>
+
+</select> 
+
+<label id="providormissing" style="color: red; font-size : 35px; width: 300px; height: 50px">*</label>
+
+<br/><br/>
+
+<label for="customPro" style="font-size : 35px; width: 300px; height: 50px">Referring Provider:</label>
+
+<input type="text" name="blankProviderbox" id="blankProviderbox" value="" style="font-size : 35px; width: 600px; height: 50px">
+
+<br/><br/>
+
+<label for="customPro" style="font-size : 35px; width: 300px; height: 50px">Referring Provider E-Mail:</label>
+
+<input type="text" name="blankProviderbox2" id="blankProviderbox2" value="" style="font-size : 35px; width: 600px; height: 50px">
+
+<br/><br/><br/><br/>
+
+<label style="font-size : 35px">Step 1: Prior radiograph from the last nine months?</label>
+
+<br/><br/>
+
+<input type="button" style="font-size : 30px; width: 450px; height: 50px;" value="Send No Radiograph E-Mail" onclick="sendMail2()" />
+
+<br/><br/>
+
+<img id="testImage0" height="500" width="500">   
+
+
+<br/><br/>
+
+<label style="font-size : 35px">Step 2: Reason for exam (mass, tumor, lump, sarcoma, osteomyelitis)?:</label>
+
+<br/><br/>
+
+<input type="text" name="clinicalinputbox" id="clinicalinputbox" value="" style="font-size : 35px; width: 1000px; height: 50px">
+
+<label id="historymissing" style="color: red; font-size : 35px; width: 300px; height: 50px">*</label>
+
+<br/><br/><br/><br/>
+
+<label style="font-size : 35px">Step 3: MRI Safety Checklist Completed?</label>
+
+<input type="button" style="font-size : 30px; width: 300px; height: 50px;" value="YES" onclick="ReadyToGo()" />
+
+<br/><br/><br/><br/>
+
+<label style="font-size : 35px">Step 4:</label>
+
+<input type="button" id = "protobutton" disabled = "true" style="font-size : 30px; width: 300px; height: 50px;" value="Get Protocol Now" onclick="predictFile2()" />
+
+<input type="button" id = "senddenialbutton" disabled = "true" style="font-size : 30px; width: 300px; height: 50px;" value="Send Denial E-Mail" onclick="sendMail()" />
+
+<br/><br/><br/>
+
+<font size="12" color="red">
+    
+<label id="resultLabel" style="font-size : 35px">MRI PROTOCOL HERE</label>
+    
+<br/><br/>
+    
+<div id="label-container"></div>
+
+<label id="male"></label>
+    
+</font>
+   
+    
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+
+<script type="text/javascript">
+    
+    let model, labelContainer, maxPredictions;
+    
+    let probNumber2 = 0;
+    
+    let probNumberAbnormal = 0;
+    let probNumberNormal = 0;
+    
+    let normalCaseNumber = "case1";    
+    let abnormalCaseNumber = "case1";    
+    
+    const dropArea0 = document.getElementById('testImage0');
+    
+    async function init() {
+        
+        document.getElementById("label-container").style.display = "none";
+        
+        const modelURL = "https://github.com/rsalibian/rsalibian.github.io/model.json";
+        
+        model = await tf.loadLayersModel(modelURL);
+    
+        maxPredictions = model.getTotalClasses();
+
+        labelContainer = document.getElementById("label-container");
+        
+        for (let i = 0; i < maxPredictions; i++) { 
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+ 
+     async function predictFile2() {
+
+        img1 = new Image();
+        img1.src = document.getElementById("testImage0").src;   
+         
+        const prediction = await model.predict(img1);
+         
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);        
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        } 
+             
+       //MRI Approved
+       probNumberAbnormal = probNumberAbnormal + (prediction[0].probability.toFixed(2)) * 100;
+
+       
+       //MRI Denied     
+       probNumberNormal = probNumberNormal + (prediction[1].probability.toFixed(2)) * 1000;
+
+       
+       if (probNumberAbnormal > 60){
+          
+          document.getElementById('resultLabel').innerHTML = "Routine Knee MRI (AI)";
+
+       }
+
+       else{
+
+          document.getElementById('resultLabel').innerHTML = "MRI Denied. Send Denial E-Mail";
+       } 
+             
+        probNumberNormal = 0;
+        probNumberAbnormal = 0;
+
+        
+        var str = document.getElementById('clinicalinputbox').value;
+
+        if(str.includes("tumor")){
+
+            document.getElementById('resultLabel').innerHTML = "Mass Protocol With IV Contrast - Place Marker (AI)";
+
+        } 
+
+        else if (str.includes("mass")){
+
+            document.getElementById('resultLabel').innerHTML = "Mass Protocol With IV Contrast - Place Marker (AI)";
+        }
+
+        else if (str.includes("lump")){
+
+            document.getElementById('resultLabel').innerHTML = "Mass Protocol With IV Contrast - Place Marker (AI)";
+ 
+        }
+
+        else if (str.includes("lesion")){
+
+            document.getElementById('resultLabel').innerHTML = "Mass Protocol With IV Contrast - Place Marker (AI)";
+       
+        }
+
+        else if (str.includes("osteomyelitis")){
+
+            document.getElementById('resultLabel').innerHTML = "Osteomyelitis Protocol (AI)";
+         
+        }
+
+        
+     }    
+    
+       async function ReadyToGo() {
+          document.getElementById("protobutton").disabled = false; 
+          document.getElementById("senddenialbutton").disabled = false; 
+       }
+
+       async function sendMail() {
+
+         var e = document.getElementById("refMD");
+	     var strUser = e.options[e.selectedIndex].text;
+
+         var refMDEMail = e.options[e.selectedIndex].value;
+
+         e = document.getElementById("inputbox");
+	     var strUser2 = e.value;
+
+         var referMD = "Dear " + strUser + ", ";
+
+
+         var KneeDenied = "This patient's knee MRI was denied because there is moderate to severe degenerative disease of the knee. It is well established in the radiology and orthopedic surgery literature that a knee MRI does not change patient management with this degree of osteoarthritis. MRI is given a score of 1 (usually not appropriate) by the American College of Radiology appropriateness criteria in cases where the x-ray shows findings of moderate to severe degenerative disease. This patient may need to be evaluated by orthopedic surgery. The patient may be managed with joint injections and physical therapy.  If for some reason we are not understanding all the issues surrounding the patient's care we are happy to speak with you. If there are any further questions or concerns, please contact Dr. Salibian (rsalibian@dhs.lacounty.gov) or Dr. Roth (aroth@dhs.lacounty.gov) at any time.";
+
+        
+         var finalT = referMD + '%0D%0A' + '%0D%0A' + KneeDenied;
+         
+         var finalT2 = finalT + '%0D%0A' + '%0D%0A' + "Sincerely,";
+
+         var finalT3 = finalT2 +'%0D%0A' + "OVMC MSK Radiology";
+
+         //window.open('mailto:' + refMDEMail + '; rsalibian@dhs.lacounty.gov?subject=Knee MRI Denied - MR#: ' + strUser2 + '&body=' + finalT3);
+
+         window.open('mailto:' + 'rsalibian@dhs.lacounty.gov?subject=Knee MRI Denied - MR#: ' + strUser2 + '&body=' + finalT3);
+
+
+        }
+
+
+       async function sendMail2() {
+
+
+        var value = document.getElementById('inputbox').value;
+        
+        if (value === '') {
+            
+            return;
+        }
+ 
+         var referMD;
+         var refMDEMail;
+
+         var ePID = document.getElementById("inputbox");
+	     var strUser = ePID.value;
+
+         var eREFMDDrop1 = document.getElementById("refMD");
+	    
+
+         if (eREFMDDrop1.options[eREFMDDrop1.selectedIndex].text != "Select Provider"){
+
+            var eREFMDDrop = document.getElementById("refMD");
+	    
+            referMD = "Dear " + eREFMDDrop.options[eREFMDDrop.selectedIndex].text + ", ";
+
+            refMDEMail = eREFMDDrop.options[eREFMDDrop.selectedIndex].value;
+
+         }        
+
+         else {
+
+            var blank1 = document.getElementById("blankProviderbox");
+	        var blank2 = document.getElementById("blankProviderbox2");
+
+            referMD = "Dear " + blank1.value + ", ";
+
+            refMDEMail = blank2.value;
+
+         }
+ 
+
+
+         var KneeDenied = "This patient's MRI request has been placed on hold. The patient needs a knee radiograph prior to proceeding with the MRI. We require a radiograph of the knee within nine months of the MRI study date. Please contact the MRI scheduling staff by phone (747-210-3535), e-mial () or Orchid message when the radiograph has been completed. If for some reason we are not understanding all the issues surrounding the patient's care we are happy to speak with you. Please contact Dr. Salibian (rsalibian@dhs.lacounty.gov) or Dr. Roth (aroth@dhs.lacounty.gov) with any questions or concerns regarding this request.";
+
+         var finalT = referMD + '%0D%0A' + '%0D%0A' + KneeDenied;
+         
+         var finalT2 = finalT + '%0D%0A' + '%0D%0A' + "Sincerely,";
+
+         var finalT3 = finalT2 +'%0D%0A' + "OVMC MSK Radiology";
+
+         //window.open('mailto:' + strUser + '; rsalibian@dhs.lacounty.gov?subject=Knee MRI Placed On Hold - MR#: ' + strUser2 + '&body=' + finalT3);
+
+         window.open('mailto:' + refMDEMail + '?subject=Knee MRI Placed On Hold - MR#: ' + strUser + '&body=' + finalT3);
+
+}
+
+     async function changeRefMDFunction(){
+
+         document.getElementById('blankProviderbox').value = "";
+         document.getElementById('blankProviderbox2').value = "";
+
+     }
+
+    
+dropArea0.addEventListener('dragover', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  // Style the drag-and-drop as a "copy file" operation.
+  event.dataTransfer.dropEffect = 'copy';
+});
+
+dropArea0.addEventListener('drop', (event) => {
+    
+  event.stopPropagation();
+  event.preventDefault();
+    
+  const fileList = event.dataTransfer.files;
+  var selectedFile = fileList.item(0);
+    
+  var imgtag = document.getElementById("testImage0");
+    
+  const reader = new FileReader();
+    
+  reader.addEventListener('load', (event) => {
+    imgtag.src = event.target.result;
+  });
+    
+  reader.readAsDataURL(selectedFile);
+    
+});
+    
+</script>
