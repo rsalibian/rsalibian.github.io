@@ -4,7 +4,7 @@
     
 <font size="30" color="red">
     
-<div>OVMC MRI PROTOCOL ENGINE 17</div>  
+<div>OVMC MRI PROTOCOL ENGINE 18</div>  
 
 </font>
     
@@ -126,16 +126,13 @@
     
     const dropArea0 = document.getElementById('testImage0');
 	
-    loadModel();
-	
-    async function loadModel() {
-	    
-        cont model = await tf.loadLayersModel('model.json');
-	    
-        console.log("model is loaded");
-	    
+    function loadModel(){
+    const model = tf.loadLayersModel('model.json');
+    console.log("model is loaded");
+    return model;
     }
-    
+	
+    const model = loadModel();
   
      async function predictFile2() {
 
