@@ -4,7 +4,7 @@
     
 <font size="30" color="red">
     
-<div>OVMC MRI PROTOCOL ENGINE</div>  
+<div>OVMC MRI PROTOCOL ENGINE 11</div>  
 
 </font>
     
@@ -134,13 +134,13 @@
         
         model = await tf.loadLayersModel(modelURL);
     
-        maxPredictions = model.getTotalClasses();
+        //maxPredictions = model.getTotalClasses();
 
-        labelContainer = document.getElementById("label-container");
+        //labelContainer = document.getElementById("label-container");
         
-        for (let i = 0; i < maxPredictions; i++) { 
-            labelContainer.appendChild(document.createElement("div"));
-        }
+        //for (let i = 0; i < maxPredictions; i++) { 
+            //labelContainer.appendChild(document.createElement("div"));
+        //}
     }
 
  
