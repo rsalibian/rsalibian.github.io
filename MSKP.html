@@ -4,7 +4,7 @@
     
 <font size="30" color="red">
     
-<div>OVMC MRI PROTOCOL ENGINE 12</div>  
+<div>OVMC MRI PROTOCOL ENGINE 13</div>  
 
 </font>
     
@@ -133,6 +133,8 @@
         const modelURL = "model.json";
         
         model = await tf.loadLayersModel(modelURL);
+	    
+        console.log("model is loaded");
     
         //maxPredictions = model.getTotalClasses();
 
