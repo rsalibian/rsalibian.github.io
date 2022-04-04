@@ -1,0 +1,41 @@
+<html>
+
+<head>
+
+<title>OVMC Radiology</title>
+
+<script>
+
+window.addEventListener('deviceorientation', handleOrientation);
+
+function handleOrientation(event) {
+  const alpha = event.alpha;
+  const beta = event.beta;
+  const gamma = event.gamma;
+  // Do stuff...
+    
+  document.getElementById('label1').innerHTML = alpha;   
+  
+    document.getElementById('label2').innerHTML = beta; 
+    
+    document.getElementById('label2').innerHTML = gamma; 
+}
+ 
+</script>
+
+</head>
+
+<body>
+    
+   <label>alpha:</label>&nbsp;&nbsp;<label id="lable1"></label>
+    
+    <br/>
+    
+    
+   <label>beta:</label>&nbsp;&nbsp;<label id="label2"></label>
+    
+      <br/>
+    
+   <label>gamma:</label>&nbsp;&nbsp;<label id="label3"></label>
+    
+</body>
