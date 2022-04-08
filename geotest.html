@@ -3,7 +3,7 @@
 
 <head>
 
-<title>OVMC Radiology 6</title>
+<title>OVMC Radiology 7</title>
 
 <script>
 
@@ -20,27 +20,21 @@
     // Do something awesome.
     document.getElementById("label1").innerHTML = y;
   
-    if (y > - 2 && y < 2){
+    if (y > -2 && y < 2){
 
-       playPause();
+       myVideo.play();
 
     }
-  
+
+    else {
+     
+       myVideo.pause(); 
+    }
     
 }
 
 window.addEventListener("devicemotion", handleMotionEvent, true);
- 
- 
 
- 
-function playPause() { 
-  if (myVideo.paused) 
-    myVideo.play(); 
-  else 
-    myVideo.pause(); 
-} 
- 
 
 </script>
 
