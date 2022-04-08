@@ -6,16 +6,18 @@
 
 <script>
 
-window.addEventListener('deviceorientation', handleOrientation);
 
-function handleOrientation(event) {
- 
-  const x = event.alpha;
-  const y = event.beta;
-  const z = event.gamma;
- 
+ function handleMotionEvent(event) {
+
+    var x = event.accelerationIncludingGravity.x;
+    var y = event.accelerationIncludingGravity.y;
+    var z = event.accelerationIncludingGravity.z;
+
+    // Do something awesome.
 }
- 
+
+window.addEventListener("devicemotion", handleMotionEvent, true);
+
 </script>
 
 </head>
