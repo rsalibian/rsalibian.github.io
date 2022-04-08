@@ -12,13 +12,30 @@
     var x = event.accelerationIncludingGravity.x;
     var y = event.accelerationIncludingGravity.y;
     var z = event.accelerationIncludingGravity.z;
+  
+    var myVideo = document.getElementById("video1"); 
+  
 
     // Do something awesome.
-document.getElementById("label1").innerHTML = y;
+    document.getElementById("label1").innerHTML = y;
+  
+    
+  
     
 }
 
 window.addEventListener("devicemotion", handleMotionEvent, true);
+ 
+ 
+
+ 
+function playPause() { 
+  if (myVideo.paused) 
+    myVideo.play(); 
+  else 
+    myVideo.pause(); 
+} 
+ 
 
 </script>
 
