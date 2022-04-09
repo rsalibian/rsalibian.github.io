@@ -3,9 +3,22 @@
 
 <head>
 
-<title>OVMC Radiology 7</title>
+<title>OVMC Radiology 8</title>
 
 <script>
+ 
+ 
+ function handleOrientation(event) {
+  var absolute = event.absolute;
+  var alpha    = event.alpha;
+  var beta     = event.beta;
+  var gamma    = event.gamma;
+  // Do stuff with the new orientation data
+  
+  document.getElementById("label2").innerHTML = beta;
+  
+}
+ 
 
 
  function handleMotionEvent(event) {
@@ -34,6 +47,8 @@
 }
 
 window.addEventListener("devicemotion", handleMotionEvent, true);
+
+window.addEventListener("deviceorientation", handleOrientation, true);
 
 
 </script>
