@@ -7,20 +7,6 @@
 
 <script>
  
-
-
-function handleOrientation(event) {
-  const alpha = event.alpha;
-  const beta = event.beta;
-  const gamma = event.gamma;
-  // Do stuff...
- 
-  document.getElementById("label2").innerHTML = beta;
- 
-}
- 
-
-
  function handleMotionEvent(event) {
 
     var x = event.accelerationIncludingGravity.x;
@@ -57,24 +43,13 @@ window.addEventListener("deviceorientation", handleOrientation, true);
 
 <body>
  
- <table>
-  
-  <tr>
-   
-  <label id="label1" style="transform:rotate(90deg)"></label>
-   
-  </tr>
-  
-  <tr>
-   
-     <video id="video1" width="1800" height="1800" style="transform:rotate(90deg)">
-       <source src="case1.mp4" type="video/mp4">
-     </video>
-   
-  </tr>
-  
- </table>
+ <div style="transform:rotate(90deg)"><label id="label1"></label></div>
  
+   <video id="video1" width="1900" height="1900" style="transform:rotate(90deg)">
+       <source src="case1.mp4" type="video/mp4">
+   </video>
+   
+
 </body>
  
 </html>
