@@ -7,6 +7,14 @@
 
 <script>
  
+ let imageNumber = 1;
+ 
+ function myFunction(){
+  
+  imageNumber = imageNumber + 1;
+  
+ }
+ 
  function handleMotionEvent(event) {
 
     var x = event.accelerationIncludingGravity.x;
@@ -22,6 +30,7 @@
     if (y > -2 && y < 2){
 
        //myVideo.play();
+       myFunction();
 
     }
 
@@ -39,7 +48,7 @@ window.addEventListener("devicemotion", handleMotionEvent, true);
 
 </head>
 
-<body style="background-color:black;">
+<body onload="myFunction()" style="background-color:black;">
  
    <label id="label1" style="color: red"></label>
  
