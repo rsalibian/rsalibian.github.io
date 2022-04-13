@@ -57,15 +57,24 @@ window.addEventListener("deviceorientation", handleOrientation, true);
 
 <body>
  
-
-  <video id="video1" width="1500" height="1500" style="transform:rotate(90deg)">
-    <source src="case1.mp4" type="video/mp4">
-  </video>
-
+ <table style="transform:rotate(90deg)">
+  
+  <tr>
+   
+     <label>alpha:</label>&nbsp;&nbsp;<label id="label1"></label>
+   
+  </tr>
+  
+  <tr>
+   
+     <video id="video1" width="2000" height="2000">
+       <source src="case1.mp4" type="video/mp4">
+     </video>
+   
+  </tr>
+  
+ </table>
  
-  <label>alpha:</label>&nbsp;&nbsp;<label id="label1"></label>
-    
-    
 </body>
  
 </html>
