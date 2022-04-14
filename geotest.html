@@ -9,7 +9,7 @@
  
  window.addEventListener("devicemotion", handleMotionEvent, true);
  
-
+ let currentState = "GO";
  
  let imageNumber = 1;
  
@@ -19,6 +19,8 @@
    imageNumber = imageNumber + 1;
    
    document.getElementById("currentImage").src = "case1/" + imageNumber + ".jpg";
+  
+   currentState = "GO";
   
  }
  
@@ -34,13 +36,19 @@
   
     if (y > -2 && y < 2){
      
-        let myVar = setInterval(nextImage, 2000);
+        if (currentState = "STOP"){
+     
+          let myVar = setInterval(nextImage, 2000);
+         
+        }
   
     }
 
     else {
      
        clearInterval(myVar);
+       
+       currentState = "STOP";
      
     }
     
