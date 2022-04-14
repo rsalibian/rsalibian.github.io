@@ -7,21 +7,12 @@
 
 <script>
  
- let currentState = 1;
+ window.addEventListener("devicemotion", handleMotionEvent, true);
+ 
+
  
  let imageNumber = 1;
  
- function myFunction(){
-  
-  while (currentState = 2){
-   
-   nextImage();
-   
-   //setInterval(nextImage, 2000);
-  
-  }
-   
- }
  
  function nextImage(){
   
@@ -43,19 +34,22 @@
   
     if (y > -2 && y < 2){
      
-       currentState = 2;
+        let myVar = setInterval(nextImage, 2000);
   
     }
 
     else {
      
-       currentState = 1;
+       clearInterval(myVar);
+     
     }
     
 }
 
-window.addEventListener("devicemotion", handleMotionEvent, true);
 
+
+
+ 
 
 </script>
 
