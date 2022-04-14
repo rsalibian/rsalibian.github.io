@@ -20,8 +20,6 @@
    
    document.getElementById("currentImage").src = "case1/" + imageNumber + ".jpg";
   
-   currentState = "GO";
-  
  }
  
  function handleMotionEvent(event) {
@@ -36,19 +34,13 @@
   
     if (y > -2 && y < 2){
      
-        if (currentState = "STOP"){
-     
-          let myVar = setInterval(nextImage, 2000);
-         
-        }
+      
   
     }
 
     else {
      
-       clearInterval(myVar);
-       
-       currentState = "STOP";
+  
      
     }
     
@@ -61,7 +53,7 @@
 
 </script>
 
-<body style="background-color:black;">
+<body style="background-color:black;" onload="nextImage()">
  
    <label id="label1" style="color: red"></label>
  
