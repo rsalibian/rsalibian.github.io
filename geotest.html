@@ -7,18 +7,30 @@
 
 <script>
  
+ let currentState = 0;
+ 
  let imageNumber = 1;
  
  function myFunction(){
   
-  imageNumber = imageNumber + 1;
+  while (currentState = 1){
    
-  document.getElementById("currentImage").src = "case1/" + imageNumber + ".jpg";
+   setTimeout(nextImage(), 10000);
+  
+  }
    
-  console.log("test4");
+ }
+ 
+ function nextImage(){
+  
+   imageNumber = imageNumber + 1;
    
-  console.log(imageNumber);
+   document.getElementById("currentImage").src = "case1/" + imageNumber + ".jpg";
    
+   console.log("test4");
+   
+   console.log(imageNumber);
+  
  }
  
  function handleMotionEvent(event) {
@@ -37,14 +49,14 @@
 
        //myVideo.play();
      
-       setTimeout(myFunction(), 10000);
-      
-
+       currentState = 1;
+  
     }
 
     else {
      
-       //myVideo.pause(); 
+       //myVideo.pause();
+       currentState = 0;
     }
     
 }
