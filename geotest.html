@@ -7,7 +7,7 @@
 
 <script>
  
- let currentState = 0;
+ let currentState = 1;
  
  let imageNumber = 1;
  
@@ -41,13 +41,13 @@
   
     if (y > -2 && y < 2){
      
-       currentState = 1;
+       currentState = 2;
   
     }
 
     else {
      
-       currentState = 0;
+       currentState = 1;
     }
     
 }
@@ -57,8 +57,6 @@ window.addEventListener("devicemotion", handleMotionEvent, true);
 
 </script>
 
-</head>
-
 <body style="background-color:black;">
  
    <label id="label1" style="color: red"></label>
@@ -66,7 +64,6 @@ window.addEventListener("devicemotion", handleMotionEvent, true);
    <br/><br/>
  
    <img id="currentImage" src="test1.jpg" width="1000" height="1000" style="transform:rotate(90deg)">
-   
  
 </body>
  
