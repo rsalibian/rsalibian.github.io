@@ -15,7 +15,7 @@
   
   while (currentState = 1){
    
-   nextImage();
+   setInterval(nextImage, 2000);
   
   }
    
@@ -26,10 +26,6 @@
    imageNumber = imageNumber + 1;
    
    document.getElementById("currentImage").src = "case1/" + imageNumber + ".jpg";
-   
-   console.log("test4");
-   
-   console.log(imageNumber);
   
  }
  
