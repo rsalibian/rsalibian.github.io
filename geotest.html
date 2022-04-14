@@ -14,7 +14,9 @@
   while (imageNumaber < 15) {
  
   imageNumber = imageNumber + 1;
-  document.getElementById("currentImage").src = "test2.jpg";
+   
+  document.getElementById("currentImage").src = imageNumber + ".jpg";
+  document.getElementById("keyImage").src = "test1.jpg"; 
    
   }
   
@@ -62,7 +64,8 @@ window.addEventListener("devicemotion", handleMotionEvent, true);
    <br/><br/>
  
    <img id="currentImage" src="test1.jpg" width="1000" height="1000" style="transform:rotate(90deg)">
-
+   <img id="keyImage" src="test1.jpg" width="1000" height="1000" style="transform:rotate(90deg)">
+ 
 </body>
  
 </html>
