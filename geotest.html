@@ -11,9 +11,15 @@
  
  let imageNumber = 1;
  
- function StartImages(){
+ let statusNow = 2;
+ 
+ function StartImages(statusNow){
   
-   setInterval(nextImage, 2000);
+   if (statusNow = 1){
+  
+     setInterval(nextImage, 1000);
+    
+   }
   
  }
  
@@ -38,13 +44,13 @@
   
     if (y > -2 && y < 2){
      
-      
+      statusNow = 1;
   
     }
 
     else {
      
-  
+       statusNow = 2;
      
     }
     
