@@ -14,19 +14,9 @@
  let statusNow = 2;
  
  function StartImages(){
-  
-     if (statusNow = 2){
-      
-        return
-      
-     }
-  
-     else{
       
        setInterval(nextImage, 1000);
       
-     }
-  
  }
  
  
@@ -67,7 +57,7 @@
 
 </script>
 
-<body style="background-color:black;">
+<body style="background-color:black;" onload="StartImages()>
  
    <label id="label1" style="color: red"></label>
  
