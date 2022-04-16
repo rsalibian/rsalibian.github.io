@@ -11,11 +11,26 @@
  
  let imageNumber = 1;
  
+ let currentImage = 1;
+ 
+ let scrolling = 1:
+ 
  let statusNow = 2;
  
  function StartImages(){
+  
+     if (scrolling = 1){
       
-       setInterval(nextImage, 800);
+       while (currentImage < 16){
+      
+         setInterval(nextImage, 800);
+        
+       }
+      
+       scrolling = 2;
+      
+      
+     }
       
  }
  
