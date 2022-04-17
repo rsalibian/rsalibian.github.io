@@ -9,39 +9,7 @@
  
  window.addEventListener("devicemotion", handleMotionEvent, true);
  
- let imageNumber = 1;
- 
- let currentImage = 1;
- 
- let scrolling = 1:
- 
- let statusNow = 2;
- 
- function StartImages(){
-  
-     if (scrolling = 1){
-      
-       while (currentImage < 16){
-      
-         setInterval(nextImage, 800);
-        
-       }
-      
-       scrolling = 2;
-      
-      
-     }
-      
- }
- 
- 
- function nextImage(){
-  
-   imageNumber = imageNumber + 1;
-   
-   document.getElementById("currentImage").src = "case1/" + imageNumber + ".jpg";
-  
- }
+ var myVideo = document.getElementById("myVideo"); 
  
  function handleMotionEvent(event) {
 
@@ -56,15 +24,13 @@
   
     if (y > -2 && y < 2){
      
-      statusNow = 1;
+       myVideo.play(); 
   
     }
 
     else {
      
-      document.getElementById("currentImage").src = "test1.jpg";
-     
-      statusNow = 2;
+      myVideo.pause(); 
      
     }
     
@@ -74,18 +40,17 @@
 
 </script>
 
-<body style="background-color:black;" onload="StartImages()">
+<body style="background-color:black;">
  
    <label id="label1" style="color: red"></label>
  
    <br/><br/>
  
-     <video id="myVideo" style="transform:rotate(90deg)" width="320" height="240" controls>
-       <source src="movie.mp4" type="video/mp4">
+     <video id="myVideo" style="transform:rotate(90deg)" width="800" height="800" controls>
+       <source src="movie1.mp4" type="video/mp4">
        Your browser does not support the video tag.
      </video>
  
-   <img id="currentImage" src="test1.jpg" width="1000" height="1000" style="transform:rotate(90deg)">
  
 </body>
  
