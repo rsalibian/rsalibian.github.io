@@ -40,11 +40,18 @@
     
 }
 
-
+function testing() {
+ 
+      if (myVideo.paused){
+         myVideo.play(); 
+         console.log("play now");
+       }
+ 
+}
 
 </script>
 
-<body style="background-color:black;">
+<body style="background-color:black;" onload="testing()">
  
    <label id="label1" style="color: red"></label>
  
