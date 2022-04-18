@@ -24,13 +24,17 @@
   
     if (y > -2 && y < 2){
      
-       myVideo.play(); 
+       if (myVideo.paused){
+         myVideo.play(); 
+         console.log("play now");
+       }
   
     }
 
     else {
      
       myVideo.pause(); 
+      console.log("puase now");
      
     }
     
