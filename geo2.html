@@ -77,6 +77,16 @@
   </div>
 </footer>
 <script>
+  
+var x = document.getElementById("myVideo"); 
+
+function playVid() { 
+  x.play(); 
+} 
+
+function pauseVid() { 
+  x.pause(); 
+} 
 
 function handleOrientation(event) {
   updateFieldIfNotNull('Orientation_a', event.alpha);
@@ -100,7 +110,8 @@ function handleMotion(event) {
   updateFieldIfNotNull('Accelerometer_gx', event.accelerationIncludingGravity.x);
   updateFieldIfNotNull('Accelerometer_gy', event.accelerationIncludingGravity.y);
   updateFieldIfNotNull('Accelerometer_gz', event.accelerationIncludingGravity.z);
-
+  
+ 
   updateFieldIfNotNull('Accelerometer_x', event.acceleration.x);
   updateFieldIfNotNull('Accelerometer_y', event.acceleration.y);
   updateFieldIfNotNull('Accelerometer_z', event.acceleration.z);
@@ -116,6 +127,7 @@ function handleMotion(event) {
 let is_running = false;
 let demo_button = document.getElementById("start_demo");
 demo_button.onclick = function(e) {
+  
   e.preventDefault();
   
   // Request permission for iOS 13+ devices
