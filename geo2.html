@@ -112,7 +112,7 @@ function handleMotion(event) {
   updateFieldIfNotNull('Accelerometer_gz', event.accelerationIncludingGravity.z);
   
 
-  if (event.accelerationIncludingGravity.y > -2 && event.accelerationIncludingGravity.y < 2){
+  if (event.accelerationIncludingGravity.y < -2 && event.accelerationIncludingGravity.y > 2){
     
     pauseVid()
     
