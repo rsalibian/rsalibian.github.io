@@ -111,6 +111,13 @@ function handleMotion(event) {
   updateFieldIfNotNull('Accelerometer_gy', event.accelerationIncludingGravity.y);
   updateFieldIfNotNull('Accelerometer_gz', event.accelerationIncludingGravity.z);
   
+
+  if (event.accelerationIncludingGravity.y) > -1.5 and event.accelerationIncludingGravity.y) < 1.5){
+    
+    pauseVid()
+    
+  }
+  
  
   updateFieldIfNotNull('Accelerometer_x', event.acceleration.x);
   updateFieldIfNotNull('Accelerometer_y', event.acceleration.y);
