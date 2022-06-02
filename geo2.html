@@ -11,7 +11,7 @@
     
     <br/><br/>
       
-    <button style="height:50px;width:300px" onclick="playPause()">Next Case</button>
+    <button style="height:50px;width:300px" onclick="NextCase()">Next Case</button>
       
     <br/><br/>
       
@@ -46,6 +46,14 @@ function handleOrientation(event) {
   updateFieldIfNotNull('Orientation_a', event.alpha);
   updateFieldIfNotNull('Orientation_b', event.beta);
   updateFieldIfNotNull('Orientation_g', event.gamma);
+}
+  
+function nextCase(){
+  
+  var x = document.getElementById("myVideo"); 
+  
+  x.src="movie2.mp4";
+  
 }
 
   
