@@ -63,20 +63,7 @@ function nextCase(){
   
 function handleMotion(event) {
 
-  if (event.accelerationIncludingGravity.y > -2.5 && event.accelerationIncludingGravity.y < 1.5){
-    
-    playVid()
-    
-  }
-  
-  else
-  {
-    
-    pauseVid()
-    
-  }
-  
-  if (event.accelerationIncludingGravity.x > -2 && event.accelerationIncludingGravity.x < 1){
+  if (event.accelerationIncludingGravity.y > -2.5 && event.accelerationIncludingGravity.y < 1.5 && event.accelerationIncludingGravity.x > -2 && event.accelerationIncludingGravity.x < 1){
     
     playVid()
     
