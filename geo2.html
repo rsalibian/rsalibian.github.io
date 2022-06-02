@@ -54,11 +54,9 @@ function handleOrientation(event) {
   
 function nextCase(){
   
-  var x = document.getElementById("myVideo"); 
+  document.getElementById("mp4_src").src = "movie2.mp4";
   
-  x.src="movie2.mp4";
-  
-  x.load();
+  document.getElementById("myVideo").load();
   
 }
 
