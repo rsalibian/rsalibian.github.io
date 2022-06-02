@@ -21,10 +21,6 @@
        Your browser does not support the video tag.
     </video>    
       
-    <br/><br/>  
-      
-    <label id="timer">Time Left</label>
-      
     <div>
       
 </head>
@@ -37,7 +33,7 @@
 let is_running = false;
   
 var x = document.getElementById("myVideo"); 
-
+  
 function playVid() { 
   x.play(); 
 } 
@@ -52,8 +48,7 @@ function handleOrientation(event) {
   updateFieldIfNotNull('Orientation_g', event.gamma);
 }
 
-
-
+  
 function handleMotion(event) {
 
   if (event.accelerationIncludingGravity.y > -2.5 && event.accelerationIncludingGravity.y < 1.5){
