@@ -79,7 +79,17 @@ function NextCase(){
 
 function PrevCase(){
   
+ if (currentVideo != 1) {
+  
   currentVideo = currentVideo - 1;
+ 
+ }
+                                         
+ else {
+                                         
+  currentVideo = 1;
+                                         
+ }
                                          
   document.getElementById("mp4_src").src = "mskvid/video " + currentVideo + ".mp4";
   
