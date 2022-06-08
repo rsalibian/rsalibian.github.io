@@ -61,13 +61,16 @@ function handleOrientation(event) {
   
 function NextCase(){
                                          
- if currentVideo < totalVideos {
+ if (currentVideo < totalVideos) {
   
   currentVideo = currentVideo + 1;
+ 
+ }
                                          
  else {
                                          
   currentVideo = 1;
+                                         
  }
                                          
   document.getElementById("mp4_src").src = "/mskvid/video " + currentVideo + ".mp4";
