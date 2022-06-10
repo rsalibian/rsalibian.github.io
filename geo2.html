@@ -71,7 +71,7 @@ function HomeNow(){
   
 function NextCase(){
                                          
- if (currentVideo < totalVideos) {
+ if (currentVideo < mskvideos.length) {
   
   currentVideo = currentVideo + 1;
  
@@ -83,7 +83,7 @@ function NextCase(){
                                          
  }
                                          
-  document.getElementById("mp4_src").src = "/mskvid/video" + currentVideo + ".mp4";
+  document.getElementById("mp4_src").src = mskvideos[currentVideo];
   
   document.getElementById("myVideo").load();
   
@@ -103,7 +103,7 @@ function PrevCase(){
                                          
  }
                                          
-  document.getElementById("mp4_src").src = "mskvid/video" + currentVideo + ".mp4";
+  document.getElementById("mp4_src").src = mskvideos[currentVideo];
   
   document.getElementById("myVideo").load();
   
