@@ -13,19 +13,10 @@
 
  <div style="text-align:center; transform:rotate(90deg)"> 
  
-   
-       <video id="myVideo" width="1900" height="900" onclick="NextCase()" loop>
+       <video id="myVideo" width="2200" height="900" onclick="NextCase()" loop>
          <source id="mp4_src" src="" type="video/mp4">
        </video>
    
-       &nbsp;&nbsp;&nbsp;
-       
-       <button style="font-size : 40px; height:100px; width:200px" onclick="PrevCase()"><<</button>
-         
-       &nbsp;&nbsp;&nbsp;
-         
-       <button style="font-size : 40px; height:100px; width:200px" onclick="NextCase()">>></button>
-    
    <div>
   
   
@@ -69,26 +60,6 @@ function NextCase(){
  if (currentVideo < mskvideos.length - 1) {
   
   currentVideo = currentVideo + 1;
- 
- }
-                                         
- else {
-                                         
-  currentVideo = 0;
-                                         
- }
-                                         
-  document.getElementById("mp4_src").src = mskvideos[currentVideo];
-  
-  document.getElementById("myVideo").load();
-  
-}
-
-function PrevCase(){
-  
- if (currentVideo != 0) {
-  
-  currentVideo = currentVideo - 1;
  
  }
                                          
