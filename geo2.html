@@ -12,7 +12,7 @@
   
    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
   
-         <video id="myVideo" width="100%" height="100%" style = "transform:rotate(90deg)" onclick="NextCase()" loop>
+         <video id="myVideo" width="100%" height="100%" onclick="NextCase()" loop>
            <source id="mp4_src" src="" type="video/mp4">
          </video>
       
@@ -91,6 +91,8 @@ function handleMotion(event) {
 
 
 function myFunction() {
+  
+  screen.lockOrientation('landscape');
   
   // Request permission for iOS 13+ devices
   if (
