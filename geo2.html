@@ -4,20 +4,29 @@
     
     <meta charset="utf-8">
     
-    <link rel="manifest" href="manifest.json">
+    <script src="pleaserotate.js"></script>
     
     <title>OVMC RADIOLOGY CORE TRAINER</title>
     
   </head>
+  
+<style>
+    /* style the elements with CSS */
+    #pleaserotate-graphic{
+        fill: #fff;
+    }
+
+    #pleaserotate-backdrop {
+        color: #fff;
+        background-color: #000;
+    }
+</style>
      
 <body style="background-color:gray" onload="myFunction()">
-  
-   <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
   
          <video id="myVideo" width="100%" height="100%" onclick="NextCase()" loop>
            <source id="mp4_src" src="" type="video/mp4">
          </video>
-      
    
 <script>
   
