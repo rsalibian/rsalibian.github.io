@@ -137,6 +137,27 @@ function myFunction() {
  
 };
 
+fullscreenButton.addEventListener('click', function (event) {
+  event.stopPropagation();
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    requestFullscreenVideo();
+  }
+});
+
+function requestFullscreenVideo() {
+  if (videoContainer.requestFullscreen) {
+    videoContainer.requestFullscreen();
+  } else {
+    video.webkitEnterFullscreen();
+  }
+}
+
+document.addEventListener('fullscreenchange', function () {
+  fullscreenButton.classList.toggle('active', document.fullscreenElement);
+});
+
 
 
 </script>
