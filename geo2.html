@@ -13,7 +13,7 @@
   
 </style>
      
-<body style="background-color:gray" onload="myFunction()">
+<body style="background-color:gray">
   
   <div id="videoContainer">
     <video id="video" src="https://www.ctisus.com/resources/library/media/vignette/February_2022/February_2022_MSK_9.mp4"></video>
@@ -162,7 +162,16 @@ document.addEventListener('fullscreenchange', function () {
   fullscreenButton.classList.toggle('active', document.fullscreenElement);
 });
 
-
+if ('orientation' in screen) {
+  screen.orientation.addEventListener('change', function () {
+    // Let's request fullscreen if user switches device in landscape mode.
+    if (screen.orientation.type.startsWith('landscape')) {
+      requestFullscreenVideo();
+    } else if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+  });
+}
 
 </script>
 </body>
