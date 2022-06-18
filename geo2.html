@@ -15,13 +15,18 @@
      
 <body style="background-color:gray">
   
-  <div id="videoContainer">
-    <video id="video" src="https://www.ctisus.com/resources/library/media/vignette/February_2022/February_2022_MSK_9.mp4"></video>
-    <div id="videoControls">
-     <button id="playPauseButton"></button>  
-     <strong><button id="fullscreenButton"></button></strong>
-    </div>
+ <div id="videoContainer">
+  <video id="video" src="file.mp4"></video>
+  <div id="videoControls">
+    <button id="playPauseButton"></button>
+    <button id="seekForwardButton"></button>
+    <button id="seekBackwardButton"></button>
+    <strong><button id="fullscreenButton"></button></strong>
+    <div id="videoCurrentTime"></div>
+    <div id="videoDuration"></div>
+    <div id="videoProgressBar"></div>
   </div>
+</div>
   
  
 <script>
@@ -55,11 +60,14 @@ function pauseVid() {
   x.pause(); 
 } 
 
+
+
 function handleOrientation(event) {
   updateFieldIfNotNull('Orientation_a', event.alpha);
   updateFieldIfNotNull('Orientation_b', event.beta);
   updateFieldIfNotNull('Orientation_g', event.gamma);
 }
+
   
 function NextCase(){
                                          
@@ -80,6 +88,8 @@ function NextCase(){
   document.getElementById("myVideo").load();
   
 }
+
+
                                    
 function handleMotion(event) {
 
@@ -137,9 +147,10 @@ function myFunction() {
   document.getElementById("myVideo").load();
   
  
-};
+}
 
 */
+
 
 fullscreenButton.addEventListener('click', function (event) {
   event.stopPropagation();
@@ -160,18 +171,8 @@ function requestFullscreenVideo() {
 
 document.addEventListener('fullscreenchange', function () {
   fullscreenButton.classList.toggle('active', document.fullscreenElement);
-});
-
-if ('orientation' in screen) {
-  screen.orientation.addEventListener('change', function () {
-    // Let's request fullscreen if user switches device in landscape mode.
-    if (screen.orientation.type.startsWith('landscape')) {
-      requestFullscreenVideo();
-    } else if (document.fullscreenElement) {
-      document.exitFullscreen();
-    }
-  });
-}
+});  
+ 
 
 </script>
 </body>
