@@ -10,59 +10,143 @@
   
 <style>
   
-  html, body {
-     width : 100%;
-     height: 100%;
-   }
-  
-  #container { display:block; }
+  .relative {
+        font-size: 25px;
+      }
 
-@media only screen and (orientation:portrait){
+      .absolute {
+        font-size: 13px;
+      }
 
-  #container {
+      @media (max-width: 1130px) and (min-width: 280px) {
+        .relative {
+          font-size: 11px;
+        }
+      }
 
-    height: 150vw;
+      @media (max-width: 1130px) and (min-width: 280px) {
+        .absolute {
+          font-size: 6px;
+        }
+      }
 
-    -webkit-transform: rotate(90deg);
+      .video-container {
+        position: fixed;
+        text-align: center;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .video-container video {
+        /* Make video to at least 100% wide and tall */
 
-    -moz-transform: rotate(90deg);
+        /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+        width: 100%;
+        height: 100%;
 
-    -o-transform: rotate(90deg);
+        /* Center the video */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
-    -ms-transform: rotate(90deg);
+      @media (max-width: 1130px) and (min-width: 280px) and (orientation: landscape) {
+        .video {
+          object-fit: cover;
+        }
+      }
 
-    transform: rotate(90deg);
+      .relative {
+        position: absolute;
+        top: -10px;
+        left: -13px;
+      }
 
-  }
+      @media (max-width: 1130px) and (min-width: 280px) {
+        .relative {
+          position: absolute;
+          top: -15px;
+          left: -30px;
+        }
+      }
 
-}
+      .absolute {
+        position: absolute;
+        left: 28px;
+        top: 28px;
+      }
 
-@media only screen and (orientation:landscape){
+      @media (max-width: 1130px) and (min-width: 280px) {
+        .absolute {
+          position: absolute;
+          top: 4px;
+          left: -15px;
+        }
+      }
 
-  #container {
+      video {
+        position: fixed;
+        text-align: center;
+        object-fit: cover;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        object-fit: cover !important;
+      }
 
-     -webkit-transform: rotate(0deg);
+      p {
+        color: white;
+        text-decoration: none;
+        color: white;
+        text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000,
+          -1px -1px 0 #000;
+        font-size: 400%;
+        margin: 50px;
+        position: relative;
+        z-index: 3;
+      }
 
-     -moz-transform: rotate(0deg);
+      .home_page {
+        position: fixed;
+        top: 520px;
+        left: 410px;
+      }
 
-     -o-transform: rotate(0deg);
+      @media (max-width: 1130px) and (min-width: 280px) {
+        .home_page {
+          position: fixed;
+          top: 470px;
+          left: -08px;
+        }
+      }
 
-     -ms-transform: rotate(0deg);
+      @media (max-width: 1130px) and (min-width: 280px) and (orientation: landscape) {
+        .home_page {
+          position: fixed;
+          top: 180px;
+          left: 160px;
+          font-size: 20px;
+        }
+      }
 
-     transform: rotate(0deg);
-
-  }
 
 }
 
   
 </style>
      
-<body id="container" style="background-color:gray">
+<body style="background-color:gray">
   
-  <video width = "100%" height = "100%" controls>
-    <source src="https://www.ctisus.com/resources/library/media/vignette/February_2022/February_2022_MSK_9.mp4" type="video/mp4">
-  </video>
+  <div class="video-container">
+    <video src="https://www.ctisus.com/resources/library/media/vignette/February_2022/February_2022_MSK_9.mp4" autoplay loop muted playsinline style="z-index: 100px; overflow: hidden; object-fit: contain;"></video>
+  </div>
   
  
 <script>
@@ -187,28 +271,6 @@ function myFunction() {
 
 */
 
-
-fullscreenButton.addEventListener('click', function (event) {
-  event.stopPropagation();
-  if (document.fullscreenElement) {
-    document.exitFullscreen();
-  } else {
-    requestFullscreenVideo();
-  }
-});
-
-function requestFullscreenVideo() {
-  if (videoContainer.requestFullscreen) {
-    videoContainer.requestFullscreen();
-  } else {
-    video.webkitEnterFullscreen();
-  }
-}
-
-document.addEventListener('fullscreenchange', function () {
-  fullscreenButton.classList.toggle('active', document.fullscreenElement);
-});  
- 
 
 </script>
 </body>
