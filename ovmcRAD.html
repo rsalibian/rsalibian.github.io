@@ -91,6 +91,8 @@ function myFunction2() {
   button2.disabled = true;
   button3.disabled = false;
 
+  document.getElementById("reminder").innerHTML = "Don't forget to complete your study!";
+
   //window.open("http://dhssynapse/WorkflowUI/?path=&desktopSession=localhost:8083&winpass=true", "_blank");
   
 }
@@ -122,6 +124,10 @@ function myFunction2() {
 <label style="font-size:30px">Reserve For:</label>&nbsp;
 <label style="font-size:30px" id="doctor"></label>&nbsp;&nbsp;
 <button type="button" style="font-size:30px" id="DoneNow" disabled onclick="myFunction3()">Done</button>
+</p>
+
+<p>
+<label style="font-size:30px" id="reminder"></label>&nbsp;&nbsp;
 </p>
   
 </body>
