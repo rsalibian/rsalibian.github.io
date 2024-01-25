@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  
+function myFunction1(){
+  
+  const button1 = document.getElementById("GoNow");
+  
+  button1.disabled = false;
+  
+}
+  
+function myFunction2() {
+  
+  const radData = {
+    
+    '2024-1-24-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian'],
+    '2024-1-24-PM': ['Eva', 'Michael', 'Sophia'],
+    '2024-1-25-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian'],
+    '2024-1-25-PM': ['Eva', 'Michael', 'Sophia']
+
+  };
+  
+  var date = new Date();
+var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+document.getElementById("cday").innerHTML = current_date;
+  
+  const currentDate = new Date();
+  const hours = currentDate.getHours();
+  document.getElementById("hours").innerHTML = "Current Hour (0-23): " + hours;
+  
+  if (hours >=0 && hours <= 11) {
+    
+    addRad = radData[current_date + "-AM"]
+    
+  } 
+  
+  else if (hours > 11 && hours <= 17) {
+    
+    addRad = radData[current_date + "-PM"]
+    
+  }
+  
+  else {
+    
+    var date = new Date();
+    
+    date.setDate(date.getDate() + 1);
+    
+    var next_day = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+    
+    document.getElementById("nextDay").innerHTML = next_day + "-AM";
+    
+    addRad = radData[next_day + "-AM"]
+    
+  }
+ 
+  howmanyRads = addRad.length;
+  
+  whichRad = Math.floor(Math.random() * howmanyRads);
+  
+  assignRad = addRad[whichRad];
+  
+  document.getElementById("doctor").innerHTML = "Reserve For: " + assignRad;
+  
+  const button1 = document.getElementById("GoNow");
+  
+  button1.disabled = true;
+  
+}
+</script>
+</head>
+<body style="background-color:powderblue;">
+<h2>OVMC General Radiology</h2>
+
+<p id="demo1">Did you complete the study?
+<button type="button" onclick="myFunction1()">YES</button>
+</p>
+  
+<p id="demo2">Did you confirm study in Synapse?
+<button type="button" id="GoNow" disabled onclick="myFunction2()">YES</button>
+</p>
+  
+<p id="doctor"></p>
+<p id="cday"></p>   
+<p id="hours"></p>  
+<p id="nextDay"></p>  
+
+
+</body>
+</html>
