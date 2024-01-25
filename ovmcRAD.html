@@ -23,12 +23,12 @@ function myFunction2() {
   };
   
   var date = new Date();
-var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
-document.getElementById("cday").innerHTML = current_date;
+  var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+  //document.getElementById("cday").innerHTML = current_date;
   
   const currentDate = new Date();
   const hours = currentDate.getHours();
-  document.getElementById("hours").innerHTML = "Current Hour (0-23): " + hours;
+  //document.getElementById("hours").innerHTML = "Current Hour (0-23): " + hours;
   
   if (hours >=0 && hours <= 11) {
     
@@ -50,7 +50,7 @@ document.getElementById("cday").innerHTML = current_date;
     
     var next_day = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
     
-    document.getElementById("nextDay").innerHTML = next_day + "-AM";
+    //document.getElementById("nextDay").innerHTML = next_day + "-AM";
     
     addRad = radData[next_day + "-AM"]
     
@@ -70,6 +70,7 @@ document.getElementById("cday").innerHTML = current_date;
   
 }
 </script>
+  
 </head>
 <body style="background-color:powderblue;">
 <h2>OVMC General Radiology</h2>
@@ -83,10 +84,6 @@ document.getElementById("cday").innerHTML = current_date;
 </p>
   
 <p id="doctor"></p>
-<p id="cday"></p>   
-<p id="hours"></p>  
-<p id="nextDay"></p>  
-
 
 </body>
 </html>
