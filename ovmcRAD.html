@@ -62,13 +62,16 @@ function myFunction2() {
   
   assignRad = addRad[whichRad];
   
-  //document.getElementById("doctor").innerHTML = "Reserve For: " + assignRad;
+  document.getElementById("doctor").innerHTML = "Reserve For: " + assignRad;
 
-  alert("Reserve For: " + assignRad);
-  
+  //alert("Reserve For: " + assignRad);
+
   const button1 = document.getElementById("GoNow");
   
+  const button2 = document.getElementById("buttonfirst");
+  
   button1.disabled = true;
+  button2.disabled = true;
   
 }
 </script>
@@ -78,7 +81,7 @@ function myFunction2() {
 <h2 style="font-size:30px">OVMC General Radiology</h2>
 
 <p style="font-size:30px" id="demo1">Did you complete the study?
-<button type="button" style="font-size:30px" onclick="myFunction1()">YES</button>
+<button type="button" style="font-size:30px" id="buttonefirst" onclick="myFunction1()">YES</button>
 </p>
   
 <p style="font-size:30px" id="demo2">Did you confirm study in Synapse?
