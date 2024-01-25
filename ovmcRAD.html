@@ -6,8 +6,10 @@
 function myFunction3(){
   
   const button1 = document.getElementById("buttonfirst");
+  const button3 = document.getElementById("DoneNow");
   
   button1.disabled = false;
+  button3.disabled = true;
   
 }  
   
@@ -70,7 +72,7 @@ function myFunction2() {
   
   assignRad = addRad[whichRad];
   
-  document.getElementById("doctor").innerHTML = "Reserve For: " + assignRad;
+  document.getElementById("doctor").innerHTML = assignRad;
 
 
   const button1 = document.getElementById("GoNow");
