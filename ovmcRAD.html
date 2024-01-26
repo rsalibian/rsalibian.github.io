@@ -3,6 +3,12 @@
 <head>
 <script>
 
+function nonamefunction(){
+
+  document.getElementById("doctor").innerHTML = "";
+  
+}
+
 function myFunction3(){
 
   document.getElementById("doctor").innerHTML = "";
@@ -79,6 +85,8 @@ function myFunction1() {
   document.getElementById("doctor").innerHTML = assignRad;
 
   document.getElementById("reminder").innerHTML = "Don't forget to complete your study!";
+
+  window.setTimeout(nonamefunction, 5000);
   
 }
 </script>
