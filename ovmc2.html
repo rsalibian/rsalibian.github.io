@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function nonamefunction(){
+
+  document.getElementById("doctor").innerHTML = "";
+  document.getElementById("reminder").innerHTML = "";
+  
+}
+
+function myFunction3(){
+
+  document.getElementById("doctor").innerHTML = "";
+  
+  const button3 = document.getElementById("DoneNow");
+  const button4 = document.getElementById("DoneNow2");
+  
+  button3.disabled = true;
+  button4.disabled = true;
+  
+}  
+  
+function myFunction15(){
+  
+  const button1 = document.getElementById("GoNow");
+  const button2 = document.getElementById("GoNow2");
+  
+  button1.disabled = false;
+  button2.disabled = false;
+  
+}
+  
+function myFunction1() {
+  
+  const radData = {
+    
+    '2024-1-26-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung'],
+    '2024-1-26-PM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung'],
+    '2024-1-27-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung'],
+    '2024-1-27-PM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung']
+
+  };
+  
+  var date = new Date();
+  var current_date = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+  //document.getElementById("cday").innerHTML = current_date;
+  
+  const currentDate = new Date();
+  const hours = currentDate.getHours();
+  //document.getElementById("hours").innerHTML = "Current Hour (0-23): " + hours;
+  
+  if (hours >=0 && hours <= 11) {
+    
+    addRad = radData[current_date + "-AM"]
+    
+  } 
+  
+  else if (hours > 11 && hours <= 17) {
+    
+    addRad = radData[current_date + "-PM"]
+    
+  }
+  
+  else {
+    
+    var date = new Date();
+    
+    date.setDate(date.getDate() + 1);
+    
+    var next_day = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+ date.getDate();
+    
+    //document.getElementById("nextDay").innerHTML = next_day + "-AM";
+    
+    addRad = radData[next_day + "-AM"]
+    
+  }
+ 
+  howmanyRads = addRad.length;
+  
+  whichRad = Math.floor(Math.random() * howmanyRads);
+  
+  assignRad = addRad[whichRad];
+  
+  document.getElementById("doctor").innerHTML = assignRad;
+
+  document.getElementById("reminder").innerHTML = "Don't forget to complete your study!";
+
+  //window.setTimeout(nonamefunction, 10000);
+  
+}
+</script>
+  
+</head>
+<body style="background-color:powderblue;">
+<h2 style="font-size:45px">OVMC General Radiology</h2>
+  
+<label style="font-size:45px">Thank you for confirming your study in Synapse!</label>
+  
+<p style="font-size:45px" id="demo2">Is this a pediatric case (<=18 y/o)?
+<button type="button" style="font-size:45px" id="GoNow" onclick="myFunction1()">NO</button>
+<button type="button" style="font-size:45px" id="GoNow2" onclick="myFunction1()">YES</button>
+
+</p>
+
+<p>
+<label style="font-size:85px" id="doctor"></label>&nbsp;
+</p>
+
+</br>
+
+<p>
+<label style="font-size:45px" id="reminder"></label>&nbsp;&nbsp;
+</p>
+  
+</body>
+</html>
