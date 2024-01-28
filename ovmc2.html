@@ -36,12 +36,12 @@ function myFunction1() {
   
   const radData = {
 
-    '2024-1-28-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung'],
-    '2024-1-28-PM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung'],
-    '2024-1-29-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung'],
-    '2024-1-29-PM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung'],
-    '2024-1-30-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung'],
-    '2024-1-30-PM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung']
+    '2024-1-28-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung', 'Dr. Chawla'],
+    '2024-1-28-PM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung', 'Dr. Chawla'],
+    '2024-1-29-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung', 'Dr. Chawla'],
+    '2024-1-29-PM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung', 'Dr. Chawla'],
+    '2024-1-30-AM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung', 'Dr. Chawla'],
+    '2024-1-30-PM': ['Dr. Salibian', 'Dr. Nguyen', 'Dr. Barclay', 'Dr. Asadoorian', 'Dr. Davila', 'Dr. Zung', 'Dr. Chawla']
 
   };
   
@@ -82,6 +82,18 @@ function myFunction1() {
   howmanyRads = addRad.length;
   
   whichRad = Math.floor(Math.random() * howmanyRads);
+
+  if (addRad.includes('Dr. Chawla')){
+
+    assignRad = 'Dr. Chawla'
+
+  }
+
+  else (){
+
+     assignRad = addRad[whichRad];
+
+  }
   
   assignRad = addRad[whichRad];
   
@@ -101,6 +113,12 @@ function myFunction1() {
 <label style="font-size:45px">Thank you for confirming your study in Synapse!</label>
   
 <p style="font-size:45px" id="demo2">Is this a pediatric case (<=18 y/o)?
+
+<select name="PEDS" id="PEDS">
+  <option value="NO">NO</option>
+  <option value="YES">YES</option>
+</select>
+  
 <button type="button" style="font-size:45px" id="GoNow" onclick="myFunction1()">NO</button>
 <button type="button" style="font-size:45px" id="GoNow2" onclick="myFunction1()">YES</button>
 
