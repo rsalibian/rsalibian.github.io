@@ -32,7 +32,7 @@ function myFunction15(){
   
 }
   
-function myFunction1(PedsOption) {
+function myFunction1(x) {
   
   const radData = {
 
@@ -81,10 +81,10 @@ function myFunction1(PedsOption) {
   
   whichRad = Math.floor(Math.random() * howmanyRads);
 
-  if (PedsOption = "yes" && addRad.includes('Dr. Chawla')){
+  if (x = 2 && addRad.includes('Dr. Chawla')){
 
     assignRad = 'Dr. Chawla';
-    alert(PedsOption);
+    alert(x);
 
   }
 
@@ -113,8 +113,8 @@ function myFunction1(PedsOption) {
   
 <p style="font-size:45px" id="demo2">Is this a pediatric case (<=18 y/o)?
   
-<button type="button" style="font-size:45px" id="GoNow" onclick="myFunction1('no')">NO</button>
-<button type="button" style="font-size:45px" id="GoNow2" onclick="myFunction1('yes')">YES</button>
+<button type="button" style="font-size:45px" id="GoNow" onclick="myFunction1(1)">NO</button>
+<button type="button" style="font-size:45px" id="GoNow2" onclick="myFunction1(2)">YES</button>
 
 </p>
 
